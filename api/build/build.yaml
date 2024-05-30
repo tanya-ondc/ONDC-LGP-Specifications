@@ -2606,6 +2606,67 @@ x-enum:
             - code: Return
               description: about the enum
               reference: <PR/Issue/Discussion Links md format text>
+        tags:
+          Package_Dimesions:
+            unit:
+              - code: centimeter
+                description: about the enum
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: meter
+                description: about the enum
+                reference: <PR/Issue/Discussion Links md format text>
+          Package_Weight:
+            unit:
+              - code: unit
+                description: about the enum
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: gram
+                description: about the enum
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: dozen
+                description: about the enum
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: kilogram
+                description: about the enum
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: tonne
+                description: about the enum
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: litre
+                description: about the enum
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: millilitre
+                description: about the enum
+                reference: <PR/Issue/Discussion Links md format text>
+          Package_Details:
+            Category:
+              - code: Grocery
+                description: about the enum
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: F&B
+                description: about the enum
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: Fashion
+                description: about the enum
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: BPC
+                description: about the enum
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: Electronics
+                description: about the enum
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: Appliances
+                description: about the enum
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: Home & Kitchen
+                description: about the enum
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: Health & Wellness
+                description: about the enum
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: Pharma
+                description: about the enum
+                reference: <PR/Issue/Discussion Links md format text>
   on_search:
     message:
       catalog:
@@ -4816,6 +4877,9 @@ x-flows:
                               code: RTO_Action
                             value: 'no'
                           - descriptor:
+                              code: Eway_Bill_No
+                            value: '1209567899003'
+                          - descriptor:
                               code: Doc_Way_Bill_No
                             value: '1209567899003'
                 billing:
@@ -6400,6 +6464,9 @@ x-flows:
                           - descriptor:
                               code: RTO_Action
                             value: 'no'
+                          - descriptor:
+                              code: Eway_Bill_No
+                            value: '1209567899003'
                           - descriptor:
                               code: Doc_Way_Bill_No
                             value: '1209567899003'
@@ -12442,10 +12509,10 @@ x-flows:
         description: LSP sends status updates
         reference: if any
         example: *ref_34
-  - summary: B2B International Logistics Cancellation - Buyer Cancels
+  - summary: Logistics Buyer Cancellation
     description: >-
-      The below flow shows the journey of Logistics buyer buying international
-      logistics services and Logistics buyer cancelling the order.
+      The below flow shows the journey of Logistics buyer buying  logistics
+      services and Logistics buyer cancelling the order.
     reference: if any
     steps:
       - summary: Search Logistics - Air Delivery
@@ -17393,6 +17460,9 @@ x-examples:
                                 code: RTO_Action
                               value: 'no'
                             - descriptor:
+                                code: Eway_Bill_No
+                              value: '1209567899003'
+                            - descriptor:
                                 code: Doc_Way_Bill_No
                               value: '1209567899003'
                   billing:
@@ -17667,6 +17737,9 @@ x-examples:
                                 code: RTO_Action
                               value: 'no'
                             - descriptor:
+                                code: Eway_Bill_No
+                              value: '1209567899003'
+                            - descriptor:
                                 code: Doc_Way_Bill_No
                               value: '1209567899003'
                   billing:
@@ -17874,6 +17947,9 @@ x-examples:
                             - descriptor:
                                 code: RTO_Action
                               value: 'no'
+                            - descriptor:
+                                code: Eway_Bill_No
+                              value: '1209567899003'
                             - descriptor:
                                 code: Doc_Way_Bill_No
                               value: '1209567899003'
@@ -18135,6 +18211,9 @@ x-examples:
                             - descriptor:
                                 code: RTO_Action
                               value: 'no'
+                            - descriptor:
+                                code: Eway_Bill_No
+                              value: '1209567899003'
                             - descriptor:
                                 code: Doc_Way_Bill_No
                               value: '1209567899003'

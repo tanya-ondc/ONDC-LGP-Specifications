@@ -221,6 +221,12 @@
                 },
                 {
                   "descriptor": {
+                    "code": "Eway_Bill_No"
+                  },
+                  "value": "1209878992826353"
+                },
+                {
+                  "descriptor": {
                     "code": "Doc_Way_Bill_No"
                   },
                   "value": "1209878992826353"
@@ -298,23 +304,23 @@
               ]
             },
             {
-                "descriptor": {
-                    "code": "Collection_Details"
+              "descriptor": {
+                "code": "Collection_Details"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "Amount"
+                  },
+                  "value": "20000"
                 },
-                "list": [
-                    {
-                        "descriptor": {
-                            "code": "Amount"
-                        },
-                        "value": "20000"
-                    },
-                    {
-                        "descriptor": {
-                            "code": "Type"
-                        },
-                        "value": "ON-FULFILLMENT"
-                    }
-                ]
+                {
+                  "descriptor": {
+                    "code": "Type"
+                  },
+                  "value": "ON-FULFILLMENT"
+                }
+              ]
             }
           ]
         }

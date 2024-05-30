@@ -140,6 +140,9 @@ value:
                     code: RTO_Action
                   value: 'no'
                 - descriptor:
+                    code: Eway_Bill_No
+                  value: '1209567899003'
+                - descriptor:
                     code: Doc_Way_Bill_No
                   value: '1209567899003'
       billing:

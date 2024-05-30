@@ -1,5 +1,5 @@
-summary: B2B International Logistics Cancellation - Buyer Cancels
-description: The below flow shows the journey of Logistics buyer buying international logistics services and Logistics buyer cancelling the order.
+summary: Logistics Buyer Cancellation
+description: The below flow shows the journey of Logistics buyer buying  logistics services and Logistics buyer cancelling the order.
 reference: if any
 steps:
   - summary: Search Logistics - Air Delivery
