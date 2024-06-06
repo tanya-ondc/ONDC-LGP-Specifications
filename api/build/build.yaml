@@ -2920,6 +2920,28 @@ x-tags:
               - code: Unit
                 description: Define unit of package weight
                 reference: <PR/Issue/Discussion Links md format text>
+                value:
+                  - code: unit
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: gram
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: dozen
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: kilogram
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: tonne
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: litre
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: millilitre
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
               - code: Value
                 description: Define value of package weight
                 reference: <PR/Issue/Discussion Links md format text>
@@ -2931,6 +2953,13 @@ x-tags:
               - code: Unit
                 description: Define unit of package dimensions
                 reference: <PR/Issue/Discussion Links md format text>
+                value:
+                  - code: centimeter
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: meter
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
               - code: Length
                 description: Define length of package dimensions
                 reference: <PR/Issue/Discussion Links md format text>
@@ -2948,6 +2977,34 @@ x-tags:
               - code: Category
                 description: Define category of package
                 reference: <PR/Issue/Discussion Links md format text>
+                value:
+                  - code: Grocery
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: F&B
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Fashion
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: BPC
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Electronics
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Appliances
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Home & Kitchen
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Health & Wellness
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Pharma
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
               - code: Dangerous_Goods
                 description: >-
                   State true if dangerous goods; If true, the logistics buyer
@@ -3203,6 +3260,13 @@ x-tags:
               - code: Unit
                 description: Define unit of package dimensions
                 reference: <PR/Issue/Discussion Links md format text>
+                value:
+                  - code: centimeter
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: meter
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
               - code: Length
                 description: Define length of package dimensions
                 reference: <PR/Issue/Discussion Links md format text>
