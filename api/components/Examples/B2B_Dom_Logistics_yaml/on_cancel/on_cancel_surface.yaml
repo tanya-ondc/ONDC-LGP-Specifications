@@ -43,6 +43,18 @@ value:
             label: TAT
             duration: PT7D
             timestamp: '2023-10-17'
+        - id: I2
+          category_ids:
+            - C1
+            - R1
+          descriptor:
+            code: P2H2P
+          fulfillment_ids:
+            - '2'
+          time:
+            label: TAT
+            duration: PT7D
+            timestamp: '2023-10-17'
       quote:
         price:
           currency: INR
