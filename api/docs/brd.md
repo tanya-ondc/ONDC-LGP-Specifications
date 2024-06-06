@@ -6,7 +6,7 @@ The process begins with a B2B seller initiating a search request for available l
 
 While initiating a search call, B2B sellers will send pincode or Lat/ Long of the start and end location and quote mandatory and optional attributes. B2B seller relays this search query to the Gateway. The gateway performs a look-up on the ONDC Registry to identify the Logistics seller apps registered in the logistics domain and then multi-casts the search query to all such logistics seller apps.
 
-The logistics seller apps, in turn, respond with an /on_search response to the gateway, with all the possible fulfillment options available from start to end location sent in the search call. The gateway then relays these responses to the buyer app (B2B seller app), which displays them to the buyer (B2B seller). 
+The logistics seller apps, in turn, respond with an /on_search response to the logistics buyer, with all the possible fulfillment options available from start to end location sent in the search call. 
 
 Input product attributes for getting a quote from B2B Logistics seller app:
 - No. of packets
