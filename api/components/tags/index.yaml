@@ -15,16 +15,14 @@ init:
     order:
       fulfillments:
         $ref: "./TagGroup.yaml#/intent/fulfillments"
-      payment: 
+      payment: &ref0
         $ref: "./TagGroup.yaml#/order/payment"
 on_init:
   message:
     order:
       fulfillments:
         $ref: "./TagGroup.yaml#/intent/fulfillments"
-      payments: &ref0
-       tags:
-         $ref: "./TagGroup.yaml#/order/payment/tags"
+      payments: *ref0
       tags:
          $ref: "./TagGroup.yaml#/order/seller_terms"
 confirm: &ref1
@@ -43,7 +41,7 @@ update:
     order:
       fulfillments: &ref3
         $ref: "./TagGroup.yaml#/order/fulfillments"
-        tags:
+      tags:
          $ref: "./TagGroup.yaml#/intent/tags"  
 on_update: 
   message:

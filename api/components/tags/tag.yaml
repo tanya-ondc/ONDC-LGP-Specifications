@@ -228,7 +228,7 @@ Delivery_Terms:
     reference: <PR/Issue/Discussion Links md format text>  
 Delivery_terms_international:
   - code: INCOTERMS
-    description: Description of the Tag; Present in International Logistics
+    description: Incoterms (International Commercial Terms) present in International Logistics are the terms to clarify the responsibilities of buyers and sellers for the delivery of goods.
     reference: <PR/Issue/Discussion Links md format text>
     value:
       - code: CIF
