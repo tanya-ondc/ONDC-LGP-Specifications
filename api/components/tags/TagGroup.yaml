@@ -36,7 +36,7 @@ intent:
         $ref: "./Tag.yaml#/Package_Details"
     - code: Cold_Logistics
       description: Define terms if cold logistics is required
-      required: required
+      required: optional
       reference: <PR/Issue/Discussion Links md format text>
       list:
         $ref: "./Tag.yaml#/Cold_Logistics"
@@ -97,19 +97,43 @@ order:
       required: required
       list:
         $ref: "./Tag.yaml#/BAP_Terms"
-  package_diff_tags:
-        - code: Package_Dimensions_Diff
-          description: Difference in package dimesions identified
-          reference: <PR/Issue/Discussion Links md format text>
-          required: optional
-          list:
-            $ref: "./Tag.yaml#/Package_Dimensions_Diff"
-        - code: Diff_Proof
-          description: Proof of difference identified
-          reference: <PR/Issue/Discussion Links md format text>
-          required: optional
-          list:
-            $ref: "./Tag.yaml#/Diff_Proof"
+  tags:
+    - code: Package_Weight
+      description: Define package dead weight here
+      reference: <PR/Issue/Discussion Links md format text>
+      required: required
+      list:
+        $ref: "./Tag.yaml#/Package_Weight"
+    - code: Package_Dimensions
+      description: Define package LBH dimensions here
+      required: required
+      reference: <PR/Issue/Discussion Links md format text>
+      list:
+        $ref: "./Tag.yaml#/Package_Dimensions"
+    - code: Package_Details
+      description: Define further details of package
+      required: required
+      reference: <PR/Issue/Discussion Links md format text>
+      list:
+        $ref: "./Tag.yaml#/Package_Details"
+    - code: Cold_Logistics
+      description: Define terms if cold logistics is required
+      required: optional
+      reference: <PR/Issue/Discussion Links md format text>
+      list:
+        $ref: "./Tag.yaml#/Cold_Logistics"
+    - code: Package_Dimensions_Diff
+      description: Difference in package dimesions identified
+      reference: <PR/Issue/Discussion Links md format text>
+      required: optional
+      list:
+        $ref: "./Tag.yaml#/Package_Dimensions_Diff"
+    - code: Diff_Proof
+      description: Proof of difference identified
+      reference: <PR/Issue/Discussion Links md format text>
+      required: optional
+      list:
+        $ref: "./Tag.yaml#/Diff_Proof"
 
 items:
   tags:
