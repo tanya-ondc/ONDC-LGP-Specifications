@@ -21,7 +21,6 @@ on_init:
     order:
       $ref: "./TagGroup.yaml#/order"
       tags:
-       list:
         - $ref: "./TagGroup.yaml#/order/seller_terms"
 
 confirm: &ref1
@@ -29,11 +28,9 @@ confirm: &ref1
     order: 
       fulfillments:
        tags:
-        list:
           - $ref: "./TagGroup.yaml#/intent"
       payment: *ref0
       tags:
-       list:
         - $ref: "./TagGroup.yaml#/intent"
         - $ref: "./TagGroup.yaml#/order/seller_terms"
         - $ref: "./TagGroup.yaml#/order/buyer_terms"
@@ -54,7 +51,6 @@ on_update:
       fulfillments: *ref3
       payment: *ref0
       tags:
-       list:
         - $ref: "./TagGroup.yaml#/intent"
         - $ref: "./TagGroup.yaml#/order/package_diff_tags"
 on_cancel:
@@ -63,7 +59,6 @@ on_cancel:
       fulfillments: *ref3
       payment: *ref0
       tags:
-       list:
         - $ref: "./TagGroup.yaml#/intent"
         - $ref: "./TagGroup.yaml#/order/package_diff_tags"
 
@@ -73,7 +68,6 @@ on_status:
       fulfillments: *ref3
       payment: *ref0
       tags:
-       list:
         - $ref: "./TagGroup.yaml#/intent"
         - $ref: "./TagGroup.yaml#/order/package_diff_tags"
         

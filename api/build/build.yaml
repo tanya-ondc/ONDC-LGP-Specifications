@@ -3148,13 +3148,12 @@ x-tags:
     message:
       order:
         tags:
-          list:
-            - &ref_12
-              - code: BPP_Terms
-                description: Define BPP terms
-                reference: <PR/Issue/Discussion Links md format text>
-                required: required
-                list: *ref_10
+          - &ref_12
+            - code: BPP_Terms
+              description: Define BPP terms
+              reference: <PR/Issue/Discussion Links md format text>
+              required: required
+              list: *ref_10
         payment: *ref_11
         seller_terms: *ref_12
         buyer_terms:
@@ -3208,17 +3207,15 @@ x-tags:
       order:
         fulfillments:
           tags:
-            list:
-              - *ref_13
+            - *ref_13
         payment: *ref_11
         tags:
-          list:
-            - *ref_13
-            - *ref_12
-            - '0': *ref_14
-              description: Define terms for BAP
-              reference: <PR/Issue/Discussion Links md format text>
-              list: *ref_15
+          - *ref_13
+          - *ref_12
+          - '0': *ref_14
+            description: Define terms for BAP
+            reference: <PR/Issue/Discussion Links md format text>
+            list: *ref_15
   on_confirm: *ref_16
   update:
     message:
@@ -3230,27 +3227,24 @@ x-tags:
         fulfillments: *ref_17
         payment: *ref_11
         tags:
-          list:
-            - *ref_13
-            - *ref_18
+          - *ref_13
+          - *ref_18
   on_cancel:
     message:
       order:
         fulfillments: *ref_17
         payment: *ref_11
         tags:
-          list:
-            - *ref_13
-            - *ref_18
+          - *ref_13
+          - *ref_18
   on_status:
     message:
       order:
         fulfillments: *ref_17
         payment: *ref_11
         tags:
-          list:
-            - *ref_13
-            - *ref_18
+          - *ref_13
+          - *ref_18
 x-flows:
   - summary: B2B Domestic Logistics - Surface Delivery
     description: >-
