@@ -219,6 +219,16 @@ Quantity:
   - code: MEASURE_VALUE
     description: Description of the Tag
     reference: <PR/Issue/Discussion Links md format text>
+static_terms:
+  - code: Static_Terms
+    description: description about the tag
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: Static_Terms_New
+    description: description about the tag
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: Effective_Date
+    description: description about the tag
+    reference: <PR/Issue/Discussion Links md format text>
 KYC:
   - code: url
     description: eKYC url for dynamic onboarding of logistics buyers.

@@ -3046,30 +3046,15 @@ x-tags:
               description: Defines the mandatory arbitrations applicable for the LSP seller
               reference: <PR/Issue/Discussion Links md format text>
               required: required
-              list: &ref_10
-                - code: Max_Liability
-                  description: Description of the Tag
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: Max_Liability_Cap
-                  description: Description of the Tag
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: Mandatory_Arbitration
-                  description: Description of the Tag
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: Court_Jurisdiction
-                  description: Description of the Tag
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: Delay_Interest
-                  description: Description of the Tag
-                  reference: <PR/Issue/Discussion Links md format text>
+              list:
                 - code: Static_Terms
-                  description: Description of the Tag
+                  description: description about the tag
                   reference: <PR/Issue/Discussion Links md format text>
                 - code: Static_Terms_New
-                  description: Description of the Tag
+                  description: description about the tag
                   reference: <PR/Issue/Discussion Links md format text>
                 - code: Effective_Date
-                  description: Description of the Tag
+                  description: description about the tag
                   reference: <PR/Issue/Discussion Links md format text>
             - code: KYC
               description: Defines the KYC details with a url
@@ -3105,7 +3090,7 @@ x-tags:
   init:
     message:
       order:
-        payment: &ref_11
+        payment: &ref_10
           tags:
             - code: Settlement_Details
               description: Define terms for Settlement Details Here
@@ -3139,13 +3124,37 @@ x-tags:
     message:
       order:
         tags:
-          - &ref_12
+          - &ref_11
             - code: BPP_Terms
               description: Define BPP terms
               reference: <PR/Issue/Discussion Links md format text>
               required: required
-              list: *ref_10
-        payment: *ref_11
+              list: &ref_12
+                - code: Max_Liability
+                  description: Description of the Tag
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: Max_Liability_Cap
+                  description: Description of the Tag
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: Mandatory_Arbitration
+                  description: Description of the Tag
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: Court_Jurisdiction
+                  description: Description of the Tag
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: Delay_Interest
+                  description: Description of the Tag
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: Static_Terms
+                  description: Description of the Tag
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: Static_Terms_New
+                  description: Description of the Tag
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: Effective_Date
+                  description: Description of the Tag
+                  reference: <PR/Issue/Discussion Links md format text>
+        payment: *ref_10
         fulfillments:
           tags:
             - code: Delivery_Terms
@@ -3162,13 +3171,13 @@ x-tags:
                 - code: RTO_Action
                   description: Description of the Tag
                   reference: <PR/Issue/Discussion Links md format text>
-        seller_terms: *ref_12
+        seller_terms: *ref_11
         buyer_terms: &ref_14
           - code: BPP_Terms
             description: BPP terms sent by the seller app
             reference: <PR/Issue/Discussion Links md format text>
             required: required
-            list: *ref_10
+            list: *ref_12
           - code: BAP_Terms
             description: Acceptance to bpp terms
             reference: <PR/Issue/Discussion Links md format text>
@@ -3218,7 +3227,7 @@ x-tags:
       order:
         fulfillments:
           tags: *ref_13
-        payment: *ref_11
+        payment: *ref_10
         tags:
           - *ref_14
   on_confirm: *ref_15
@@ -3232,7 +3241,7 @@ x-tags:
       order:
         fulfillments:
           tags: *ref_16
-        payment: *ref_11
+        payment: *ref_10
         tags:
           - *ref_17
           - *ref_18
@@ -3241,7 +3250,7 @@ x-tags:
       order:
         fulfillments:
           tags: *ref_16
-        payment: *ref_11
+        payment: *ref_10
         tags:
           - *ref_17
           - *ref_18
@@ -3250,7 +3259,7 @@ x-tags:
       order:
         fulfillments:
           tags: *ref_16
-        payment: *ref_11
+        payment: *ref_10
         tags:
           - *ref_17
           - *ref_18

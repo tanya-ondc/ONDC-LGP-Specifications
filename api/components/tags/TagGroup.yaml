@@ -47,14 +47,13 @@ descriptor:
       reference: <PR/Issue/Discussion Links md format text>
       required: required
       list:
-        $ref: "./Tag.yaml#/BPP_Terms"
+        $ref: "./Tag.yaml#/static_terms"
     - code: KYC
       description: Defines the KYC details with a url
       required: required
       reference: <PR/Issue/Discussion Links md format text>
       list:
         $ref: "./Tag.yaml#/KYC"
-
 order:
   payment:
     tags:
