@@ -14,21 +14,25 @@ on_search:
 init:
   message:
     order:
-      payment: &ref0
+      fulfillments:
+        $ref: "./TagGroup.yaml#/intent/fulfillments"
+      payment: 
         $ref: "./TagGroup.yaml#/order/payment"
 on_init:
   message:
     order:
-      $ref: "./TagGroup.yaml#/order"
+      fulfillments:
+        $ref: "./TagGroup.yaml#/intent/fulfillments"
+      payments: &ref0
+       tags:
+         $ref: "./TagGroup.yaml#/order/payment/tags"
       tags:
-        - $ref: "./TagGroup.yaml#/order/seller_terms"
-
+         $ref: "./TagGroup.yaml#/order/seller_terms"
 confirm: &ref1
   message:
     order: 
       fulfillments:
-       tags:
-         $ref: "./TagGroup.yaml#/intent/fulfillments"
+        $ref: "./TagGroup.yaml#/intent/fulfillments"
       payment: *ref0
       tags:
         - $ref: "./TagGroup.yaml#/order/buyer_terms"
@@ -39,9 +43,9 @@ update:
   message:
     order:
       fulfillments: &ref3
-        $ref: "./TagGroup.yaml#/intent/fulfillments"
+        $ref: "./TagGroup.yaml#/order/fulfillments"
         tags:
-
+         $ref: "./TagGroup.yaml#/intent/tags"  
 on_update: 
   message:
     order:
@@ -49,7 +53,6 @@ on_update:
       payment: *ref0
       tags:
         - $ref: "./TagGroup.yaml#/intent/tags"
-        - $ref: "./TagGroup.yaml#/order/package_diff_tags"
 on_cancel:
   message:
     order:

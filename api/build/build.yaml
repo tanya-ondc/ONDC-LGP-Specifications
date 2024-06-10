@@ -2870,8 +2870,8 @@ x-tags:
   search:
     message:
       intent:
-        fulfillments: &ref_13
-          tags: &ref_16
+        fulfillments: &ref_9
+          tags:
             - code: Delivery_Terms
               description: Define incoterms for Delivery here for internation logistics
               reference: <PR/Issue/Discussion Links md format text>
@@ -2880,6 +2880,45 @@ x-tags:
                 - code: INCOTERMS
                   description: Description of the Tag; Present in International Logistics
                   reference: <PR/Issue/Discussion Links md format text>
+                  value:
+                    - code: CIF
+                      description: >-
+                        CIF (Cost, Insurance, and Freight) indicates that the
+                        seller has the responsibility to deliver the goods to
+                        the named port of destination, covering the cost of
+                        transportation, insurance, and freight charges.
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: EXW
+                      description: >-
+                        EXW (Ex Works) represents the point at which the
+                        seller's responsibility for the goods ends and the
+                        buyer's responsibility begins in an international
+                        transaction.
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: FOB
+                      description: >-
+                        FOB (Free On Board) terms define the point at which the
+                        seller fulfills their obligation to deliver the goods,
+                        and the buyer takes on the responsibility and costs
+                        associated with transporting the goods from the named
+                        port of shipment to the final destination
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: DAP
+                      description: >-
+                        under DAP (Delivered at Place) terms, the seller takes
+                        on the responsibility and costs of delivering the goods
+                        to a named place at the buyer's destination.
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: DDP
+                      description: >-
+                        Under DDP (Delivered Duty Paid) terms, the seller
+                        assumes a high level of responsibility and covers all
+                        costs associated with delivering the goods to the
+                        buyer's destination. The buyer, on the other hand, is
+                        responsible for unloading the goods and any subsequent
+                        transportation from the named place to their final
+                        destination.
+                      reference: <PR/Issue/Discussion Links md format text>
                 - code: NAMED_PLACE_OF_DELIVERY
                   description: >-
                     If the delivery is on port based on incoterm, the port code
@@ -2893,7 +2932,7 @@ x-tags:
                 the payment from buyer at the time of delivery.
               reference: <PR/Issue/Discussion Links md format text>
               required: required for COD orders
-              list: &ref_9
+              list: &ref_10
                 - code: Amount
                   description: Value of the collected amount
                   reference: <PR/Issue/Discussion Links md format text>
@@ -2902,7 +2941,7 @@ x-tags:
                     Information about the type of collection
                     details(ON_FULLFILLMENT)
                   reference: <PR/Issue/Discussion Links md format text>
-        tags: &ref_17
+        tags: &ref_15
           - code: Package_Weight
             description: Define package dead weight here
             reference: <PR/Issue/Discussion Links md format text>
@@ -3048,13 +3087,13 @@ x-tags:
               required: required
               list:
                 - code: Static_Terms
-                  description: description about the tag
+                  description: TLC and terms defined by the Logistics service provider
                   reference: <PR/Issue/Discussion Links md format text>
                 - code: Static_Terms_New
-                  description: description about the tag
+                  description: To be used in case new terms are being defined or updated
                   reference: <PR/Issue/Discussion Links md format text>
                 - code: Effective_Date
-                  description: description about the tag
+                  description: Effective date from which the terms will be valid from
                   reference: <PR/Issue/Discussion Links md format text>
             - code: KYC
               description: Defines the KYC details with a url
@@ -3090,8 +3129,9 @@ x-tags:
   init:
     message:
       order:
-        payment: &ref_10
-          tags:
+        fulfillments: *ref_9
+        payment:
+          tags: &ref_11
             - code: Settlement_Details
               description: Define terms for Settlement Details Here
               reference: <PR/Issue/Discussion Links md format text>
@@ -3119,150 +3159,145 @@ x-tags:
               description: Define terms for Collection Details Here
               required: required for COD orders
               reference: <PR/Issue/Discussion Links md format text>
-              list: *ref_9
+              list: *ref_10
   on_init:
     message:
       order:
+        fulfillments: *ref_9
+        payments: &ref_12
+          tags: *ref_11
         tags:
-          - &ref_11
-            - code: BPP_Terms
-              description: Define BPP terms
+          - code: BPP_Terms
+            description: Define BPP terms
+            reference: <PR/Issue/Discussion Links md format text>
+            required: required
+            list: &ref_13
+              - code: Max_Liability
+                description: >-
+                  max_liability is the maximum aggregate liability of either
+                  party expressed as multiple of the total transaction value.
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: Max_Liability_Cap
+                description: >-
+                  max_liability_cap is the maximum aggregate liability expressed
+                  in Indian Rupees (INR).
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: Mandatory_Arbitration
+                description: >-
+                  If this attribute is set to true, that would mean both parties
+                  agree that in case of a dispute, both parties must resolve the
+                  dispute through arbitration.
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: Court_Jurisdiction
+                description: >-
+                  The name of the city whose courts will have exclusive
+                  jurisdiction over disputes related to this contract. The list
+                  of options will only contain Indian cities which have a High
+                  Court bench.
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: Delay_Interest
+                description: >-
+                  This is the annual rate of interest that the Payment Collector
+                  will be charged if they delay a payment to the counterparty
+                  Network Participant, calculated pro rata for each calendar day
+                  of delay.
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: Static_Terms
+                description: TLC and terms defined by the Logistics service provider
+                reference: <PR/Issue/Discussion Links md format text>
+  confirm: &ref_14
+    message:
+      order:
+        fulfillments: *ref_9
+        payment: *ref_12
+        tags:
+          - - code: BPP_Terms
+              description: BPP terms sent by the seller app
               reference: <PR/Issue/Discussion Links md format text>
               required: required
-              list: &ref_12
-                - code: Max_Liability
-                  description: Description of the Tag
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: Max_Liability_Cap
-                  description: Description of the Tag
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: Mandatory_Arbitration
-                  description: Description of the Tag
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: Court_Jurisdiction
-                  description: Description of the Tag
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: Delay_Interest
-                  description: Description of the Tag
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: Static_Terms
-                  description: Description of the Tag
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: Static_Terms_New
-                  description: Description of the Tag
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: Effective_Date
-                  description: Description of the Tag
-                  reference: <PR/Issue/Discussion Links md format text>
-        payment: *ref_10
-        fulfillments:
-          tags:
-            - code: Delivery_Terms
-              description: Define terms for Delivery here
+              list: *ref_13
+            - code: BAP_Terms
+              description: Acceptance to bpp terms
               reference: <PR/Issue/Discussion Links md format text>
               required: required
               list:
-                - code: Ready_To_Ship
+                - code: Accept_BPP_Terms
                   description: Description of the Tag
                   reference: <PR/Issue/Discussion Links md format text>
-                - code: AWB_No
-                  description: Description of the Tag
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: RTO_Action
-                  description: Description of the Tag
-                  reference: <PR/Issue/Discussion Links md format text>
-        seller_terms: *ref_11
-        buyer_terms: &ref_14
-          - code: BPP_Terms
-            description: BPP terms sent by the seller app
-            reference: <PR/Issue/Discussion Links md format text>
-            required: required
-            list: *ref_12
-          - code: BAP_Terms
-            description: Acceptance to bpp terms
-            reference: <PR/Issue/Discussion Links md format text>
-            required: required
-            list:
-              - code: Accept_BPP_Terms
-                description: Description of the Tag
-                reference: <PR/Issue/Discussion Links md format text>
-        package_diff_tags: &ref_18
-          - code: Package_Dimensions_Diff
-            description: Difference in package dimesions identified
-            reference: <PR/Issue/Discussion Links md format text>
-            required: optional
-            list:
-              - code: Unit
-                description: Define unit of package dimensions
-                reference: <PR/Issue/Discussion Links md format text>
-                value:
-                  - code: centimeter
-                    description: about the enum
-                    reference: <PR/Issue/Discussion Links md format text>
-                  - code: meter
-                    description: about the enum
-                    reference: <PR/Issue/Discussion Links md format text>
-              - code: Length
-                description: Define length of package dimensions
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: Breadth
-                description: Define breadth of package dimensions
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: Height
-                description: Define height of package dimensions
-                reference: <PR/Issue/Discussion Links md format text>
-          - code: Diff_Proof
-            description: Proof of difference identified
-            reference: <PR/Issue/Discussion Links md format text>
-            required: optional
-            list:
-              - code: type
-                description: Description of the Tag
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: url
-                description: Description of the Tag
-                reference: <PR/Issue/Discussion Links md format text>
-  confirm: &ref_15
-    message:
-      order:
-        fulfillments:
-          tags: *ref_13
-        payment: *ref_10
-        tags:
-          - *ref_14
-  on_confirm: *ref_15
+                  value:
+                    - code: 'Y'
+                      description: Acceptance of the seller terms
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: 'N'
+                      description: Rejection of the seller terms
+                      reference: <PR/Issue/Discussion Links md format text>
+  on_confirm: *ref_14
   update:
     message:
       order:
         fulfillments:
-          tags: *ref_16
+          tags: *ref_15
   on_update:
     message:
       order:
         fulfillments:
-          tags: *ref_16
-        payment: *ref_10
+          tags: *ref_15
+        payment: *ref_12
         tags:
-          - *ref_17
-          - *ref_18
+          - *ref_15
   on_cancel:
     message:
       order:
         fulfillments:
-          tags: *ref_16
-        payment: *ref_10
+          tags: *ref_15
+        payment: *ref_12
         tags:
-          - *ref_17
-          - *ref_18
+          - *ref_15
+          - &ref_16
+            - code: Package_Dimensions_Diff
+              description: Difference in package dimesions identified
+              reference: <PR/Issue/Discussion Links md format text>
+              required: optional
+              list:
+                - code: Unit
+                  description: Define unit of package dimensions
+                  reference: <PR/Issue/Discussion Links md format text>
+                  value:
+                    - code: centimeter
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: meter
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                - code: Length
+                  description: Define length of package dimensions
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: Breadth
+                  description: Define breadth of package dimensions
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: Height
+                  description: Define height of package dimensions
+                  reference: <PR/Issue/Discussion Links md format text>
+            - code: Diff_Proof
+              description: Proof of difference identified
+              reference: <PR/Issue/Discussion Links md format text>
+              required: optional
+              list:
+                - code: type
+                  description: Description of the Tag
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: url
+                  description: Description of the Tag
+                  reference: <PR/Issue/Discussion Links md format text>
   on_status:
     message:
       order:
         fulfillments:
-          tags: *ref_16
-        payment: *ref_10
+          tags: *ref_15
+        payment: *ref_12
         tags:
-          - *ref_17
-          - *ref_18
+          - *ref_15
+          - *ref_16
 x-flows:
   - summary: B2B Domestic Logistics - Surface Delivery
     description: >-
@@ -3347,7 +3382,7 @@ x-flows:
           Search Logistics based on fulfilment start and end location + Product
           details.
         reference: if any
-        example: &ref_19
+        example: &ref_17
           summary: Search Logistics - Without Category
           description: Search for logistics without category
           value:
@@ -3494,7 +3529,7 @@ x-flows:
           Logistics service provider sends the catalog based on search + Sends
           the KYC Link.
         reference: if any
-        example: &ref_20
+        example: &ref_18
           summary: LSP sends catalog (Air Delivery)
           description: >-
             Logistics service provider sends the catalog based on search + Sends
@@ -5042,7 +5077,7 @@ x-flows:
         api: status
         description: Buyer requests for the order status update
         reference: if any
-        example: &ref_21
+        example: &ref_19
           summary: Logistics Buyer requests for status update
           description: null
           value:
@@ -5417,21 +5452,21 @@ x-flows:
           Search Logistics based on fulfilment start and end location + Product
           details.
         reference: if any
-        example: *ref_19
+        example: *ref_17
       - summary: LSP sends catalog - Surface and Air Cargo
         api: on_search
         description: >-
           Logistics service provider sends the catalog based on search + Sends
           the KYC Link.
         reference: if any
-        example: *ref_20
+        example: *ref_18
       - summary: Logistics Buyer initializes the order - Air Cargo.
         api: init
         description: >-
           Logistics Buyer fills the KYC form and sends the submission Id while
           initializing the order.
         reference: if any
-        example: &ref_22
+        example: &ref_20
           summary: Logistics Buyer initializes the order (Air Delivery)
           description: >-
             Logistics Buyer fills the KYC form and sends the submission Id while
@@ -5557,7 +5592,7 @@ x-flows:
           Logistics Provider updates the KYC as successful and sends the breakup
           of the quote.
         reference: if any
-        example: &ref_23
+        example: &ref_21
           summary: Response to order initialization - KYC Successful (Air Delivery)
           description: >-
             Logistics Provider updates the KYC as successful and sends the
@@ -5761,7 +5796,7 @@ x-flows:
         api: confirm
         description: Logistics buyer confirms the order.
         reference: if any
-        example: &ref_24
+        example: &ref_22
           summary: Logistics buyer confirms the order (Air Delivery)
           description: Logistics buyer confirms the order.
           value:
@@ -6011,7 +6046,7 @@ x-flows:
         api: on_confirm
         description: Logistics Provider accepts the order.
         reference: if any
-        example: &ref_25
+        example: &ref_23
           summary: Logistics Provider accepts the order (Air Delivery)
           description: Logistics Provider accepts the order.
           value:
@@ -6334,7 +6369,7 @@ x-flows:
         api: update
         description: Logistics Buyer updates RTS - Ready to Ship
         reference: if any
-        example: &ref_26
+        example: &ref_24
           summary: Logistics Buyer updates RTS (Air Delivery)
           description: null
           value:
@@ -6427,7 +6462,7 @@ x-flows:
         api: on_update
         description: LSP updates the weight and measurement differential charges.
         reference: if any
-        example: &ref_27
+        example: &ref_25
           summary: >-
             Solicited response to update - package measurement updated (Air
             Delivery)
@@ -6626,14 +6661,14 @@ x-flows:
         api: status
         description: Logistics Buyer requests for order status update
         reference: if any
-        example: *ref_21
+        example: *ref_19
       - summary: Responds to order status update - Order Picked up
         api: on_status
         description: >-
           Logistics provider updates the status of fulfillment as Order Picked
           up.
         reference: if any
-        example: &ref_28
+        example: &ref_26
           summary: Status updates
           description: >-
             Logistics provider updates the status of fulfillment as Order Picked
@@ -6910,60 +6945,60 @@ x-flows:
           Search Logistics based on fulfilment start and end location + Product
           details.
         reference: if any
-        example: *ref_19
+        example: *ref_17
       - summary: LSP sends catalog - Surface & Air Cargo
         api: on_search
         description: >-
           Logistics service provider sends the catalog based on search + Sends
           the KYC Link.
         reference: if any
-        example: *ref_20
+        example: *ref_18
       - summary: Logistics Buyer initializes the order.
         api: init
         description: >-
           Logistics Buyer fills the KYC form and sends the submission Id while
           initializing the order.
         reference: if any
-        example: *ref_22
+        example: *ref_20
       - summary: Response to order initialization - KYC Successful
         api: on_init
         description: >-
           Logistics Provider updates the KYC as successful and sends the breakup
           of the quote.
         reference: if any
-        example: *ref_23
+        example: *ref_21
       - summary: Logistics buyer confirms the order.
         api: confirm
         description: Logistics buyer confirms the order.
         reference: if any
-        example: *ref_24
+        example: *ref_22
       - summary: Logistics Provider accepts the order.
         api: on_confirm
         description: Logistics Provider accepts the order.
         reference: if any
-        example: *ref_25
+        example: *ref_23
       - summary: Logistics Buyer updates RTS
         api: update
         description: Logistics Buyer updates RTS - Ready to Ship
         reference: if any
-        example: *ref_26
+        example: *ref_24
       - summary: LSP updates the weight and measurement differential charges.
         api: on_update
         description: LSP updates the weight and measurement differential charges.
         reference: if any
-        example: *ref_27
+        example: *ref_25
       - summary: Request for order status update
         api: status
         description: Buyer requests for the order status update
         reference: if any
-        example: *ref_21
+        example: *ref_19
       - summary: Responds to order status update - Order Picked up
         api: on_status
         description: >-
           Seller app sends an on_status call to the buyer app informing about
           the current status of the order.
         reference: if any
-        example: *ref_28
+        example: *ref_26
       - summary: Buyer is not available so LSP cancels the order and triggers RTO
         api: on_cancel
         description: Seller app cancels the order by sending unsolicited on_cancel call
@@ -7640,7 +7675,7 @@ x-flows:
           Search intent sent by the buyer based on the start & end location +
           Product details.
         reference: if any
-        example: &ref_35
+        example: &ref_33
           summary: Search by category - Express Delivery
           description: null
           value:
@@ -7803,7 +7838,7 @@ x-flows:
           Logistics service provider sends the catalog based on search + Sends
           the KYC Link.
         reference: if any
-        example: &ref_29
+        example: &ref_27
           summary: LSP sends catalog
           description: >-
             Logistics service provider sends the catalog based on search + Sends
@@ -8102,7 +8137,7 @@ x-flows:
           Logistics Buyer fills the KYC form and sends the submission Id while
           initializing the order.
         reference: if any
-        example: &ref_36
+        example: &ref_34
           summary: Logistics Buyer initializes the order.
           description: >-
             Logistics Buyer fills the KYC form and sends the submission Id while
@@ -8238,7 +8273,7 @@ x-flows:
           Logistics Provider updates the KYC as successful and sends the breakup
           of the quote.
         reference: if any
-        example: &ref_37
+        example: &ref_35
           summary: Response to order initialization - KYC Successful
           description: >-
             Logistics Provider updates the KYC as successful and sends the
@@ -8485,7 +8520,7 @@ x-flows:
         api: confirm
         description: Logistics buyer confirms the order.
         reference: if any
-        example: &ref_38
+        example: &ref_36
           summary: Logistics buyer confirms the order
           description: Logistics buyer confirms the order
           value:
@@ -8751,7 +8786,7 @@ x-flows:
         api: on_confirm
         description: Logistics Provider accepts the order.
         reference: if any
-        example: &ref_39
+        example: &ref_37
           summary: Logistics Provider accepts the order.
           description: Logistics Provider accepts the order.
           value:
@@ -9124,7 +9159,7 @@ x-flows:
         api: update
         description: Logistics Buyer updates RTS - Ready to Ship
         reference: if any
-        example: &ref_40
+        example: &ref_38
           summary: Logistics Buyer updates RTS
           description: null
           value:
@@ -9277,7 +9312,7 @@ x-flows:
           LSP updates the weight and measurement differential charges. - If
           Applicable
         reference: if any
-        example: &ref_41
+        example: &ref_39
           summary: Solicited response to update - package measurement updated
           description: null
           value:
@@ -9600,7 +9635,7 @@ x-flows:
         api: on_status
         description: LSP sends status updates
         reference: if any
-        example: &ref_30
+        example: &ref_28
           summary: Status updates
           description: >-
             Logistics provider updates the status of fulfillment as Order Picked
@@ -9906,7 +9941,7 @@ x-flows:
         api: on_status
         description: LSP sends status updates
         reference: if any
-        example: &ref_31
+        example: &ref_29
           summary: Status updates
           description: Logistics provider updates the status of fulfillment
           value:
@@ -10211,7 +10246,7 @@ x-flows:
         api: on_status
         description: LSP sends status updates
         reference: if any
-        example: &ref_32
+        example: &ref_30
           summary: Status updates
           description: Logistics provider updates the status of fulfillment
           value:
@@ -10516,7 +10551,7 @@ x-flows:
         api: status
         description: Logistics buyer requests for status update
         reference: if any
-        example: &ref_33
+        example: &ref_31
           summary: Logistics Buyer requests for status update
           description: null
           value:
@@ -10543,7 +10578,7 @@ x-flows:
         api: on_status
         description: LSP sends status updates
         reference: if any
-        example: &ref_34
+        example: &ref_32
           summary: Status updates
           description: Logistics provider updates the status of fulfillment
           value:
@@ -11091,7 +11126,7 @@ x-flows:
           Logistics service provider sends the catalog based on search + Sends
           the KYC Link.
         reference: if any
-        example: *ref_29
+        example: *ref_27
       - summary: Logistics Buyer initializes the order.
         api: init
         description: >-
@@ -12608,27 +12643,27 @@ x-flows:
         api: on_status
         description: LSP sends status updates
         reference: if any
-        example: *ref_30
+        example: *ref_28
       - summary: LSP sends status updates - Order Picked up
         api: on_status
         description: LSP sends status updates
         reference: if any
-        example: *ref_31
+        example: *ref_29
       - summary: LSP sends status updates - Domestic Custom Cleared
         api: on_status
         description: LSP sends status updates
         reference: if any
-        example: *ref_32
+        example: *ref_30
       - summary: Logistics buyer requests for status update
         api: status
         description: Logistics buyer requests for status update
         reference: if any
-        example: *ref_33
+        example: *ref_31
       - summary: LSP sends status updates - Order Delivered
         api: on_status
         description: LSP sends status updates
         reference: if any
-        example: *ref_34
+        example: *ref_32
   - summary: Logistics Buyer Cancellation
     description: >-
       The below flow shows the journey of Logistics buyer buying  logistics
@@ -12639,60 +12674,60 @@ x-flows:
         api: search
         description: Search intent sent by the buyer based on the category
         reference: if any
-        example: *ref_35
+        example: *ref_33
       - summary: LSP sends catalog
         api: on_search
         description: >-
           Logistics service provider sends the catalog based on search + Sends
           the KYC Link.
         reference: if any
-        example: *ref_29
+        example: *ref_27
       - summary: Logistics Buyer initializes the order.
         api: init
         description: >-
           Logistics Buyer fills the KYC form and sends the submission Id while
           initializing the order.
         reference: if any
-        example: *ref_36
+        example: *ref_34
       - summary: Response to order initialization - KYC Successful
         api: on_init
         description: >-
           Logistics Provider updates the KYC as successful and sends the breakup
           of the quote.
         reference: if any
-        example: *ref_37
+        example: *ref_35
       - summary: Logistics buyer confirms the order.
         api: confirm
         description: Logistics buyer confirms the order.
         reference: if any
-        example: *ref_38
+        example: *ref_36
       - summary: Logistics Provider accepts the order.
         api: on_confirm
         description: Logistics Provider accepts the order.
         reference: if any
-        example: *ref_39
+        example: *ref_37
       - summary: Logistics Buyer updates RTS
         api: update
         description: Logistics Buyer updates RTS - Ready to Ship
         reference: if any
-        example: *ref_40
+        example: *ref_38
       - summary: LSP updates the weight and measurement differential charges.
         api: on_update
         description: LSP updates the weight and measurement differential charges.
         reference: if any
-        example: *ref_41
+        example: *ref_39
       - summary: Request for order status update
         api: status
         description: Buyer requests for the order status update
         reference: if any
-        example: *ref_33
+        example: *ref_31
       - summary: Responds to order status update - Pickup Approved
         api: on_status
         description: >-
           Seller app sends an on_status call to the buyer app informing about
           the current status of the order.
         reference: if any
-        example: *ref_30
+        example: *ref_28
       - summary: Logistics Buyer cancels the order
         api: cancel
         description: Logistics Buyer cancels the order
