@@ -20,38 +20,23 @@ on_init:
   message:
     order:
       $ref: "./TagGroup.yaml#/order"
+      tags:
+       list:
+        - $ref: "./TagGroup.yaml#/order/seller_terms"
 
 confirm: &ref1
   message:
     order: 
+      fulfillments:
+       tags:
+        list:
+          - $ref: "./TagGroup.yaml#/intent"
       payment: *ref0
       tags:
-        - code: Package_Weight
-          description: Define package dead weight here
-          reference: <PR/Issue/Discussion Links md format text>
-          list:
-            $ref: "./Tag.yaml#/Package_Weight"
-        - code: Package_Dimensions
-          description: Define package LBH dimensions here
-          reference: <PR/Issue/Discussion Links md format text>
-          list:
-            $ref: "./Tag.yaml#/Package_Dimensions"
-        - code: Package_Details
-          description: Define further details of package
-          reference: <PR/Issue/Discussion Links md format text>
-          list:
-            $ref: "./Tag.yaml#/Package_Details"
-        - code: Cold_Logistics
-          description: Define terms if cold logistics is required
-          reference: <PR/Issue/Discussion Links md format text>
-          list:
-            $ref: "./Tag.yaml#/Settlement_Details"
-        - code: BPP_Terms
-          description: Define BPP terms
-          reference: <PR/Issue/Discussion Links md format text>
-          list:
-            $ref: "./Tag.yaml#/BPP_Terms"
-        - code: BAP_Terms
+       list:
+        - $ref: "./TagGroup.yaml#/intent"
+        - $ref: "./TagGroup.yaml#/order/seller_terms"
+        - $ref: "./TagGroup.yaml#/order/buyer_terms"
           description: Define terms for BAP
           reference: <PR/Issue/Discussion Links md format text>
           list:
@@ -68,38 +53,19 @@ on_update:
     order:
       fulfillments: *ref3
       payment: *ref0
-
+      tags:
+       list:
+        - $ref: "./TagGroup.yaml#/intent"
+        - $ref: "./TagGroup.yaml#/order/package_diff_tags"
 on_cancel:
   message:
     order:
       fulfillments: *ref3
       payment: *ref0
       tags:
-        - code: Quantity
-          description: Define Quantity
-          reference: <PR/Issue/Discussion Links md format text>
-          list:
-            $ref: "./Tag.yaml#/Quantity"
-        - code: Package_Weight
-          description: Define package dead weight here
-          reference: <PR/Issue/Discussion Links md format text>
-          list:
-            $ref: "./Tag.yaml#/Package_Weight"
-        - code: Package_Dimensions
-          description: Define package LBH dimensions here
-          reference: <PR/Issue/Discussion Links md format text>
-          list:
-            $ref: "./Tag.yaml#/Package_Dimensions"
-        - code: Package_Details
-          description: Define further details of package
-          reference: <PR/Issue/Discussion Links md format text>
-          list:
-            $ref: "./Tag.yaml#/Package_Details"
-        - code: Cold_Logistics
-          description: Define terms if cold logistics is required
-          reference: <PR/Issue/Discussion Links md format text>
-          list:
-            $ref: "./Tag.yaml#/Settlement_Details"
+       list:
+        - $ref: "./TagGroup.yaml#/intent"
+        - $ref: "./TagGroup.yaml#/order/package_diff_tags"
 
 on_status:
   message:
@@ -107,34 +73,7 @@ on_status:
       fulfillments: *ref3
       payment: *ref0
       tags:
-        - code: Package_Weight
-          description: Define package dead weight here
-          reference: <PR/Issue/Discussion Links md format text>
-          list:
-            $ref: "./Tag.yaml#/Package_Weight"
-        - code: Package_Dimensions
-          description: Define package LBH dimensions here
-          reference: <PR/Issue/Discussion Links md format text>
-          list:
-            $ref: "./Tag.yaml#/Package_Dimensions"
-        - code: Package_Details
-          description: Define further details of package
-          reference: <PR/Issue/Discussion Links md format text>
-          list:
-            $ref: "./Tag.yaml#/Package_Details"
-        - code: Cold_Logistics
-          description: Define terms if cold logistics is required
-          reference: <PR/Issue/Discussion Links md format text>
-          list:
-            $ref: "./Tag.yaml#/Cold_Logistics"
-        - code: Package_Dimensions_Diff
-          description: Dimension change details
-          reference: <PR/Issue/Discussion Links md format text>
-          list:
-            $ref: "./Tag.yaml#/Package_Dimensions_Diff"
-        - code: Diff_Proof
-          description: Proof of dimension change
-          reference: <PR/Issue/Discussion Links md format text>
-          list:
-            $ref: "./Tag.yaml#/Diff_Proof"
+       list:
+        - $ref: "./TagGroup.yaml#/intent"
+        - $ref: "./TagGroup.yaml#/order/package_diff_tags"
         
