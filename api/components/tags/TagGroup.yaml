@@ -2,11 +2,11 @@ intent:
   fulfillments:
     tags:
       - code: Delivery_Terms
-        description: Define terms for Delivery here
+        description: Define incoterms for Delivery here for internation logistics
         reference: <PR/Issue/Discussion Links md format text>
-        required: required
+        required: required for international logistics
         list:
-          $ref: "./Tag.yaml#/Delivery_Terms"
+          $ref: "./Tag.yaml#/Delivery_terms_international"
   payment:
     tags:
       - code: Collection_Details
@@ -70,6 +70,14 @@ order:
         reference: <PR/Issue/Discussion Links md format text>
         list:
           $ref: "./Tag.yaml#/Collection_Details"
+  fulfillments:
+    tags:
+      - code: Delivery_Terms
+        description: Define terms for Delivery here
+        reference: <PR/Issue/Discussion Links md format text>
+        required: required
+        list:
+          $ref: "./Tag.yaml#/Delivery_Terms"
   seller_terms:
     - code: BPP_Terms
       description: Define BPP terms
@@ -78,8 +86,14 @@ order:
       list:
         $ref: "./Tag.yaml#/BPP_Terms"
   buyer_terms:
+    - code: BPP_Terms
+      description: BPP terms sent by the seller app
+      reference: <PR/Issue/Discussion Links md format text>
+      required: required
+      list:
+        $ref: "./Tag.yaml#/BPP_Terms"
     - code: BAP_Terms
-      description: Define BAP terms
+      description: Acceptance to bpp terms 
       reference: <PR/Issue/Discussion Links md format text>
       required: required
       list:

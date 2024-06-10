@@ -2869,23 +2869,14 @@ x-enum:
 x-tags:
   search:
     message:
-      intent: &ref_13
-        fulfillments: &ref_17
-          tags:
+      intent:
+        fulfillments: &ref_13
+          tags: &ref_16
             - code: Delivery_Terms
-              description: Define terms for Delivery here
+              description: Define incoterms for Delivery here for internation logistics
               reference: <PR/Issue/Discussion Links md format text>
-              required: required
+              required: required for international logistics
               list:
-                - code: Ready_To_Ship
-                  description: Description of the Tag
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: AWB_No
-                  description: Description of the Tag
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: RTO_Action
-                  description: Description of the Tag
-                  reference: <PR/Issue/Discussion Links md format text>
                 - code: INCOTERMS
                   description: Description of the Tag; Present in International Logistics
                   reference: <PR/Issue/Discussion Links md format text>
@@ -2911,7 +2902,7 @@ x-tags:
                     Information about the type of collection
                     details(ON_FULLFILLMENT)
                   reference: <PR/Issue/Discussion Links md format text>
-        tags:
+        tags: &ref_17
           - code: Package_Weight
             description: Define package dead weight here
             reference: <PR/Issue/Discussion Links md format text>
@@ -3155,14 +3146,34 @@ x-tags:
               required: required
               list: *ref_10
         payment: *ref_11
+        fulfillments:
+          tags:
+            - code: Delivery_Terms
+              description: Define terms for Delivery here
+              reference: <PR/Issue/Discussion Links md format text>
+              required: required
+              list:
+                - code: Ready_To_Ship
+                  description: Description of the Tag
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: AWB_No
+                  description: Description of the Tag
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: RTO_Action
+                  description: Description of the Tag
+                  reference: <PR/Issue/Discussion Links md format text>
         seller_terms: *ref_12
-        buyer_terms:
-          - &ref_14
-            code: BAP_Terms
-            description: Define BAP terms
+        buyer_terms: &ref_14
+          - code: BPP_Terms
+            description: BPP terms sent by the seller app
             reference: <PR/Issue/Discussion Links md format text>
             required: required
-            list: &ref_15
+            list: *ref_10
+          - code: BAP_Terms
+            description: Acceptance to bpp terms
+            reference: <PR/Issue/Discussion Links md format text>
+            required: required
+            list:
               - code: Accept_BPP_Terms
                 description: Description of the Tag
                 reference: <PR/Issue/Discussion Links md format text>
@@ -3202,48 +3213,46 @@ x-tags:
               - code: url
                 description: Description of the Tag
                 reference: <PR/Issue/Discussion Links md format text>
-  confirm: &ref_16
+  confirm: &ref_15
     message:
       order:
         fulfillments:
-          tags:
-            - *ref_13
+          tags: *ref_13
         payment: *ref_11
         tags:
-          - *ref_13
-          - *ref_12
-          - '0': *ref_14
-            description: Define terms for BAP
-            reference: <PR/Issue/Discussion Links md format text>
-            list: *ref_15
-  on_confirm: *ref_16
+          - *ref_14
+  on_confirm: *ref_15
   update:
     message:
       order:
-        fulfillments: *ref_17
+        fulfillments:
+          tags: *ref_16
   on_update:
     message:
       order:
-        fulfillments: *ref_17
+        fulfillments:
+          tags: *ref_16
         payment: *ref_11
         tags:
-          - *ref_13
+          - *ref_17
           - *ref_18
   on_cancel:
     message:
       order:
-        fulfillments: *ref_17
+        fulfillments:
+          tags: *ref_16
         payment: *ref_11
         tags:
-          - *ref_13
+          - *ref_17
           - *ref_18
   on_status:
     message:
       order:
-        fulfillments: *ref_17
+        fulfillments:
+          tags: *ref_16
         payment: *ref_11
         tags:
-          - *ref_13
+          - *ref_17
           - *ref_18
 x-flows:
   - summary: B2B Domestic Logistics - Surface Delivery

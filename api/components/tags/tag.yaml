@@ -202,6 +202,7 @@ Delivery_Terms:
   - code: RTO_Action
     description: Description of the Tag
     reference: <PR/Issue/Discussion Links md format text>
+Delivery_terms_international:
   - code: INCOTERMS
     description: Description of the Tag; Present in International Logistics
     reference: <PR/Issue/Discussion Links md format text>
