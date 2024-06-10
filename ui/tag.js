@@ -52,14 +52,30 @@ function loadTagGroup() {
 
   // Populate dropdown2
   let data = getAttribute(TagData[selectedValue1], selectedValue2.split("."));
-  Object.keys(data).forEach(function (key) {
+  console.log("data",data);
+  // Initialize a flag to capture the first required value
+  let firstRequiredValue = null;
+
+  Object.keys(data).forEach(function (key, index) {
     var option = document.createElement("option");
     option.text = data[key]["code"];
     dropdown3.add(option);
-    requiredField.innerHTML = data[key]["required"];
+
+    // Capture the first required value
+    if (index === 0) {
+      firstRequiredValue = data[key]["required"];
+    }
   });
+
+  // Set the requiredField value to the first required value
+  if (firstRequiredValue !== null) {
+    requiredField.innerHTML = firstRequiredValue;
+  }
+
   loadTag();
 }
+
+
 
 function loadTag() {
   let hasTagValue = false;
@@ -67,6 +83,7 @@ function loadTag() {
   var dropdown2 = document.getElementById("tag-path-dropdown");
   var dropdown3 = document.getElementById("tag-group-dropdown");
   var dropdown4 = document.getElementById("tag-dropdown");
+  var requiredField = document.getElementById("tag-group-required");
   dropdown4.innerHTML = "";
 
   // Get the selected values from dropdown1 and dropdown2
@@ -79,10 +96,12 @@ function loadTag() {
   let selectedObject3 = data.find((obj) => {
     if (obj["code"] === selectedValue3) return obj;
   });
+  requiredField.innerHTML = selectedObject3?.required
   let list = selectedObject3.list;
   list.forEach(function (obj) {
     var option = document.createElement("option");
     option.text = obj["code"];
+    
     dropdown4.add(option);
   });
 
