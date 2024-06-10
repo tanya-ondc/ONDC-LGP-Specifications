@@ -139,10 +139,10 @@ Cold_Logistics:
     reference: <PR/Issue/Discussion Links md format text>
 Settlement_Details:
   - code: Counterparty
-    description: Description of the Tag
+    description: Settlement counterparty with which the payment collector will settle the payment (BAP,BPP)
     reference: <PR/Issue/Discussion Links md format text>
   - code: Mode
-    description: Description of the Tag
+    description: The Payment Collector will use the selected method to remit the due payment to the counterparty Network Participant. To illustrate, if the Buyer App collects the payment and the Settlement Type is set to “rtgs”, when the settlement is due, the Buyer App will transfer the Seller App’s share of the Buyer Price to the Seller App’s account via RTGS. 
     reference: <PR/Issue/Discussion Links md format text>
   - code: Beneficiary_Name
     description: Description of the Tag
