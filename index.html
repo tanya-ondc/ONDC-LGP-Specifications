@@ -217,17 +217,22 @@
             <table class="table">
               <tr>
                 <td><b>Error Set</b></td>
+                <td>
+                  <!-- <select
+                    id="error-dropdown"
+                    class="form-select"
+                    onchange="loadErrors()"
+                  ></select> -->
+                  <select id="error-dropdown" class="form-select" value = "Cancellation" onchange="updateErrors()">
+                    <option value="Cancellation">Cancellation Codes</option>
+                    <option value="ErrorCodes">Error Codes</option>
+                  </select>
+                </td>
               </tr>
             </table>
             <div class="table-wrapper">
               <table id="errorset">
-                <tr>
-                  <th>Code</th>
-                  <th>Reason</th>
-                  <th>Who can use code?</th>
-                  <th>Usage</th>
-                  <th>Action</th>
-                </tr> 
+               
               </table>
             </div>
           </div>
@@ -303,13 +308,17 @@
                     <select id="tag-group-dropdown" class="form-select" onchange="loadTag()"></select>
                   </td>
                 </tr>
+                <td><b>Required</b></td>
+                <td id="tag-group-required">
+                </td>
+              </tr>
                 <tr>
                   <td><b>Tag</b></td>
                   <td>
                     <select id="tag-dropdown" class="form-select" onchange="displayTag()"></select>
                   </td>
                 </tr>
-                <tr id="tag-value-row" style="display: none;">
+                <tr id="tag-value-row" >
                   <td><b>Tag Value</b></td>
                   <td>
                     <select id="tag-value-dropdown" class="form-select" onchange="displayTagValue()"></select>
@@ -318,7 +327,7 @@
               </table>
               <table id="tag-group-table" class="table"></table>
               <table id="tag-table" class="table"></table>
-              <table id="tag-value-table" class="table" style="display: none;"></table>
+              <table id="tag-value-table" class="table" ></table>
             </div>
           </div>
         </div>
