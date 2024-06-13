@@ -22,7 +22,7 @@ context:
     reference: if any
   city:
     code:
-      description: The city code for search indicates the location where the product needs to be picked up. List of city codes for domestic, with pincode mapping, are here - https://docs.google.com/spreadsheets/d/12A_B-nDtvxyFh_FWDfp85ss2qpb65kZ7/edit#gid=213574534
+      description: City code for search where product needs to be delivered. List of city codes for domestic, with pincode mapping, are here - https://docs.google.com/spreadsheets/d/12A_B-nDtvxyFh_FWDfp85ss2qpb65kZ7/edit#gid=213574534
       required: required
       usage: std:080
       reference: if any
