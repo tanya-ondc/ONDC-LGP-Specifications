@@ -55,7 +55,7 @@ message:
         reference: if any
     payment:
         parent: true
-        payment:
+        payments:
           description: This payment object should be consistent with the /confirm payment object
           required: required
           usage: "-"

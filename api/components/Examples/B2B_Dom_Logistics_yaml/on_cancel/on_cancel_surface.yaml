@@ -23,9 +23,9 @@ value:
       id: O2
       status: Cancelled
       cancellation:
-        cancelled_by: logistics_buyer.com
+        cancelled_by: logistics_seller.com
         reason:
-          id: '004'
+          id: '013'
       provider:
         id: P1
         locations:
@@ -58,32 +58,38 @@ value:
       quote:
         price:
           currency: INR
-          value: '0.00'
+          value: '7500.00'
         breakup:
           - item:
               id: I1
             title: delivery
             price:
               currency: INR
-              value: '0.00'
+              value: '3000.00'
+          - item:
+              id: I1
+            title: insurance
+            price:
+              currency: INR
+              value: '500.0'
           - item:
               id: I1
             title: tax
             price:
               currency: INR
-              value: '0.00'
+              value: '500.00'
           - item:
               id: I2
             title: rto
             price:
               currency: INR
-              value: '0.00'
+              value: '3000.00'
           - item:
               id: I2
             title: tax
             price:
               currency: INR
-              value: '0.00'
+              value: '500.00'
       fulfillments:
         - id: '1'
           type: Delivery
@@ -170,15 +176,32 @@ value:
                 - code: Sub_Reason_Id
                   value: '004'
                 - code: Cancelled_By
-                  value: lsp.com
+                  value: logistics_seller.com
         - id: '2'
           type: RTO
           state:
             descriptor:
               code: RTO-Initiated
           start:
+            location:
+              gps: 12.342769,77.9129423
+              map_url: ''
+              address: My house or building name, street name
+              city: Bengaluru
+              state: Karnataka
+              country: India
+              area_code: '560043'
             time:
               timestamp: '2023-06-07T14:00:00.000Z'
+          end:
+            location:
+              gps: 12.4535445,77.9283792
+              area_code: '560041'
+              map_url: ''
+              address: My house or building name, street name
+              city: Bengaluru
+              state: Karnataka
+              country: India
       billing:
         name: ONDC sellerapp
         address: My house or building name
@@ -187,7 +210,7 @@ value:
         tax_id: XXXXXXXXXXXXXXX
         phone: '9886098860'
         email: abcd.efgh@gmail.com
-      payment:
+      payments:
         - id: P1
           collected_by: BPP
           params:

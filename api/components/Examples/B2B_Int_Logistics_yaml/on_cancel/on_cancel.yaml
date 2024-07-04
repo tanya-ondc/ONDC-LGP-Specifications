@@ -1,5 +1,5 @@
-summary: Unsolicited on_cancel
-description: Unsolicited on_cancel from Logistics provider 
+summary: LSP confirms order cancellation
+description: LSP confirm order cancellation after logistics buyer cancels the order. The quote shall be updated to the final price to be paid by logistics buyer.
 value:
   context:
     domain: ONDC:LOG11

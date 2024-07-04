@@ -15,7 +15,7 @@ init:
     order:
       fulfillments:
         $ref: "./TagGroup.yaml#/intent/fulfillments"
-      payment: &ref0
+      payments: &ref0
         $ref: "./TagGroup.yaml#/order/payment"
 on_init:
   message:
@@ -30,7 +30,7 @@ confirm: &ref1
     order: 
       fulfillments:
         $ref: "./TagGroup.yaml#/intent/fulfillments"
-      payment: *ref0
+      payments: *ref0
       tags:
         $ref: "./TagGroup.yaml#/order/buyer_terms"
 
@@ -47,14 +47,14 @@ on_update:
   message:
     order:
       fulfillments: *ref3
-      payment: *ref0
+      payments: *ref0
       tags:
         $ref: "./TagGroup.yaml#/order/tags"
 on_cancel:
   message:
     order:
       fulfillments: *ref3
-      payment: *ref0
+      payments: *ref0
       tags:
         $ref: "./TagGroup.yaml#/order/tags"
 
@@ -62,7 +62,7 @@ on_status:
   message:
     order:
       fulfillments: *ref3
-      payment: *ref0
+      payments: *ref0
       tags:
         $ref: "./TagGroup.yaml#/order/tags"
 

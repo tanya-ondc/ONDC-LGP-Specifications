@@ -3134,7 +3134,7 @@ x-tags:
     message:
       order:
         fulfillments: *ref_9
-        payment: &ref_11
+        payments: &ref_11
           tags:
             - code: Settlement_Details
               description: Define terms for Settlement Details Here
@@ -3220,7 +3220,7 @@ x-tags:
     message:
       order:
         fulfillments: *ref_9
-        payment: *ref_11
+        payments: *ref_11
         tags:
           - code: BPP_Terms
             description: BPP terms sent by the seller app
@@ -3299,7 +3299,7 @@ x-tags:
     message:
       order:
         fulfillments: *ref_15
-        payment: *ref_11
+        payments: *ref_11
         tags: &ref_20
           - code: Package_Weight
             description: Define package dead weight here
@@ -3360,13 +3360,13 @@ x-tags:
     message:
       order:
         fulfillments: *ref_15
-        payment: *ref_11
+        payments: *ref_11
         tags: *ref_20
   on_status:
     message:
       order:
         fulfillments: *ref_15
-        payment: *ref_11
+        payments: *ref_11
         tags: *ref_20
 x-flows:
   - summary: B2B Domestic Logistics - Surface Delivery
@@ -4021,7 +4021,7 @@ x-flows:
                   email: abcd.efgh@gmail.com
                   time:
                     timestamp: '2023-10-17T21:11:00.000Z'
-                payment:
+                payments:
                   collected_by: BPP
                   type: ON-FULFILLMENT
                   tags:
@@ -5102,7 +5102,7 @@ x-flows:
                   tax_id: XXXXXXXXXXXXXXX
                   phone: '9886098860'
                   email: abcd.efgh@gmail.com
-                payment:
+                payments:
                   - id: P1
                     collected_by: BPP
                     params:
@@ -5332,7 +5332,7 @@ x-flows:
                   tax_id: XXXXXXXXXXXXXXX
                   phone: '9886098860'
                   email: abcd.efgh@gmail.com
-                payment:
+                payments:
                   - id: P1
                     collected_by: BPP
                     params:
@@ -5615,7 +5615,7 @@ x-flows:
                   email: abcd.efgh@gmail.com
                   time:
                     timestamp: '2023-10-17T21:11:00.000Z'
-                payment:
+                payments:
                   collected_by: BPP
                   type: ON-FULFILLMENT
                   tags:
@@ -6686,7 +6686,7 @@ x-flows:
                   email: abcd.efgh@gmail.com
                   time:
                     timestamp: '2023-10-17T21:11:00.000Z'
-                payment:
+                payments:
                   - id: P1
                     collected_by: BPP
                     params:
@@ -6893,7 +6893,7 @@ x-flows:
                   tax_id: XXXXXXXXXXXXXXX
                   phone: '9886098860'
                   email: abcd.efgh@gmail.com
-                payment:
+                payments:
                   - id: P1
                     collected_by: BPP
                     params:
@@ -7101,9 +7101,9 @@ x-flows:
                 id: O2
                 status: Cancelled
                 cancellation:
-                  cancelled_by: logistics_buyer.com
+                  cancelled_by: logistics_seller.com
                   reason:
-                    id: '004'
+                    id: '013'
                 provider:
                   id: P1
                   locations:
@@ -7118,37 +7118,54 @@ x-flows:
                       - '1'
                     time:
                       label: TAT
-                      duration: PT45M
-                      timestamp: '2023-10-23'
+                      duration: P4D
+                      timestamp: '2023-10-27'
+                  - id: I4
+                    category_ids:
+                      - C2
+                    descriptor:
+                      code: P2H2P
+                    fulfillment_ids:
+                      - '2'
+                    time:
+                      label: TAT
+                      duration: P4D
+                      timestamp: '2023-10-27'
                 quote:
                   price:
                     currency: INR
-                    value: '0.00'
+                    value: '7500.00'
                   breakup:
                     - item:
-                        id: I1
+                        id: I3
                       title: delivery
                       price:
                         currency: INR
-                        value: '0.00'
+                        value: '3000.00'
                     - item:
-                        id: I1
+                        id: I3
+                      title: insurance
+                      price:
+                        currency: INR
+                        value: '500.0'
+                    - item:
+                        id: I3
                       title: tax
                       price:
                         currency: INR
-                        value: '0.00'
+                        value: '500.00'
                     - item:
-                        id: I2
+                        id: I4
                       title: rto
                       price:
                         currency: INR
-                        value: '0.00'
+                        value: '3000.00'
                     - item:
-                        id: I2
+                        id: I4
                       title: tax
                       price:
                         currency: INR
-                        value: '0.00'
+                        value: '500.00'
                 fulfillments:
                   - id: '1'
                     type: Delivery
@@ -7186,8 +7203,8 @@ x-flows:
                             - link/to/shipping/label
                         time:
                           range:
-                            start: '2023-02-06T22:30:00.000Z'
-                            end: '2023-02-06T22:45:00.000Z'
+                            start: '2023-10-17T21:12:00.710Z'
+                            end: '2023-10-20T21:12:00.710Z'
                       - id: L2
                         parent_stop_id: L1
                         type: end
@@ -7215,8 +7232,8 @@ x-flows:
                             url: URL for instructions
                         time:
                           range:
-                            start: '2023-02-14T22:30:00.000Z'
-                            end: '2023-02-14T22:45:00.000Z'
+                            start: '2023-10-21T21:12:00.710Z'
+                            end: '2023-10-24T21:12:00.710Z'
                     tags:
                       - descriptor:
                           code: Delivery_Terms
@@ -7235,15 +7252,32 @@ x-flows:
                           - code: Sub_Reason_Id
                             value: '004'
                           - code: Cancelled_By
-                            value: lsp.com
+                            value: logistics_seller.com
                   - id: '2'
                     type: RTO
                     state:
                       descriptor:
                         code: RTO-Initiated
                     start:
+                      location:
+                        gps: 12.342769,77.9129423
+                        map_url: ''
+                        address: My house or building name, street name
+                        city: Bengaluru
+                        state: Karnataka
+                        country: India
+                        area_code: '560043'
                       time:
                         timestamp: '2023-06-07T14:00:00.000Z'
+                    end:
+                      location:
+                        gps: 12.4535445,77.9283792
+                        area_code: '560041'
+                        map_url: ''
+                        address: My house or building name, street name
+                        city: Bengaluru
+                        state: Karnataka
+                        country: India
                 billing:
                   name: ONDC sellerapp
                   address: My house or building name
@@ -7252,11 +7286,11 @@ x-flows:
                   tax_id: XXXXXXXXXXXXXXX
                   phone: '9886098860'
                   email: abcd.efgh@gmail.com
-                payment:
+                payments:
                   - id: P1
                     collected_by: BPP
                     params:
-                      amount: '6000'
+                      amount: '4000'
                       currency: INR
                       bank_account_number: xxxxxxxx
                       virtual_payment_address: xxx@xxxx
@@ -7350,7 +7384,7 @@ x-flows:
                       - descriptor:
                           code: Height
                         value: '1.5'
-                updated_at: '2023-02-06T22:00:30.000Z'
+                updated_at: '2023-10-17T22:00:00.811Z'
       - summary: >-
           LSP initiates RTO and sends updates through unsolicited on_status
           calls
@@ -7554,7 +7588,7 @@ x-flows:
                   tax_id: XXXXXXXXXXXXXXX
                   phone: '9886098860'
                   email: abcd.efgh@gmail.com
-                payment:
+                payments:
                   - id: P1
                     collected_by: BPP
                     params:
@@ -8296,7 +8330,7 @@ x-flows:
                   email: abcd.efgh@gmail.com
                   time:
                     timestamp: '2023-10-17T21:11:00.000Z'
-                payment:
+                payments:
                   collected_by: BPP
                   type: PRE-FULFILLMENT
                   tags:
@@ -11292,7 +11326,7 @@ x-flows:
                   email: abcd.efgh@gmail.com
                   time:
                     timestamp: '2023-10-17T21:11:00.000Z'
-                payment:
+                payments:
                   collected_by: BPP
                   type: PRE-FULFILLMENT
                   tags:
@@ -12831,8 +12865,11 @@ x-flows:
         description: Logistics Provider acknowledges
         reference: if any
         example:
-          summary: Unsolicited on_cancel
-          description: Unsolicited on_cancel from Logistics provider
+          summary: LSP confirms order cancellation
+          description: >-
+            LSP confirm order cancellation after logistics buyer cancels the
+            order. The quote shall be updated to the final price to be paid by
+            logistics buyer.
           value:
             context:
               domain: ONDC:LOG11
@@ -13643,7 +13680,7 @@ x-examples:
                     email: abcd.efgh@gmail.com
                     time:
                       timestamp: '2023-10-17T21:11:00.000Z'
-                  payment:
+                  payments:
                     collected_by: BPP
                     type: ON-FULFILLMENT
                     tags:
@@ -13763,7 +13800,7 @@ x-examples:
                     email: abcd.efgh@gmail.com
                     time:
                       timestamp: '2023-10-17T21:11:00.000Z'
-                  payment:
+                  payments:
                     collected_by: BPP
                     type: ON-FULFILLMENT
                     tags:
@@ -16599,7 +16636,7 @@ x-examples:
                     tax_id: XXXXXXXXXXXXXXX
                     phone: '9886098860'
                     email: abcd.efgh@gmail.com
-                  payment:
+                  payments:
                     - id: P1
                       collected_by: BPP
                       params:
@@ -16903,7 +16940,7 @@ x-examples:
                     tax_id: XXXXXXXXXXXXXXX
                     phone: '9886098860'
                     email: abcd.efgh@gmail.com
-                  payment:
+                  payments:
                     - id: P1
                       collected_by: BPP
                       params:
@@ -17204,7 +17241,7 @@ x-examples:
                     tax_id: XXXXXXXXXXXXXXX
                     phone: '9886098860'
                     email: abcd.efgh@gmail.com
-                  payment:
+                  payments:
                     - id: P1
                       collected_by: BPP
                       params:
@@ -17467,7 +17504,7 @@ x-examples:
                     tax_id: XXXXXXXXXXXXXXX
                     phone: '9886098860'
                     email: abcd.efgh@gmail.com
-                  payment:
+                  payments:
                     - id: P1
                       collected_by: BPP
                       params:
@@ -17742,7 +17779,7 @@ x-examples:
                     email: abcd.efgh@gmail.com
                     time:
                       timestamp: '2023-10-17T21:11:00.000Z'
-                  payment:
+                  payments:
                     - id: P1
                       collected_by: BPP
                       params:
@@ -18018,7 +18055,7 @@ x-examples:
                     email: abcd.efgh@gmail.com
                     time:
                       timestamp: '2023-10-17T21:11:00.000Z'
-                  payment:
+                  payments:
                     - id: P1
                       collected_by: BPP
                       params:
@@ -18227,7 +18264,7 @@ x-examples:
                     tax_id: XXXXXXXXXXXXXXX
                     phone: '9886098860'
                     email: abcd.efgh@gmail.com
-                  payment:
+                  payments:
                     - id: P1
                       collected_by: BPP
                       params:
@@ -18491,7 +18528,7 @@ x-examples:
                     tax_id: XXXXXXXXXXXXXXX
                     phone: '9886098860'
                     email: abcd.efgh@gmail.com
-                  payment:
+                  payments:
                     - id: P1
                       collected_by: BPP
                       params:
@@ -18561,9 +18598,9 @@ x-examples:
                   id: O2
                   status: Cancelled
                   cancellation:
-                    cancelled_by: logistics_buyer.com
+                    cancelled_by: logistics_seller.com
                     reason:
-                      id: '004'
+                      id: '013'
                   provider:
                     id: P1
                     locations:
@@ -18596,32 +18633,38 @@ x-examples:
                   quote:
                     price:
                       currency: INR
-                      value: '0.00'
+                      value: '7500.00'
                     breakup:
                       - item:
                           id: I1
                         title: delivery
                         price:
                           currency: INR
-                          value: '0.00'
+                          value: '3000.00'
+                      - item:
+                          id: I1
+                        title: insurance
+                        price:
+                          currency: INR
+                          value: '500.0'
                       - item:
                           id: I1
                         title: tax
                         price:
                           currency: INR
-                          value: '0.00'
+                          value: '500.00'
                       - item:
                           id: I2
                         title: rto
                         price:
                           currency: INR
-                          value: '0.00'
+                          value: '3000.00'
                       - item:
                           id: I2
                         title: tax
                         price:
                           currency: INR
-                          value: '0.00'
+                          value: '500.00'
                   fulfillments:
                     - id: '1'
                       type: Delivery
@@ -18708,15 +18751,32 @@ x-examples:
                             - code: Sub_Reason_Id
                               value: '004'
                             - code: Cancelled_By
-                              value: lsp.com
+                              value: logistics_seller.com
                     - id: '2'
                       type: RTO
                       state:
                         descriptor:
                           code: RTO-Initiated
                       start:
+                        location:
+                          gps: 12.342769,77.9129423
+                          map_url: ''
+                          address: My house or building name, street name
+                          city: Bengaluru
+                          state: Karnataka
+                          country: India
+                          area_code: '560043'
                         time:
                           timestamp: '2023-06-07T14:00:00.000Z'
+                      end:
+                        location:
+                          gps: 12.4535445,77.9283792
+                          area_code: '560041'
+                          map_url: ''
+                          address: My house or building name, street name
+                          city: Bengaluru
+                          state: Karnataka
+                          country: India
                   billing:
                     name: ONDC sellerapp
                     address: My house or building name
@@ -18725,7 +18785,7 @@ x-examples:
                     tax_id: XXXXXXXXXXXXXXX
                     phone: '9886098860'
                     email: abcd.efgh@gmail.com
-                  payment:
+                  payments:
                     - id: P1
                       collected_by: BPP
                       params:
@@ -18851,9 +18911,9 @@ x-examples:
                   id: O2
                   status: Cancelled
                   cancellation:
-                    cancelled_by: logistics_buyer.com
+                    cancelled_by: logistics_seller.com
                     reason:
-                      id: '004'
+                      id: '013'
                   provider:
                     id: P1
                     locations:
@@ -18868,37 +18928,54 @@ x-examples:
                         - '1'
                       time:
                         label: TAT
-                        duration: PT45M
-                        timestamp: '2023-10-23'
+                        duration: P4D
+                        timestamp: '2023-10-27'
+                    - id: I4
+                      category_ids:
+                        - C2
+                      descriptor:
+                        code: P2H2P
+                      fulfillment_ids:
+                        - '2'
+                      time:
+                        label: TAT
+                        duration: P4D
+                        timestamp: '2023-10-27'
                   quote:
                     price:
                       currency: INR
-                      value: '0.00'
+                      value: '7500.00'
                     breakup:
                       - item:
-                          id: I1
+                          id: I3
                         title: delivery
                         price:
                           currency: INR
-                          value: '0.00'
+                          value: '3000.00'
                       - item:
-                          id: I1
+                          id: I3
+                        title: insurance
+                        price:
+                          currency: INR
+                          value: '500.0'
+                      - item:
+                          id: I3
                         title: tax
                         price:
                           currency: INR
-                          value: '0.00'
+                          value: '500.00'
                       - item:
-                          id: I2
+                          id: I4
                         title: rto
                         price:
                           currency: INR
-                          value: '0.00'
+                          value: '3000.00'
                       - item:
-                          id: I2
+                          id: I4
                         title: tax
                         price:
                           currency: INR
-                          value: '0.00'
+                          value: '500.00'
                   fulfillments:
                     - id: '1'
                       type: Delivery
@@ -18936,8 +19013,8 @@ x-examples:
                               - link/to/shipping/label
                           time:
                             range:
-                              start: '2023-02-06T22:30:00.000Z'
-                              end: '2023-02-06T22:45:00.000Z'
+                              start: '2023-10-17T21:12:00.710Z'
+                              end: '2023-10-20T21:12:00.710Z'
                         - id: L2
                           parent_stop_id: L1
                           type: end
@@ -18965,8 +19042,8 @@ x-examples:
                               url: URL for instructions
                           time:
                             range:
-                              start: '2023-02-14T22:30:00.000Z'
-                              end: '2023-02-14T22:45:00.000Z'
+                              start: '2023-10-21T21:12:00.710Z'
+                              end: '2023-10-24T21:12:00.710Z'
                       tags:
                         - descriptor:
                             code: Delivery_Terms
@@ -18985,15 +19062,32 @@ x-examples:
                             - code: Sub_Reason_Id
                               value: '004'
                             - code: Cancelled_By
-                              value: lsp.com
+                              value: logistics_seller.com
                     - id: '2'
                       type: RTO
                       state:
                         descriptor:
                           code: RTO-Initiated
                       start:
+                        location:
+                          gps: 12.342769,77.9129423
+                          map_url: ''
+                          address: My house or building name, street name
+                          city: Bengaluru
+                          state: Karnataka
+                          country: India
+                          area_code: '560043'
                         time:
                           timestamp: '2023-06-07T14:00:00.000Z'
+                      end:
+                        location:
+                          gps: 12.4535445,77.9283792
+                          area_code: '560041'
+                          map_url: ''
+                          address: My house or building name, street name
+                          city: Bengaluru
+                          state: Karnataka
+                          country: India
                   billing:
                     name: ONDC sellerapp
                     address: My house or building name
@@ -19002,11 +19096,11 @@ x-examples:
                     tax_id: XXXXXXXXXXXXXXX
                     phone: '9886098860'
                     email: abcd.efgh@gmail.com
-                  payment:
+                  payments:
                     - id: P1
                       collected_by: BPP
                       params:
-                        amount: '6000'
+                        amount: '4000'
                         currency: INR
                         bank_account_number: xxxxxxxx
                         virtual_payment_address: xxx@xxxx
@@ -19100,7 +19194,7 @@ x-examples:
                         - descriptor:
                             code: Height
                           value: '1.5'
-                  updated_at: '2023-02-06T22:00:30.000Z'
+                  updated_at: '2023-10-17T22:00:00.811Z'
   B2B Logistics - International:
     summary: B2B Logistics - International Use Case Specification
     description: >-
@@ -19514,7 +19608,7 @@ x-examples:
                     email: abcd.efgh@gmail.com
                     time:
                       timestamp: '2023-10-17T21:11:00.000Z'
-                  payment:
+                  payments:
                     collected_by: BPP
                     type: PRE-FULFILLMENT
                     tags:
@@ -19643,7 +19737,7 @@ x-examples:
                     email: abcd.efgh@gmail.com
                     time:
                       timestamp: '2023-10-17T21:11:00.000Z'
-                  payment:
+                  payments:
                     collected_by: BPP
                     type: PRE-FULFILLMENT
                     tags:
@@ -24820,7 +24914,7 @@ x-attributes:
                 reference: if any
             payment:
               parent: true
-              payment:
+              payments:
                 description: >-
                   This payment object should be consistent with the /confirm
                   payment object

@@ -192,7 +192,7 @@ value:
         tax_id: XXXXXXXXXXXXXXX
         phone: "9886098860"
         email: abcd.efgh@gmail.com
-      payment:
+      payments:
         - id: P1
           collected_by: BPP
           params:

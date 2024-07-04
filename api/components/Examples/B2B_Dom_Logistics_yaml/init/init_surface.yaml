@@ -75,7 +75,7 @@ value:
         email: abcd.efgh@gmail.com
         time:
           timestamp: '2023-10-17T21:11:00.000Z'
-      payment:
+      payments:
         collected_by: BPP
         type: ON-FULFILLMENT
         tags:
