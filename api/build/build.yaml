@@ -3600,7 +3600,7 @@ x-flows:
           the KYC Link.
         reference: if any
         example: &ref_22
-          summary: LSP sends catalog (Air Delivery)
+          summary: LSP sends catalog (Domestic Logistics)
           description: >-
             Logistics service provider sends the catalog based on search + Sends
             the KYC Link.
@@ -3663,18 +3663,18 @@ x-flows:
                     categories:
                       - id: C1
                         descriptor:
-                          code: Standard_Delivery
+                          code: Surface_Delivery
                         time:
                           label: TAT
                           duration: P7D
-                          timestamp: '2023-10-17'
+                          timestamp: '2023-10-24'
                       - id: C2
                         descriptor:
-                          code: Express_Delivery
+                          code: Air_Delivery
                         time:
                           label: TAT
                           duration: P4D
-                          timestamp: '2023-10-17'
+                          timestamp: '2023-10-21'
                     locations:
                       - id: L1
                         gps: 12.967555,77.749666
@@ -3769,7 +3769,7 @@ x-flows:
                         time:
                           label: TAT
                           duration: P7D
-                          timestamp: '2023-10-31T21:00:00.000Z'
+                          timestamp: '2023-10-24T21:00:00.000Z'
                       - id: I22
                         parent_item_id: I11
                         category_ids:
@@ -3787,7 +3787,7 @@ x-flows:
                         time:
                           label: TAT
                           duration: P7D
-                          timestamp: '2023-10-31T21:00:00.000Z'
+                          timestamp: '2023-10-24T21:00:00.000Z'
                       - id: I21
                         parent_item_id: ''
                         category_ids:
@@ -3805,7 +3805,7 @@ x-flows:
                         time:
                           label: TAT
                           duration: P6D
-                          timestamp: '2023-10-24T21:00:00.000Z'
+                          timestamp: '2023-10-23T21:00:00.000Z'
                         tags:
                           - descriptor:
                               code: Cargo_Details
@@ -3830,7 +3830,7 @@ x-flows:
                         time:
                           label: TAT
                           duration: P6D
-                          timestamp: '2023-10-31T21:00:00.000Z'
+                          timestamp: '2023-10-23T21:00:00.000Z'
                       - id: I3
                         parent_item_id: ''
                         category_ids:
@@ -3916,7 +3916,7 @@ x-flows:
                         time:
                           label: TAT
                           duration: P4D
-                          timestamp: '2023-10-25T21:00:00.000Z'
+                          timestamp: '2023-10-21T21:00:00.000Z'
                       - id: I44
                         parent_item_id: I33
                         category_ids:
@@ -3934,7 +3934,7 @@ x-flows:
                         time:
                           label: TAT
                           duration: P4D
-                          timestamp: '2023-10-25T21:00:00.000Z'
+                          timestamp: '2023-10-21T21:00:00.000Z'
       - summary: Logistics Buyer initializes the order.
         api: init
         description: >-
@@ -4135,6 +4135,16 @@ x-flows:
                         contact:
                           phone: '9886098860'
                           email: abcd.efgh@gmail.com
+                billing:
+                  name: ONDC sellerapp
+                  address: My house or building name
+                  city: Bengaluru
+                  state: Karnataka
+                  tax_id: XXXXXXXXXXXXXXX
+                  phone: '9886098860'
+                  email: abcd.efgh@gmail.com
+                  time:
+                    timestamp: '2023-10-17T21:11:00.000Z'
                 quote:
                   price:
                     currency: INR
@@ -5102,6 +5112,8 @@ x-flows:
                   tax_id: XXXXXXXXXXXXXXX
                   phone: '9886098860'
                   email: abcd.efgh@gmail.com
+                  time:
+                    timestamp: '2023-10-17T21:11:00.000Z'
                 payments:
                   - id: P1
                     collected_by: BPP
@@ -5729,6 +5741,16 @@ x-flows:
                         contact:
                           phone: '9886098860'
                           email: abcd.efgh@gmail.com
+                billing:
+                  name: ONDC sellerapp
+                  address: My house or building name
+                  city: Bengaluru
+                  state: Karnataka
+                  tax_id: XXXXXXXXXXXXXXX
+                  phone: '9886098860'
+                  email: abcd.efgh@gmail.com
+                  time:
+                    timestamp: '2023-10-17T21:11:00.000Z'
                 quote:
                   price:
                     currency: INR
@@ -7241,17 +7263,23 @@ x-flows:
                           - descriptor:
                               code: AWB_No
                             value: '1209878992826353'
-                      - code: RTO_Event
+                      - descriptor:
+                          code: RTO_Event
                         list:
-                          - code: Retry_Count
+                          - descriptor:
+                              code: Retry_Count
                             value: '3'
-                          - code: RTO_Id
+                          - descriptor:
+                              code: RTO_Id
                             value: '2'
-                          - code: Cancellation_Reason_Id
+                          - descriptor:
+                              code: Cancellation_Reason_Id
                             value: '013'
-                          - code: Sub_Reason_Id
+                          - descriptor:
+                              code: Sub_Reason_Id
                             value: '004'
-                          - code: Cancelled_By
+                          - descriptor:
+                              code: Cancelled_By
                             value: logistics_seller.com
                   - id: '2'
                     type: RTO
@@ -7286,6 +7314,8 @@ x-flows:
                   tax_id: XXXXXXXXXXXXXXX
                   phone: '9886098860'
                   email: abcd.efgh@gmail.com
+                  time:
+                    timestamp: '2023-10-17T21:11:00.000Z'
                 payments:
                   - id: P1
                     collected_by: BPP
@@ -7943,7 +7973,7 @@ x-flows:
           the KYC Link.
         reference: if any
         example: &ref_31
-          summary: LSP sends catalog
+          summary: LSP sends catalog (International Logistics)
           description: >-
             Logistics service provider sends the catalog based on search + Sends
             the KYC Link.
@@ -8006,18 +8036,18 @@ x-flows:
                     categories:
                       - id: C1
                         descriptor:
-                          code: STANDARD_DELIVERY
+                          code: Ocean_Delivery
                         time:
                           label: TAT
                           duration: P7D
-                          timestamp: '2023-10-17'
+                          timestamp: '2023-10-24'
                       - id: C2
                         descriptor:
-                          code: EXPRESS_Delivery
+                          code: Air_Delivery
                         time:
                           label: TAT
                           duration: P4D
-                          timestamp: '2023-10-17'
+                          timestamp: '2023-10-21'
                     locations:
                       - id: L1
                         gps: 12.967555,77.749666
@@ -8112,7 +8142,7 @@ x-flows:
                         time:
                           label: TAT
                           duration: P7D
-                          timestamp: '2023-10-31T21:00:00.000Z'
+                          timestamp: '2023-10-24T21:00:00.000Z'
                       - id: I22
                         parent_item_id: I11
                         category_ids:
@@ -8130,7 +8160,7 @@ x-flows:
                         time:
                           label: TAT
                           duration: P7D
-                          timestamp: '2023-10-31T21:00:00.000Z'
+                          timestamp: '2023-10-24T21:00:00.000Z'
                       - id: I3
                         parent_item_id: ''
                         category_ids:
@@ -8216,7 +8246,7 @@ x-flows:
                         time:
                           label: TAT
                           duration: P4D
-                          timestamp: '2023-10-25T21:00:00.000Z'
+                          timestamp: '2023-10-21T21:00:00.000Z'
                       - id: I44
                         parent_item_id: I33
                         category_ids:
@@ -8234,7 +8264,7 @@ x-flows:
                         time:
                           label: TAT
                           duration: P4D
-                          timestamp: '2023-10-25T21:00:00.000Z'
+                          timestamp: '2023-10-21T21:00:00.000Z'
       - summary: Logistics Buyer initializes the order.
         api: init
         description: >-
@@ -14695,7 +14725,7 @@ x-examples:
                 cancellation_reason_id: '004'
       on_search:
         examples:
-          - summary: LSP sends catalog (Air Delivery)
+          - summary: LSP sends catalog (Domestic Logistics)
             description: >-
               Logistics service provider sends the catalog based on search +
               Sends the KYC Link.
@@ -14758,18 +14788,18 @@ x-examples:
                       categories:
                         - id: C1
                           descriptor:
-                            code: Standard_Delivery
+                            code: Surface_Delivery
                           time:
                             label: TAT
                             duration: P7D
-                            timestamp: '2023-10-17'
+                            timestamp: '2023-10-24'
                         - id: C2
                           descriptor:
-                            code: Express_Delivery
+                            code: Air_Delivery
                           time:
                             label: TAT
                             duration: P4D
-                            timestamp: '2023-10-17'
+                            timestamp: '2023-10-21'
                       locations:
                         - id: L1
                           gps: 12.967555,77.749666
@@ -14864,7 +14894,7 @@ x-examples:
                           time:
                             label: TAT
                             duration: P7D
-                            timestamp: '2023-10-31T21:00:00.000Z'
+                            timestamp: '2023-10-24T21:00:00.000Z'
                         - id: I22
                           parent_item_id: I11
                           category_ids:
@@ -14882,7 +14912,7 @@ x-examples:
                           time:
                             label: TAT
                             duration: P7D
-                            timestamp: '2023-10-31T21:00:00.000Z'
+                            timestamp: '2023-10-24T21:00:00.000Z'
                         - id: I21
                           parent_item_id: ''
                           category_ids:
@@ -14900,7 +14930,7 @@ x-examples:
                           time:
                             label: TAT
                             duration: P6D
-                            timestamp: '2023-10-24T21:00:00.000Z'
+                            timestamp: '2023-10-23T21:00:00.000Z'
                           tags:
                             - descriptor:
                                 code: Cargo_Details
@@ -14925,7 +14955,7 @@ x-examples:
                           time:
                             label: TAT
                             duration: P6D
-                            timestamp: '2023-10-31T21:00:00.000Z'
+                            timestamp: '2023-10-23T21:00:00.000Z'
                         - id: I3
                           parent_item_id: ''
                           category_ids:
@@ -15011,7 +15041,7 @@ x-examples:
                           time:
                             label: TAT
                             duration: P4D
-                            timestamp: '2023-10-25T21:00:00.000Z'
+                            timestamp: '2023-10-21T21:00:00.000Z'
                         - id: I44
                           parent_item_id: I33
                           category_ids:
@@ -15029,7 +15059,7 @@ x-examples:
                           time:
                             label: TAT
                             duration: P4D
-                            timestamp: '2023-10-25T21:00:00.000Z'
+                            timestamp: '2023-10-21T21:00:00.000Z'
       on_init:
         examples:
           - summary: Response to order initialization - KYC Successful (Air Delivery)
@@ -15098,6 +15128,16 @@ x-examples:
                           contact:
                             phone: '9886098860'
                             email: abcd.efgh@gmail.com
+                  billing:
+                    name: ONDC sellerapp
+                    address: My house or building name
+                    city: Bengaluru
+                    state: Karnataka
+                    tax_id: XXXXXXXXXXXXXXX
+                    phone: '9886098860'
+                    email: abcd.efgh@gmail.com
+                    time:
+                      timestamp: '2023-10-17T21:11:00.000Z'
                   quote:
                     price:
                       currency: INR
@@ -15297,6 +15337,16 @@ x-examples:
                           contact:
                             phone: '9886098860'
                             email: abcd.efgh@gmail.com
+                  billing:
+                    name: ONDC sellerapp
+                    address: My house or building name
+                    city: Bengaluru
+                    state: Karnataka
+                    tax_id: XXXXXXXXXXXXXXX
+                    phone: '9886098860'
+                    email: abcd.efgh@gmail.com
+                    time:
+                      timestamp: '2023-10-17T21:11:00.000Z'
                   quote:
                     price:
                       currency: INR
@@ -15502,6 +15552,16 @@ x-examples:
                           contact:
                             phone: '9886098860'
                             email: abcd.efgh@gmail.com
+                  billing:
+                    name: ONDC sellerapp
+                    address: My house or building name
+                    city: Bengaluru
+                    state: Karnataka
+                    tax_id: XXXXXXXXXXXXXXX
+                    phone: '9886098860'
+                    email: abcd.efgh@gmail.com
+                    time:
+                      timestamp: '2023-10-17T21:11:00.000Z'
                   quote:
                     price:
                       currency: INR
@@ -15702,6 +15762,16 @@ x-examples:
                           contact:
                             phone: '9886098860'
                             email: abcd.efgh@gmail.com
+                  billing:
+                    name: ONDC sellerapp
+                    address: My house or building name
+                    city: Bengaluru
+                    state: Karnataka
+                    tax_id: XXXXXXXXXXXXXXX
+                    phone: '9886098860'
+                    email: abcd.efgh@gmail.com
+                    time:
+                      timestamp: '2023-10-17T21:11:00.000Z'
                   quote:
                     price:
                       currency: INR
@@ -18264,6 +18334,8 @@ x-examples:
                     tax_id: XXXXXXXXXXXXXXX
                     phone: '9886098860'
                     email: abcd.efgh@gmail.com
+                    time:
+                      timestamp: '2023-10-17T21:11:00.000Z'
                   payments:
                     - id: P1
                       collected_by: BPP
@@ -18528,6 +18600,8 @@ x-examples:
                     tax_id: XXXXXXXXXXXXXXX
                     phone: '9886098860'
                     email: abcd.efgh@gmail.com
+                    time:
+                      timestamp: '2023-10-17T21:11:00.000Z'
                   payments:
                     - id: P1
                       collected_by: BPP
@@ -18740,17 +18814,23 @@ x-examples:
                             - descriptor:
                                 code: AWB_No
                               value: '1209878992826353'
-                        - code: RTO_Event
+                        - descriptor:
+                            code: RTO_Event
                           list:
-                            - code: Retry_Count
+                            - descriptor:
+                                code: Retry_Count
                               value: '3'
-                            - code: RTO_Id
+                            - descriptor:
+                                code: RTO_Id
                               value: '2'
-                            - code: Cancellation_Reason_Id
+                            - descriptor:
+                                code: Cancellation_Reason_Id
                               value: '013'
-                            - code: Sub_Reason_Id
+                            - descriptor:
+                                code: Sub_Reason_Id
                               value: '004'
-                            - code: Cancelled_By
+                            - descriptor:
+                                code: Cancelled_By
                               value: logistics_seller.com
                     - id: '2'
                       type: RTO
@@ -18785,6 +18865,8 @@ x-examples:
                     tax_id: XXXXXXXXXXXXXXX
                     phone: '9886098860'
                     email: abcd.efgh@gmail.com
+                    time:
+                      timestamp: '2023-10-17T21:11:00.000Z'
                   payments:
                     - id: P1
                       collected_by: BPP
@@ -19051,17 +19133,23 @@ x-examples:
                             - descriptor:
                                 code: AWB_No
                               value: '1209878992826353'
-                        - code: RTO_Event
+                        - descriptor:
+                            code: RTO_Event
                           list:
-                            - code: Retry_Count
+                            - descriptor:
+                                code: Retry_Count
                               value: '3'
-                            - code: RTO_Id
+                            - descriptor:
+                                code: RTO_Id
                               value: '2'
-                            - code: Cancellation_Reason_Id
+                            - descriptor:
+                                code: Cancellation_Reason_Id
                               value: '013'
-                            - code: Sub_Reason_Id
+                            - descriptor:
+                                code: Sub_Reason_Id
                               value: '004'
-                            - code: Cancelled_By
+                            - descriptor:
+                                code: Cancelled_By
                               value: logistics_seller.com
                     - id: '2'
                       type: RTO
@@ -19096,6 +19184,8 @@ x-examples:
                     tax_id: XXXXXXXXXXXXXXX
                     phone: '9886098860'
                     email: abcd.efgh@gmail.com
+                    time:
+                      timestamp: '2023-10-17T21:11:00.000Z'
                   payments:
                     - id: P1
                       collected_by: BPP
@@ -19195,6 +19285,251 @@ x-examples:
                             code: Height
                           value: '1.5'
                   updated_at: '2023-10-17T22:00:00.811Z'
+          - summary: LSP confirms order cancellation
+            description: LSP cancels the order as logistics buyer cancels the order
+            value:
+              context:
+                domain: ONDC:LOG10
+                location:
+                  city:
+                    code: std:080
+                  country:
+                    code: IND
+                action: on_cancel
+                version: 2.0.0
+                bap_id: logistics_buyer.com
+                bap_uri: https://logistics_buyer.com/ondc
+                bpp_id: logistics_seller.com
+                bpp_uri: https://logistics_seller.com/ondc
+                transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
+                message_id: '1755281254860'
+                timestamp: '2023-10-23T21:00:00.000Z'
+                ttl: PT30S
+              message:
+                order:
+                  id: O2
+                  status: Cancelled
+                  cancellation:
+                    cancelled_by: logistics_buyer.com
+                    reason:
+                      id: '004'
+                  provider:
+                    id: P1
+                    locations:
+                      - id: L1
+                  items:
+                    - id: I3
+                      category_ids:
+                        - C1
+                      descriptor:
+                        code: P2H2P
+                      fulfillment_ids:
+                        - '1'
+                      time:
+                        label: TAT
+                        duration: P4D
+                        timestamp: '2023-10-27'
+                  quote:
+                    price:
+                      currency: INR
+                      value: '0.00'
+                    breakup:
+                      - item:
+                          id: I1
+                        title: delivery
+                        price:
+                          currency: INR
+                          value: '0.00'
+                      - item:
+                          id: I1
+                        title: tax
+                        price:
+                          currency: INR
+                          value: '0.00'
+                  fulfillments:
+                    - id: '1'
+                      type: Delivery
+                      state:
+                        descriptor:
+                          code: Cancelled
+                      tracking: false
+                      stops:
+                        - id: L1
+                          parent_stop_id: ''
+                          type: start
+                          location:
+                            gps: 12.4535445,77.9283792
+                            area_code: '560041'
+                            map_url: ''
+                            address: My house or building name, street name
+                            city: Bengaluru
+                            state: Karnataka
+                            country: India
+                          contact:
+                            phone: '9886098860'
+                            email: abcd.efgh@gmail.com
+                          authorization:
+                            type: QR
+                            token: XYZ2
+                            valid_from: ''
+                            valid_to: ''
+                          instructions:
+                            short_desc: Shipping label
+                            long_desc: ''
+                            additional_desc:
+                              content_type: text/html
+                              url: URL for instructions
+                            images:
+                              - link/to/shipping/label
+                          time:
+                            range:
+                              start: '2023-02-06T22:30:00.000Z'
+                              end: '2023-02-06T22:45:00.000Z'
+                        - id: L2
+                          parent_stop_id: L1
+                          type: end
+                          location:
+                            gps: 12.342769,77.9129423
+                            map_url: ''
+                            address: My house or building name, street name
+                            city: Bengaluru
+                            state: Karnataka
+                            country: India
+                            area_code: '560043'
+                          contact:
+                            phone: '9886098860'
+                            email: abcd.efgh@gmail.com
+                          authorization:
+                            type: QR
+                            token: XYZ2
+                            valid_from: ''
+                            valid_to: ''
+                          instructions:
+                            short_desc: ''
+                            long_desc: drop package at security gate
+                            additional_desc:
+                              content_type: text/html
+                              url: URL for instructions
+                          time:
+                            range:
+                              start: '2023-02-14T22:30:00.000Z'
+                              end: '2023-02-14T22:45:00.000Z'
+                      tags:
+                        - descriptor:
+                            code: Delivery_Terms
+                          list:
+                            - descriptor:
+                                code: AWB_No
+                              value: '1209878992826353'
+                  billing:
+                    name: ONDC sellerapp
+                    address: My house or building name
+                    city: Bengaluru
+                    state: Karnataka
+                    tax_id: XXXXXXXXXXXXXXX
+                    phone: '9886098860'
+                    email: abcd.efgh@gmail.com
+                    time:
+                      timestamp: '2023-10-17T21:11:00.000Z'
+                  payments:
+                    - id: P1
+                      collected_by: BPP
+                      params:
+                        amount: '6000'
+                        currency: INR
+                        bank_account_number: xxxxxxxx
+                        virtual_payment_address: xxx@xxxx
+                      type: ON-FULFILLMENT
+                      tags:
+                        - descriptor:
+                            code: Settlement_Details
+                          list:
+                            - descriptor:
+                                code: Counterparty
+                              value: BAP
+                            - descriptor:
+                                code: Mode
+                              value: UPI
+                            - descriptor:
+                                code: Beneficiary_Name
+                              value: xxxxx
+                            - descriptor:
+                                code: Bank_Account_No
+                              value: xxxxx
+                            - descriptor:
+                                code: Ifsc_Code
+                              value: xxxxxxx
+                            - descriptor:
+                                code: UPI_Address
+                              value: xxxxxxx
+                        - descriptor:
+                            code: Collection_Details
+                          list:
+                            - descriptor:
+                                code: Amount
+                              value: '20000'
+                            - descriptor:
+                                code: Type
+                              value: ON-FULFILLMENT
+                  tags:
+                    - descriptor:
+                        code: Quantity
+                      list:
+                        - descriptor:
+                            code: count
+                          value: '1000'
+                        - descriptor:
+                            code: MEASURE_UNIT
+                          value: kilogram
+                        - descriptor:
+                            code: MEASURE_VALUE
+                          value: '1000'
+                    - descriptor:
+                        code: Package_Dimensions
+                      list:
+                        - descriptor:
+                            code: Unit
+                          value: centimeter
+                        - descriptor:
+                            code: Length
+                          value: '1'
+                        - descriptor:
+                            code: Breadth
+                          value: '1'
+                        - descriptor:
+                            code: Height
+                          value: '1'
+                    - descriptor:
+                        code: Package_Details
+                      list:
+                        - descriptor:
+                            code: Category
+                          value: Grocery
+                        - descriptor:
+                            code: UNIT_PRICE
+                          value: '100'
+                        - descriptor:
+                            code: ITEM_PRICE
+                          value: '100000'
+                        - descriptor:
+                            code: Dangerous_Goods
+                          value: 'true'
+                    - descriptor:
+                        code: Package_Dimensions_Diff
+                      list:
+                        - descriptor:
+                            code: Unit
+                          value: centimeter
+                        - descriptor:
+                            code: Length
+                          value: '1.5'
+                        - descriptor:
+                            code: Breadth
+                          value: '1.5'
+                        - descriptor:
+                            code: Height
+                          value: '1.5'
+                  updated_at: '2023-02-06T22:00:30.000Z'
   B2B Logistics - International:
     summary: B2B Logistics - International Use Case Specification
     description: >-
@@ -20628,7 +20963,7 @@ x-examples:
                 order_id: '02'
       on_search:
         examples:
-          - summary: LSP sends catalog
+          - summary: LSP sends catalog (International Logistics)
             description: >-
               Logistics service provider sends the catalog based on search +
               Sends the KYC Link.
@@ -20691,18 +21026,18 @@ x-examples:
                       categories:
                         - id: C1
                           descriptor:
-                            code: STANDARD_DELIVERY
+                            code: Ocean_Delivery
                           time:
                             label: TAT
                             duration: P7D
-                            timestamp: '2023-10-17'
+                            timestamp: '2023-10-24'
                         - id: C2
                           descriptor:
-                            code: EXPRESS_Delivery
+                            code: Air_Delivery
                           time:
                             label: TAT
                             duration: P4D
-                            timestamp: '2023-10-17'
+                            timestamp: '2023-10-21'
                       locations:
                         - id: L1
                           gps: 12.967555,77.749666
@@ -20797,7 +21132,7 @@ x-examples:
                           time:
                             label: TAT
                             duration: P7D
-                            timestamp: '2023-10-31T21:00:00.000Z'
+                            timestamp: '2023-10-24T21:00:00.000Z'
                         - id: I22
                           parent_item_id: I11
                           category_ids:
@@ -20815,7 +21150,7 @@ x-examples:
                           time:
                             label: TAT
                             duration: P7D
-                            timestamp: '2023-10-31T21:00:00.000Z'
+                            timestamp: '2023-10-24T21:00:00.000Z'
                         - id: I3
                           parent_item_id: ''
                           category_ids:
@@ -20901,7 +21236,7 @@ x-examples:
                           time:
                             label: TAT
                             duration: P4D
-                            timestamp: '2023-10-25T21:00:00.000Z'
+                            timestamp: '2023-10-21T21:00:00.000Z'
                         - id: I44
                           parent_item_id: I33
                           category_ids:
@@ -20919,7 +21254,7 @@ x-examples:
                           time:
                             label: TAT
                             duration: P4D
-                            timestamp: '2023-10-25T21:00:00.000Z'
+                            timestamp: '2023-10-21T21:00:00.000Z'
       on_init:
         examples:
           - summary: Response to order initialization - KYC Successful

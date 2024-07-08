@@ -165,18 +165,24 @@ value:
                 - descriptor:
                     code: AWB_No
                   value: '1209878992826353'
-            - code: RTO_Event
+            - descriptor:
+                code: RTO_Event
               list:
-                - code: Retry_Count
-                  value: '3'
-                - code: RTO_Id
-                  value: '2'
-                - code: Cancellation_Reason_Id
-                  value: '013'
-                - code: Sub_Reason_Id
-                  value: '004'
-                - code: Cancelled_By
-                  value: logistics_seller.com
+               - descriptor:
+                  code: Retry_Count
+                 value: '3'
+               - descriptor:
+                   code: RTO_Id
+                 value: '2'
+               - descriptor:
+                  code: Cancellation_Reason_Id
+                 value: '013'
+               - descriptor:
+                   code: Sub_Reason_Id
+                 value: '004'
+               - descriptor:
+                   code: Cancelled_By
+                 value: logistics_seller.com
         - id: '2'
           type: RTO
           state:
@@ -210,6 +216,8 @@ value:
         tax_id: XXXXXXXXXXXXXXX
         phone: '9886098860'
         email: abcd.efgh@gmail.com
+        time:
+          timestamp: '2023-10-17T21:11:00.000Z'
       payments:
         - id: P1
           collected_by: BPP

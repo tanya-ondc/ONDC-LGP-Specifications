@@ -165,6 +165,8 @@ value:
         tax_id: XXXXXXXXXXXXXXX
         phone: '9886098860'
         email: abcd.efgh@gmail.com
+        time:
+          timestamp: '2023-10-17T21:11:00.000Z'
       payments:
         - id: P1
           collected_by: BPP
