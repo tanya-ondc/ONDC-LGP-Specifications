@@ -2575,302 +2575,630 @@ components:
             to confirm the order.
           type: boolean
 x-enum:
-  search:
-    context: &ref_2
-      domain:
-        - code: ONDC:LOG10
-          description: Domestic Logistics
-          reference: <PR/Issue/Discussion Links md format text>
-        - code: ONDC:LOG11
-          description: International Logistics
-          reference: <PR/Issue/Discussion Links md format text>
-    message:
-      intent:
-        category:
-          descriptor:
-            code: &ref_1
-              - code: Surface_Delivery
-                description: Surface Delivery
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: Air_Delivery
-                description: Air Delivery
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: Ocean_Delivery
-                description: Ocean Delivery
-                reference: <PR/Issue/Discussion Links md format text>
-        fulfillments: &ref_0
-          type: &ref_3
-            - code: Delivery
-              description: about the enum
+  B2B Domestic Logistics:
+    enum_set:
+      search:
+        context: &ref_2
+          domain:
+            - code: ONDC:LOG10
+              description: Domestic Logistics
               reference: <PR/Issue/Discussion Links md format text>
-            - code: Return
-              description: about the enum
+            - code: ONDC:LOG11
+              description: International Logistics
               reference: <PR/Issue/Discussion Links md format text>
-        tags:
-          Package_Dimesions:
-            unit:
-              - code: centimeter
-                description: about the enum
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: meter
-                description: about the enum
-                reference: <PR/Issue/Discussion Links md format text>
-          Package_Weight:
-            unit:
-              - code: unit
-                description: about the enum
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: gram
-                description: about the enum
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: dozen
-                description: about the enum
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: kilogram
-                description: about the enum
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: tonne
-                description: about the enum
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: litre
-                description: about the enum
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: millilitre
-                description: about the enum
-                reference: <PR/Issue/Discussion Links md format text>
-          Package_Details:
-            Category:
-              - code: Grocery
-                description: about the enum
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: F&B
-                description: about the enum
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: Fashion
-                description: about the enum
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: BPC
-                description: about the enum
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: Electronics
-                description: about the enum
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: Appliances
-                description: about the enum
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: Home & Kitchen
-                description: about the enum
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: Health & Wellness
-                description: about the enum
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: Pharma
-                description: about the enum
-                reference: <PR/Issue/Discussion Links md format text>
-  on_search:
-    message:
-      catalog:
-        fulfillments: *ref_0
-        providers:
-          categories:
-            descriptor:
-              code: *ref_1
-  init:
-    context: *ref_2
-    message:
-      order:
-        fulfillments:
-          type: *ref_3
-  on_init:
-    context: *ref_2
-    message:
-      order:
-        fulfillments:
-          type: *ref_3
-        quote:
-          breakup: &ref_4
-            title:
-              - code: delivery
-                description: about the enum
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: tax
-                description: about the enum
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: Origin
-                description: about the enum
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: Freight
-                description: about the enum
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: Destination
-                description: about the enum
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: Custom_Clearance_Service_Origin
-                description: about the enum
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: Custom_Clearance_Service_Destination
-                description: about the enum
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: rto
-                description: about the enum
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: diff
-                description: about the enum
-                reference: <PR/Issue/Discussion Links md format text>
-        cancellation_terms:
-          fulfillment_state: &ref_6
-            descriptor:
-              code:
-                - code: Pending
+        message:
+          intent:
+            category:
+              descriptor:
+                code: &ref_1
+                  - code: Surface_Delivery
+                    description: Surface Delivery
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Air_Delivery
+                    description: Air Delivery
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Ocean_Delivery
+                    description: Ocean Delivery
+                    reference: <PR/Issue/Discussion Links md format text>
+            fulfillments: &ref_0
+              type: &ref_3
+                - code: Delivery
                   description: about the enum
                   reference: <PR/Issue/Discussion Links md format text>
-                - code: Out-for-pickup
+                - code: Return
                   description: about the enum
                   reference: <PR/Issue/Discussion Links md format text>
-                - code: Order-picked-up
+            tags:
+              Package_Dimesions:
+                unit:
+                  - code: centimeter
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: meter
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+              Package_Weight:
+                unit:
+                  - code: unit
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: gram
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: dozen
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: kilogram
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: tonne
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: litre
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: millilitre
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+              Package_Details:
+                Category:
+                  - code: Grocery
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: F&B
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Fashion
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: BPC
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Electronics
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Appliances
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Home & Kitchen
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Health & Wellness
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Pharma
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+      on_search:
+        message:
+          catalog:
+            fulfillments: *ref_0
+            providers:
+              categories:
+                descriptor:
+                  code: *ref_1
+      init:
+        context: *ref_2
+        message:
+          order:
+            fulfillments:
+              type: *ref_3
+      on_init:
+        context: *ref_2
+        message:
+          order:
+            fulfillments:
+              type: *ref_3
+            quote:
+              breakup: &ref_4
+                title:
+                  - code: delivery
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: tax
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: rto
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: diff
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: tax_diff
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: delivery_diff
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: insurance
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+            cancellation_terms:
+              fulfillment_state: &ref_6
+                descriptor:
+                  code:
+                    - code: Pending
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: Out-for-pickup
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: Order-picked-up
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: In-transit
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: At-destination-hub
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: Out-for-delivery
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: Order-delivered
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: RTO-Initiated
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: RTO-Delivered
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: RTO-Disposed
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+            payments: &ref_5
+              type:
+                - code: ON-ORDER
                   description: about the enum
                   reference: <PR/Issue/Discussion Links md format text>
-                - code: In-transit
+                - code: ON-FULFILLMENT
                   description: about the enum
                   reference: <PR/Issue/Discussion Links md format text>
-                - code: At-destination-hub
+                - code: POST-FULFILLMENT
                   description: about the enum
                   reference: <PR/Issue/Discussion Links md format text>
-                - code: Out-for-delivery
-                  description: about the enum
+              collected_by:
+                - code: BAP
+                  description: Collected by BAP
                   reference: <PR/Issue/Discussion Links md format text>
-                - code: Order-delivered
-                  description: about the enum
+                - code: BPP
+                  description: Collected by BPP
                   reference: <PR/Issue/Discussion Links md format text>
-                - code: RTO-Initiated
-                  description: about the enum
+                - code: SOR
+                  description: Collected by Seller on Record
                   reference: <PR/Issue/Discussion Links md format text>
-                - code: RTO-Delivered
-                  description: about the enum
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: RTO-Disposed
-                  description: about the enum
-                  reference: <PR/Issue/Discussion Links md format text>
-        payments: &ref_5
-          type:
-            - code: ON-ORDER
-              description: about the enum
+      confirm:
+        context: *ref_2
+        message:
+          order:
+            fulfillment:
+              type: *ref_3
+            quote:
+              breakup: *ref_4
+            payments: *ref_5
+            status: &ref_7
+              - code: Created
+                description: about the enum
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: Accepted
+                description: about the enum
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: In-progress
+                description: about the enum
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: Completed
+                description: about the enum
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: Cancelled
+                description: about the enum
+                reference: <PR/Issue/Discussion Links md format text>
+      on_confirm:
+        context: *ref_2
+        message:
+          order:
+            fulfillments:
+              type: *ref_3
+              state: *ref_6
+            quote:
+              breakup: *ref_4
+            cancellation_terms:
+              fulfillment_state: *ref_6
+            payments: *ref_5
+            status: *ref_7
+      update:
+        context: *ref_2
+        message:
+          order:
+            payments: *ref_5
+      on_update:
+        context: *ref_2
+        message:
+          order:
+            fulfillments:
+              state: *ref_6
+              instructions: &ref_8
+                code:
+                  - code: AWB_No
+                    description: shipping bill (AWB number)
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: ACC_No
+                    description: If Account exists-Customer code
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: BKG_No
+                    description: >-
+                      Booking reference number provided by LSP at the time of
+                      booking
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: GST_No
+                    description: GST number
+                    reference: <PR/Issue/Discussion Links md format text>
+            quote:
+              breakup: *ref_4
+            payments: *ref_5
+            status: *ref_7
+      status:
+        context: *ref_2
+      on_status:
+        context: *ref_2
+        message:
+          order:
+            fulfillments:
+              state: *ref_6
+              instructions: *ref_8
+            quote:
+              breakup: *ref_4
+            payments: *ref_5
+            status: *ref_7
+      cancel:
+        context: *ref_2
+      on_cancel:
+        context: *ref_2
+        message:
+          order:
+            fulfillments:
+              type: *ref_3
+              state: *ref_6
+            quote:
+              breakup: *ref_4
+            payments: *ref_5
+  B2B International Logistics:
+    enum_set:
+      search:
+        context: &ref_11
+          domain:
+            - code: ONDC:LOG10
+              description: Domestic Logistics
               reference: <PR/Issue/Discussion Links md format text>
-            - code: ON-FULFILLMENT
-              description: about the enum
+            - code: ONDC:LOG11
+              description: International Logistics
               reference: <PR/Issue/Discussion Links md format text>
-            - code: POST-FULFILLMENT
-              description: about the enum
-              reference: <PR/Issue/Discussion Links md format text>
-          collected_by:
-            - code: BAP
-              description: Collected by BAP
-              reference: <PR/Issue/Discussion Links md format text>
-            - code: BPP
-              description: Collected by BPP
-              reference: <PR/Issue/Discussion Links md format text>
-            - code: SOR
-              description: Collected by Seller on Record
-              reference: <PR/Issue/Discussion Links md format text>
-  confirm:
-    context: *ref_2
-    message:
-      order:
-        fulfillment:
-          type: *ref_3
-        quote:
-          breakup: *ref_4
-        payments: *ref_5
-        status: &ref_7
-          - code: Created
-            description: about the enum
-            reference: <PR/Issue/Discussion Links md format text>
-          - code: Accepted
-            description: about the enum
-            reference: <PR/Issue/Discussion Links md format text>
-          - code: In-progress
-            description: about the enum
-            reference: <PR/Issue/Discussion Links md format text>
-          - code: Completed
-            description: about the enum
-            reference: <PR/Issue/Discussion Links md format text>
-          - code: Cancelled
-            description: about the enum
-            reference: <PR/Issue/Discussion Links md format text>
-  on_confirm:
-    context: *ref_2
-    message:
-      order:
-        fulfillments:
-          type: *ref_3
-          state: *ref_6
-        quote:
-          breakup: *ref_4
-        cancellation_terms:
-          fulfillment_state: *ref_6
-        payments: *ref_5
-        status: *ref_7
-  update:
-    context: *ref_2
-    message:
-      order:
-        payments: *ref_5
-  on_update:
-    context: *ref_2
-    message:
-      order:
-        fulfillments:
-          state: *ref_6
-          instructions: &ref_8
-            code:
-              - code: AWB_No
-                description: shipping bill (AWB number)
+        message:
+          intent:
+            category:
+              descriptor:
+                code: &ref_10
+                  - code: Surface_Delivery
+                    description: Surface Delivery
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Air_Delivery
+                    description: Air Delivery
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Ocean_Delivery
+                    description: Ocean Delivery
+                    reference: <PR/Issue/Discussion Links md format text>
+            fulfillments: &ref_9
+              type: &ref_12
+                - code: Delivery
+                  description: about the enum
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: Return
+                  description: about the enum
+                  reference: <PR/Issue/Discussion Links md format text>
+            tags:
+              Package_Dimesions:
+                unit:
+                  - code: centimeter
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: meter
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+              Package_Weight:
+                unit:
+                  - code: unit
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: gram
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: dozen
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: kilogram
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: tonne
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: litre
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: millilitre
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+              Package_Details:
+                Category:
+                  - code: Grocery
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: F&B
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Fashion
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: BPC
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Electronics
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Appliances
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Home & Kitchen
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Health & Wellness
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Pharma
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+      on_search:
+        message:
+          catalog:
+            fulfillments: *ref_9
+            providers:
+              categories:
+                descriptor:
+                  code: *ref_10
+      init:
+        context: *ref_11
+        message:
+          order:
+            fulfillments:
+              type: *ref_12
+      on_init:
+        context: *ref_11
+        message:
+          order:
+            fulfillments:
+              type: *ref_12
+            quote:
+              breakup: &ref_13
+                title:
+                  - code: delivery
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: tax
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Origin
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Freight
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Destination
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Custom_Clearance_Service_Origin
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Custom_Clearance_Service_Destination
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: rto
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: diff
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: tax_diff
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: delivery_diff
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: insurance
+                    description: about the enum
+                    reference: <PR/Issue/Discussion Links md format text>
+            cancellation_terms:
+              fulfillment_state: &ref_15
+                descriptor:
+                  code:
+                    - code: Pending
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: Packed
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: Pickup-approved
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: Pickup-rejected
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: Order-picked-up
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: In-transit
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: At-domestic-hub
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: Custom-cleared-domestic
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: Custom-rejected-domestic
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: Shipped
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: Reached-destination-country
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: Custom-cleared-destination
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: Custom-rejected-destination
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: At-destination-hub
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: Out-for-delivery
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: Order-delivered
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: Delivery-failed
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: RTO-Initiated
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: RTO-Delivered
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+                    - code: RTO-Disposed
+                      description: about the enum
+                      reference: <PR/Issue/Discussion Links md format text>
+            payments: &ref_14
+              type:
+                - code: ON-ORDER
+                  description: about the enum
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: ON-FULFILLMENT
+                  description: about the enum
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: POST-FULFILLMENT
+                  description: about the enum
+                  reference: <PR/Issue/Discussion Links md format text>
+              collected_by:
+                - code: BAP
+                  description: Collected by BAP
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: BPP
+                  description: Collected by BPP
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: SOR
+                  description: Collected by Seller on Record
+                  reference: <PR/Issue/Discussion Links md format text>
+      confirm:
+        context: *ref_11
+        message:
+          order:
+            fulfillment:
+              type: *ref_12
+            quote:
+              breakup: *ref_13
+            payments: *ref_14
+            status: &ref_16
+              - code: Created
+                description: about the enum
                 reference: <PR/Issue/Discussion Links md format text>
-              - code: ACC_No
-                description: If Account exists-Customer code
+              - code: Accepted
+                description: about the enum
                 reference: <PR/Issue/Discussion Links md format text>
-              - code: BKG_No
-                description: >-
-                  Booking reference number provided by LSP at the time of
-                  booking
+              - code: In-progress
+                description: about the enum
                 reference: <PR/Issue/Discussion Links md format text>
-              - code: GST_No
-                description: GST number
+              - code: Completed
+                description: about the enum
                 reference: <PR/Issue/Discussion Links md format text>
-        quote:
-          breakup: *ref_4
-        payments: *ref_5
-        status: *ref_7
-  status:
-    context: *ref_2
-  on_status:
-    context: *ref_2
-    message:
-      order:
-        fulfillments:
-          state: *ref_6
-          instructions: *ref_8
-        quote:
-          breakup: *ref_4
-        payments: *ref_5
-        status: *ref_7
-  cancel:
-    context: *ref_2
-  on_cancel:
-    context: *ref_2
-    message:
-      order:
-        fulfillments:
-          type: *ref_3
-          state: *ref_6
-        quote:
-          breakup: *ref_4
-        payments: *ref_5
+              - code: Cancelled
+                description: about the enum
+                reference: <PR/Issue/Discussion Links md format text>
+      on_confirm:
+        context: *ref_11
+        message:
+          order:
+            fulfillments:
+              type: *ref_12
+              state: *ref_15
+            quote:
+              breakup: *ref_13
+            cancellation_terms:
+              fulfillment_state: *ref_15
+            payments: *ref_14
+            status: *ref_16
+      update:
+        context: *ref_11
+        message:
+          order:
+            payments: *ref_14
+      on_update:
+        context: *ref_11
+        message:
+          order:
+            fulfillments:
+              state: *ref_15
+              instructions: &ref_17
+                code:
+                  - code: AWB_No
+                    description: shipping bill (AWB number)
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: ACC_No
+                    description: If Account exists-Customer code
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: BKG_No
+                    description: >-
+                      Booking reference number provided by LSP at the time of
+                      booking
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: GST_No
+                    description: GST number
+                    reference: <PR/Issue/Discussion Links md format text>
+            quote:
+              breakup: *ref_13
+            payments: *ref_14
+            status: *ref_16
+      status:
+        context: *ref_11
+      on_status:
+        context: *ref_11
+        message:
+          order:
+            fulfillments:
+              state: *ref_15
+              instructions: *ref_17
+            quote:
+              breakup: *ref_13
+            payments: *ref_14
+            status: *ref_16
+      cancel:
+        context: *ref_11
+      on_cancel:
+        context: *ref_11
+        message:
+          order:
+            fulfillments:
+              type: *ref_12
+              state: *ref_15
+            quote:
+              breakup: *ref_13
+            payments: *ref_14
 x-tags:
   search:
     message:
       intent:
-        fulfillments: &ref_9
+        fulfillments: &ref_18
           tags:
             - code: Delivery_Terms
               description: Define incoterms for Delivery here for internation logistics
@@ -2936,7 +3264,7 @@ x-tags:
                 the payment from buyer at the time of delivery.
               reference: <PR/Issue/Discussion Links md format text>
               required: required for COD orders
-              list: &ref_10
+              list: &ref_19
                 - code: Amount
                   description: Value of the collected amount
                   reference: <PR/Issue/Discussion Links md format text>
@@ -2945,12 +3273,12 @@ x-tags:
                     Information about the type of collection
                     details(ON_FULLFILLMENT)
                   reference: <PR/Issue/Discussion Links md format text>
-        tags: &ref_14
+        tags: &ref_23
           - code: Package_Weight
             description: Define package dead weight here
             reference: <PR/Issue/Discussion Links md format text>
             required: required
-            list: &ref_16
+            list: &ref_25
               - code: Unit
                 description: Define unit of package weight
                 reference: <PR/Issue/Discussion Links md format text>
@@ -2983,7 +3311,7 @@ x-tags:
             description: Define package LBH dimensions here
             required: required
             reference: <PR/Issue/Discussion Links md format text>
-            list: &ref_17
+            list: &ref_26
               - code: Unit
                 description: Define unit of package dimensions
                 reference: <PR/Issue/Discussion Links md format text>
@@ -3007,7 +3335,7 @@ x-tags:
             description: Define further details of package
             required: required
             reference: <PR/Issue/Discussion Links md format text>
-            list: &ref_18
+            list: &ref_27
               - code: Category
                 description: Define category of package
                 reference: <PR/Issue/Discussion Links md format text>
@@ -3067,7 +3395,7 @@ x-tags:
             description: Define terms if cold logistics is required
             required: optional
             reference: <PR/Issue/Discussion Links md format text>
-            list: &ref_19
+            list: &ref_28
               - code: Temp_Control
                 description: State true if require cold logistics
                 reference: <PR/Issue/Discussion Links md format text>
@@ -3133,8 +3461,8 @@ x-tags:
   init:
     message:
       order:
-        fulfillments: *ref_9
-        payments: &ref_11
+        fulfillments: *ref_18
+        payments: &ref_20
           tags:
             - code: Settlement_Details
               description: Define terms for Settlement Details Here
@@ -3171,18 +3499,18 @@ x-tags:
               description: Define terms for Collection Details Here
               required: required for COD orders
               reference: <PR/Issue/Discussion Links md format text>
-              list: *ref_10
+              list: *ref_19
   on_init:
     message:
       order:
-        fulfillments: *ref_9
-        payments: *ref_11
+        fulfillments: *ref_18
+        payments: *ref_20
         tags:
           - code: BPP_Terms
             description: Define BPP terms
             reference: <PR/Issue/Discussion Links md format text>
             required: required
-            list: &ref_12
+            list: &ref_21
               - code: Max_Liability
                 description: >-
                   max_liability is the maximum aggregate liability of either
@@ -3216,17 +3544,17 @@ x-tags:
               - code: Static_Terms
                 description: TLC and terms defined by the Logistics service provider
                 reference: <PR/Issue/Discussion Links md format text>
-  confirm: &ref_13
+  confirm: &ref_22
     message:
       order:
-        fulfillments: *ref_9
-        payments: *ref_11
+        fulfillments: *ref_18
+        payments: *ref_20
         tags:
           - code: BPP_Terms
             description: BPP terms sent by the seller app
             reference: <PR/Issue/Discussion Links md format text>
             required: required
-            list: *ref_12
+            list: *ref_21
           - code: BAP_Terms
             description: Acceptance to bpp terms
             reference: <PR/Issue/Discussion Links md format text>
@@ -3242,11 +3570,11 @@ x-tags:
                   - code: 'N'
                     description: Rejection of the seller terms
                     reference: <PR/Issue/Discussion Links md format text>
-  on_confirm: *ref_13
+  on_confirm: *ref_22
   update:
     message:
       order:
-        fulfillments: &ref_15
+        fulfillments: &ref_24
           tags:
             - code: Delivery_Terms
               description: Define terms for Delivery here
@@ -3294,33 +3622,33 @@ x-tags:
                 - code: Doc_Way_Bill_No
                   description: about the tag
                   reference: <PR/Issue/Discussion Links md format text>
-        tags: *ref_14
+        tags: *ref_23
   on_update:
     message:
       order:
-        fulfillments: *ref_15
-        payments: *ref_11
-        tags: &ref_20
+        fulfillments: *ref_24
+        payments: *ref_20
+        tags: &ref_29
           - code: Package_Weight
             description: Define package dead weight here
             reference: <PR/Issue/Discussion Links md format text>
             required: required
-            list: *ref_16
+            list: *ref_25
           - code: Package_Dimensions
             description: Define package LBH dimensions here
             required: required
             reference: <PR/Issue/Discussion Links md format text>
-            list: *ref_17
+            list: *ref_26
           - code: Package_Details
             description: Define further details of package
             required: required
             reference: <PR/Issue/Discussion Links md format text>
-            list: *ref_18
+            list: *ref_27
           - code: Cold_Logistics
             description: Define terms if cold logistics is required
             required: optional
             reference: <PR/Issue/Discussion Links md format text>
-            list: *ref_19
+            list: *ref_28
           - code: Package_Dimensions_Diff
             description: Difference in package dimesions identified
             reference: <PR/Issue/Discussion Links md format text>
@@ -3359,15 +3687,15 @@ x-tags:
   on_cancel:
     message:
       order:
-        fulfillments: *ref_15
-        payments: *ref_11
-        tags: *ref_20
+        fulfillments: *ref_24
+        payments: *ref_20
+        tags: *ref_29
   on_status:
     message:
       order:
-        fulfillments: *ref_15
-        payments: *ref_11
-        tags: *ref_20
+        fulfillments: *ref_24
+        payments: *ref_20
+        tags: *ref_29
 x-flows:
   - summary: B2B Domestic Logistics - Surface Delivery
     description: >-
@@ -3452,7 +3780,7 @@ x-flows:
           Search Logistics based on fulfilment start and end location + Product
           details.
         reference: if any
-        example: &ref_21
+        example: &ref_30
           summary: Search Logistics - Without Category
           description: Search for logistics without category
           value:
@@ -3599,7 +3927,7 @@ x-flows:
           Logistics service provider sends the catalog based on search + Sends
           the KYC Link.
         reference: if any
-        example: &ref_22
+        example: &ref_31
           summary: LSP sends catalog (Domestic Logistics)
           description: >-
             Logistics service provider sends the catalog based on search + Sends
@@ -5159,7 +5487,7 @@ x-flows:
         api: status
         description: Buyer requests for the order status update
         reference: if any
-        example: &ref_23
+        example: &ref_32
           summary: Logistics Buyer requests for status update
           description: null
           value:
@@ -5534,21 +5862,21 @@ x-flows:
           Search Logistics based on fulfilment start and end location + Product
           details.
         reference: if any
-        example: *ref_21
+        example: *ref_30
       - summary: LSP sends catalog - Surface and Air Cargo
         api: on_search
         description: >-
           Logistics service provider sends the catalog based on search + Sends
           the KYC Link.
         reference: if any
-        example: *ref_22
+        example: *ref_31
       - summary: Logistics Buyer initializes the order - Air Cargo.
         api: init
         description: >-
           Logistics Buyer fills the KYC form and sends the submission Id while
           initializing the order.
         reference: if any
-        example: &ref_24
+        example: &ref_33
           summary: Logistics Buyer initializes the order (Air Delivery)
           description: >-
             Logistics Buyer fills the KYC form and sends the submission Id while
@@ -5674,7 +6002,7 @@ x-flows:
           Logistics Provider updates the KYC as successful and sends the breakup
           of the quote.
         reference: if any
-        example: &ref_25
+        example: &ref_34
           summary: Response to order initialization - KYC Successful (Air Delivery)
           description: >-
             Logistics Provider updates the KYC as successful and sends the
@@ -5888,7 +6216,7 @@ x-flows:
         api: confirm
         description: Logistics buyer confirms the order.
         reference: if any
-        example: &ref_26
+        example: &ref_35
           summary: Logistics buyer confirms the order (Air Delivery)
           description: Logistics buyer confirms the order.
           value:
@@ -6138,7 +6466,7 @@ x-flows:
         api: on_confirm
         description: Logistics Provider accepts the order.
         reference: if any
-        example: &ref_27
+        example: &ref_36
           summary: Logistics Provider accepts the order (Air Delivery)
           description: Logistics Provider accepts the order.
           value:
@@ -6461,7 +6789,7 @@ x-flows:
         api: update
         description: Logistics Buyer updates RTS - Ready to Ship
         reference: if any
-        example: &ref_28
+        example: &ref_37
           summary: Logistics Buyer updates RTS (Air Delivery)
           description: null
           value:
@@ -6554,7 +6882,7 @@ x-flows:
         api: on_update
         description: LSP updates the weight and measurement differential charges.
         reference: if any
-        example: &ref_29
+        example: &ref_38
           summary: >-
             Solicited response to update - package measurement updated (Air
             Delivery)
@@ -6753,14 +7081,14 @@ x-flows:
         api: status
         description: Logistics Buyer requests for order status update
         reference: if any
-        example: *ref_23
+        example: *ref_32
       - summary: Responds to order status update - Order Picked up
         api: on_status
         description: >-
           Logistics provider updates the status of fulfillment as Order Picked
           up.
         reference: if any
-        example: &ref_30
+        example: &ref_39
           summary: Status updates
           description: >-
             Logistics provider updates the status of fulfillment as Order Picked
@@ -7037,60 +7365,60 @@ x-flows:
           Search Logistics based on fulfilment start and end location + Product
           details.
         reference: if any
-        example: *ref_21
+        example: *ref_30
       - summary: LSP sends catalog - Surface & Air Cargo
         api: on_search
         description: >-
           Logistics service provider sends the catalog based on search + Sends
           the KYC Link.
         reference: if any
-        example: *ref_22
+        example: *ref_31
       - summary: Logistics Buyer initializes the order.
         api: init
         description: >-
           Logistics Buyer fills the KYC form and sends the submission Id while
           initializing the order.
         reference: if any
-        example: *ref_24
+        example: *ref_33
       - summary: Response to order initialization - KYC Successful
         api: on_init
         description: >-
           Logistics Provider updates the KYC as successful and sends the breakup
           of the quote.
         reference: if any
-        example: *ref_25
+        example: *ref_34
       - summary: Logistics buyer confirms the order.
         api: confirm
         description: Logistics buyer confirms the order.
         reference: if any
-        example: *ref_26
+        example: *ref_35
       - summary: Logistics Provider accepts the order.
         api: on_confirm
         description: Logistics Provider accepts the order.
         reference: if any
-        example: *ref_27
+        example: *ref_36
       - summary: Logistics Buyer updates RTS
         api: update
         description: Logistics Buyer updates RTS - Ready to Ship
         reference: if any
-        example: *ref_28
+        example: *ref_37
       - summary: LSP updates the weight and measurement differential charges.
         api: on_update
         description: LSP updates the weight and measurement differential charges.
         reference: if any
-        example: *ref_29
+        example: *ref_38
       - summary: Request for order status update
         api: status
         description: Buyer requests for the order status update
         reference: if any
-        example: *ref_23
+        example: *ref_32
       - summary: Responds to order status update - Order Picked up
         api: on_status
         description: >-
           Seller app sends an on_status call to the buyer app informing about
           the current status of the order.
         reference: if any
-        example: *ref_30
+        example: *ref_39
       - summary: Buyer is not available so LSP cancels the order and triggers RTO
         api: on_cancel
         description: Seller app cancels the order by sending unsolicited on_cancel call
@@ -7809,7 +8137,7 @@ x-flows:
           Search intent sent by the buyer based on the start & end location +
           Product details.
         reference: if any
-        example: &ref_37
+        example: &ref_46
           summary: Search by category - Express Delivery
           description: null
           value:
@@ -7972,7 +8300,7 @@ x-flows:
           Logistics service provider sends the catalog based on search + Sends
           the KYC Link.
         reference: if any
-        example: &ref_31
+        example: &ref_40
           summary: LSP sends catalog (International Logistics)
           description: >-
             Logistics service provider sends the catalog based on search + Sends
@@ -8271,7 +8599,7 @@ x-flows:
           Logistics Buyer fills the KYC form and sends the submission Id while
           initializing the order.
         reference: if any
-        example: &ref_38
+        example: &ref_47
           summary: Logistics Buyer initializes the order.
           description: >-
             Logistics Buyer fills the KYC form and sends the submission Id while
@@ -8407,7 +8735,7 @@ x-flows:
           Logistics Provider updates the KYC as successful and sends the breakup
           of the quote.
         reference: if any
-        example: &ref_39
+        example: &ref_48
           summary: Response to order initialization - KYC Successful
           description: >-
             Logistics Provider updates the KYC as successful and sends the
@@ -8654,7 +8982,7 @@ x-flows:
         api: confirm
         description: Logistics buyer confirms the order.
         reference: if any
-        example: &ref_40
+        example: &ref_49
           summary: Logistics buyer confirms the order
           description: Logistics buyer confirms the order
           value:
@@ -8920,7 +9248,7 @@ x-flows:
         api: on_confirm
         description: Logistics Provider accepts the order.
         reference: if any
-        example: &ref_41
+        example: &ref_50
           summary: Logistics Provider accepts the order.
           description: Logistics Provider accepts the order.
           value:
@@ -9293,7 +9621,7 @@ x-flows:
         api: update
         description: Logistics Buyer updates RTS - Ready to Ship
         reference: if any
-        example: &ref_42
+        example: &ref_51
           summary: Logistics Buyer updates RTS
           description: null
           value:
@@ -9446,7 +9774,7 @@ x-flows:
           LSP updates the weight and measurement differential charges. - If
           Applicable
         reference: if any
-        example: &ref_43
+        example: &ref_52
           summary: Solicited response to update - package measurement updated
           description: null
           value:
@@ -9769,7 +10097,7 @@ x-flows:
         api: on_status
         description: LSP sends status updates
         reference: if any
-        example: &ref_32
+        example: &ref_41
           summary: Status updates
           description: >-
             Logistics provider updates the status of fulfillment as Order Picked
@@ -10075,7 +10403,7 @@ x-flows:
         api: on_status
         description: LSP sends status updates
         reference: if any
-        example: &ref_33
+        example: &ref_42
           summary: Status updates
           description: Logistics provider updates the status of fulfillment
           value:
@@ -10380,7 +10708,7 @@ x-flows:
         api: on_status
         description: LSP sends status updates
         reference: if any
-        example: &ref_34
+        example: &ref_43
           summary: Status updates
           description: Logistics provider updates the status of fulfillment
           value:
@@ -10685,7 +11013,7 @@ x-flows:
         api: status
         description: Logistics buyer requests for status update
         reference: if any
-        example: &ref_35
+        example: &ref_44
           summary: Logistics Buyer requests for status update
           description: null
           value:
@@ -10712,7 +11040,7 @@ x-flows:
         api: on_status
         description: LSP sends status updates
         reference: if any
-        example: &ref_36
+        example: &ref_45
           summary: Status updates
           description: Logistics provider updates the status of fulfillment
           value:
@@ -11260,7 +11588,7 @@ x-flows:
           Logistics service provider sends the catalog based on search + Sends
           the KYC Link.
         reference: if any
-        example: *ref_31
+        example: *ref_40
       - summary: Logistics Buyer initializes the order.
         api: init
         description: >-
@@ -12777,27 +13105,27 @@ x-flows:
         api: on_status
         description: LSP sends status updates
         reference: if any
-        example: *ref_32
+        example: *ref_41
       - summary: LSP sends status updates - Order Picked up
         api: on_status
         description: LSP sends status updates
         reference: if any
-        example: *ref_33
+        example: *ref_42
       - summary: LSP sends status updates - Domestic Custom Cleared
         api: on_status
         description: LSP sends status updates
         reference: if any
-        example: *ref_34
+        example: *ref_43
       - summary: Logistics buyer requests for status update
         api: status
         description: Logistics buyer requests for status update
         reference: if any
-        example: *ref_35
+        example: *ref_44
       - summary: LSP sends status updates - Order Delivered
         api: on_status
         description: LSP sends status updates
         reference: if any
-        example: *ref_36
+        example: *ref_45
   - summary: Logistics Buyer Cancellation
     description: >-
       The below flow shows the journey of Logistics buyer buying  logistics
@@ -12808,60 +13136,60 @@ x-flows:
         api: search
         description: Search intent sent by the buyer based on the category
         reference: if any
-        example: *ref_37
+        example: *ref_46
       - summary: LSP sends catalog
         api: on_search
         description: >-
           Logistics service provider sends the catalog based on search + Sends
           the KYC Link.
         reference: if any
-        example: *ref_31
+        example: *ref_40
       - summary: Logistics Buyer initializes the order.
         api: init
         description: >-
           Logistics Buyer fills the KYC form and sends the submission Id while
           initializing the order.
         reference: if any
-        example: *ref_38
+        example: *ref_47
       - summary: Response to order initialization - KYC Successful
         api: on_init
         description: >-
           Logistics Provider updates the KYC as successful and sends the breakup
           of the quote.
         reference: if any
-        example: *ref_39
+        example: *ref_48
       - summary: Logistics buyer confirms the order.
         api: confirm
         description: Logistics buyer confirms the order.
         reference: if any
-        example: *ref_40
+        example: *ref_49
       - summary: Logistics Provider accepts the order.
         api: on_confirm
         description: Logistics Provider accepts the order.
         reference: if any
-        example: *ref_41
+        example: *ref_50
       - summary: Logistics Buyer updates RTS
         api: update
         description: Logistics Buyer updates RTS - Ready to Ship
         reference: if any
-        example: *ref_42
+        example: *ref_51
       - summary: LSP updates the weight and measurement differential charges.
         api: on_update
         description: LSP updates the weight and measurement differential charges.
         reference: if any
-        example: *ref_43
+        example: *ref_52
       - summary: Request for order status update
         api: status
         description: Buyer requests for the order status update
         reference: if any
-        example: *ref_35
+        example: *ref_44
       - summary: Responds to order status update - Pickup Approved
         api: on_status
         description: >-
           Seller app sends an on_status call to the buyer app informing about
           the current status of the order.
         reference: if any
-        example: *ref_32
+        example: *ref_41
       - summary: Logistics Buyer cancels the order
         api: cancel
         description: Logistics Buyer cancels the order
