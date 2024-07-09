@@ -36,7 +36,7 @@ value:
             code: P2H2P
       fulfillments:
         - id: '1'
-          type: DELIVERY
+          type: Delivery
           agent:
             person:
               name: Ramu
@@ -123,7 +123,7 @@ value:
             currency: INR
             bank_account_number: xxxxxxxx
             virtual_payment_address: xxx@xxxx
-          type: ON-FULFILMENT
+          type: ON-FULFILLMENT
           tags:
             - descriptor:
                 code: Settlement_Details
@@ -164,7 +164,7 @@ value:
               value: kilogram
             - descriptor:
                 code: Value
-              Value: '5'
+              value: '5'
         - descriptor:
             code: Package_Dimensions
           list:

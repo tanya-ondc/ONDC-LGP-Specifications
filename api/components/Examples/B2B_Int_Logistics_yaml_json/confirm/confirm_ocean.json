@@ -167,7 +167,7 @@
             "item": {
               "id": "I1"
             },
-            "title": "Clearance_Service_Origin",
+            "title": "Custom_Clearance_Service_Origin",
             "price": {
               "currency": "INR",
               "value": "500.0"
@@ -177,7 +177,7 @@
             "item": {
               "id": "I1"
             },
-            "title": "Clearance_Service_Destination",
+            "title": "Custom_Clearance_Service_Destination",
             "price": {
               "currency": "INR",
               "value": "500.0"
@@ -281,7 +281,7 @@
               "descriptor": {
                 "code": "Value"
               },
-              "Value": "5"
+              "value": "5"
             }
           ]
         },

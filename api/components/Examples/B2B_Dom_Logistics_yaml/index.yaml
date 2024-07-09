@@ -1,7 +1,7 @@
 search:
   examples:
-    - $ref: ./search/search_by_Express_category.yaml
-    - $ref: ./search/search_by_Standard_category.yaml
+    - $ref: ./search/search_by_surface_delivery.yaml
+    - $ref: ./search/search_by_air_delivery.yaml
     - $ref: ./search/search_without_category.yaml
 init:
   examples:
