@@ -24,7 +24,7 @@ message:
       name: LSP Aggregator Inc
       tags:
         - descriptor:
-            code: BPP_TERMS
+            code: BPP_Terms
           list:
             - descriptor:
                 code: Static_Terms
