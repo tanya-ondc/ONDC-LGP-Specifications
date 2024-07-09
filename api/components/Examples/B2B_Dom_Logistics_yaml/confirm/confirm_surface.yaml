@@ -163,7 +163,7 @@ value:
               value: kilogram
             - descriptor:
                 code: Value
-              Value: '5'
+              value: '5'
         - descriptor:
             code: Package_Dimensions
           list:

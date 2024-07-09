@@ -1,13 +1,13 @@
-summary: Search by category - Express Delivery
+summary: Search by Category - Express Delivery
 description: 
 value:
   context:
-    domain: ONDC:LOG11
+    domain: ONDC:LOG10
     location:
       city:
-        code: UN:SIN
+        code: std:080
       country:
-        code: SGP
+        code: IND
     action: search
     version: 2.0.0
     bap_id: logistics_buyer.com
@@ -20,7 +20,7 @@ value:
     intent:
       category:
         descriptor:
-          code: Express_Delivery
+          code: Surface_Delivery
       provider:
         time:
           days: 1,2,3,4,5,6,7
@@ -42,24 +42,14 @@ value:
               area_code: '560041'
             time:
               range:
-                start: '2023-10-23T10:00:00.000Z'
-                end: '2023-10-25T10:30:00.000Z'
+                start: '2023-02-03T10:00:00.000Z'
+                end: '2023-02-03T10:30:00.000Z'
           - id: L2
             parent_stop_id: L1
             type: end
             location:
-              gps: 1.3806217468119772, 103.74636438437074
-              area_code: '680230'
-        tags:
-          descriptor:
-            code: Delivery_Terms
-          list:
-            - descriptor:
-                code: INCOTERMS
-              value: CIF
-            - descriptor:
-                code: NAMED_PLACE_OF_DELIVERY
-              value: UN:SGSIN
+              gps: 12.342769,77.9129423
+              area_code: '636806'
       payment:
         collected_by: BPP
         tags:
@@ -81,7 +71,7 @@ value:
               value: kilogram
             - descriptor:
                 code: Value
-              Value: '5'
+              value: '5'
         - descriptor:
             code: Package_Dimensions
           list:
@@ -133,9 +123,6 @@ value:
             - descriptor:
                 code: Shipment_Value
               value: '50000'
-            - descriptor:
-                code: HSN_Code
-              value: xxxxxxx
             - descriptor:
                 code: Transit_Risk_Owner
               value: 'Carrier'

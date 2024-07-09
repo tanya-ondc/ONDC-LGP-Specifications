@@ -49,7 +49,7 @@
       "fulfillments": [
         {
           "id": "1",
-          "type": "DELIVERY",
+          "type": "Delivery",
           "agent": {
             "person": {
               "name": "Ramu"
@@ -176,7 +176,7 @@
             "bank_account_number": "xxxxxxxx",
             "virtual_payment_address": "xxx@xxxx"
           },
-          "type": "ON-FULFILMENT",
+          "type": "ON-FULFILLMENT",
           "tags": [
             {
               "descriptor": {
@@ -259,7 +259,7 @@
               "descriptor": {
                 "code": "Value"
               },
-              "Value": "5"
+              "value": "5"
             }
           ]
         },

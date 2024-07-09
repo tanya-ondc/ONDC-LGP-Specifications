@@ -27,7 +27,7 @@
         "tags": [
           {
             "descriptor": {
-              "code": "BPP_Terms"
+              "code": "BPP_TERMS"
             },
             "list": [
               {
@@ -93,7 +93,7 @@
             {
               "id": "C1",
               "descriptor": {
-                "code": "Standard_Delivery"
+                "code": "Surface_Delivery"
               },
               "time": {
                 "label": "TAT",
@@ -104,7 +104,7 @@
             {
               "id": "C2",
               "descriptor": {
-                "code": "Express_Delivery"
+                "code": "Surface_Delivery"
               },
               "time": {
                 "label": "TAT",

@@ -186,18 +186,6 @@ value:
                 value: ON-FULFILLMENT
       tags:
         - descriptor:
-            code: Quantity
-          list:
-            - descriptor:
-                code: count
-              value: '1000'
-            - descriptor:
-                code: MEASURE_UNIT
-              value: kilogram
-            - descriptor:
-                code: MEASURE_VALUE
-              value: '1000'
-        - descriptor:
             code: Package_Dimensions
           list:
             - descriptor:
@@ -218,12 +206,6 @@ value:
             - descriptor:
                 code: Category
               value: Grocery
-            - descriptor:
-                code: UNIT_PRICE
-              value: '100'
-            - descriptor:
-                code: ITEM_PRICE
-              value: '100000'
             - descriptor:
                 code: Dangerous_Goods
               value: 'true'
