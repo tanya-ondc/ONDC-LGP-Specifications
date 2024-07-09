@@ -7614,26 +7614,29 @@ x-flows:
                     state:
                       descriptor:
                         code: RTO-Initiated
-                    start:
-                      location:
-                        gps: 12.342769,77.9129423
-                        map_url: ''
-                        address: My house or building name, street name
-                        city: Bengaluru
-                        state: Karnataka
-                        country: India
-                        area_code: '560043'
-                      time:
-                        timestamp: '2023-06-07T14:00:00.000Z'
-                    end:
-                      location:
-                        gps: 12.4535445,77.9283792
-                        area_code: '560041'
-                        map_url: ''
-                        address: My house or building name, street name
-                        city: Bengaluru
-                        state: Karnataka
-                        country: India
+                    stops:
+                      - id: L2
+                        type: start
+                        location:
+                          gps: 12.342769,77.9129423
+                          map_url: ''
+                          address: My house or building name, street name
+                          city: Bengaluru
+                          state: Karnataka
+                          country: India
+                          area_code: '560043'
+                        time:
+                          timestamp: '2023-06-07T14:00:00.000Z'
+                      - id: L1
+                        type: end
+                        location:
+                          gps: 12.4535445,77.9283792
+                          area_code: '560041'
+                          map_url: ''
+                          address: My house or building name, street name
+                          city: Bengaluru
+                          state: Karnataka
+                          country: India
                 billing:
                   name: ONDC sellerapp
                   address: My house or building name
@@ -19165,26 +19168,29 @@ x-examples:
                       state:
                         descriptor:
                           code: RTO-Initiated
-                      start:
-                        location:
-                          gps: 12.342769,77.9129423
-                          map_url: ''
-                          address: My house or building name, street name
-                          city: Bengaluru
-                          state: Karnataka
-                          country: India
-                          area_code: '560043'
-                        time:
-                          timestamp: '2023-06-07T14:00:00.000Z'
-                      end:
-                        location:
-                          gps: 12.4535445,77.9283792
-                          area_code: '560041'
-                          map_url: ''
-                          address: My house or building name, street name
-                          city: Bengaluru
-                          state: Karnataka
-                          country: India
+                      stops:
+                        - id: L2
+                          type: start
+                          location:
+                            gps: 12.342769,77.9129423
+                            map_url: ''
+                            address: My house or building name, street name
+                            city: Bengaluru
+                            state: Karnataka
+                            country: India
+                            area_code: '560043'
+                          time:
+                            timestamp: '2023-06-07T14:00:00.000Z'
+                        - id: L1
+                          type: end
+                          location:
+                            gps: 12.4535445,77.9283792
+                            area_code: '560041'
+                            map_url: ''
+                            address: My house or building name, street name
+                            city: Bengaluru
+                            state: Karnataka
+                            country: India
                   billing:
                     name: ONDC sellerapp
                     address: My house or building name
@@ -19484,26 +19490,29 @@ x-examples:
                       state:
                         descriptor:
                           code: RTO-Initiated
-                      start:
-                        location:
-                          gps: 12.342769,77.9129423
-                          map_url: ''
-                          address: My house or building name, street name
-                          city: Bengaluru
-                          state: Karnataka
-                          country: India
-                          area_code: '560043'
-                        time:
-                          timestamp: '2023-06-07T14:00:00.000Z'
-                      end:
-                        location:
-                          gps: 12.4535445,77.9283792
-                          area_code: '560041'
-                          map_url: ''
-                          address: My house or building name, street name
-                          city: Bengaluru
-                          state: Karnataka
-                          country: India
+                      stops:
+                        - id: L2
+                          type: start
+                          location:
+                            gps: 12.342769,77.9129423
+                            map_url: ''
+                            address: My house or building name, street name
+                            city: Bengaluru
+                            state: Karnataka
+                            country: India
+                            area_code: '560043'
+                          time:
+                            timestamp: '2023-06-07T14:00:00.000Z'
+                        - id: L1
+                          type: end
+                          location:
+                            gps: 12.4535445,77.9283792
+                            area_code: '560041'
+                            map_url: ''
+                            address: My house or building name, street name
+                            city: Bengaluru
+                            state: Karnataka
+                            country: India
                   billing:
                     name: ONDC sellerapp
                     address: My house or building name
