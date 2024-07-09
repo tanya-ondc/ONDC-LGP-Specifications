@@ -242,7 +242,7 @@ value:
               value: kilogram
             - descriptor:
                 code: Value
-              Value: '50'
+              value: '50'
         - descriptor:
             code: Package_Dimensions
           list:

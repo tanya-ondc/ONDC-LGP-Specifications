@@ -22,7 +22,7 @@
     "intent": {
       "category": {
         "descriptor": {
-          "code": "EXPRESS_DELIVERY"
+          "code": "Surface_Delivery"
         }
       },
       "provider": {
@@ -109,7 +109,7 @@
               "descriptor": {
                 "code": "Value"
               },
-              "Value": "5"
+              "value": "5"
             }
           ]
         },

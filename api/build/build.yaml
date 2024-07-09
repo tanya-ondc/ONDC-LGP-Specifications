@@ -3851,7 +3851,7 @@ x-flows:
                         value: kilogram
                       - descriptor:
                           code: Value
-                        Value: '5'
+                        value: '5'
                   - descriptor:
                       code: Package_Dimensions
                     list:
@@ -3933,336 +3933,336 @@ x-flows:
             Logistics service provider sends the catalog based on search + Sends
             the KYC Link.
           value:
-            context:
-              domain: ONDC:LOG10
-              location:
-                city:
-                  code: std:080
-                country:
-                  code: IND
-              action: on_search
-              version: 2.0.0
-              bap_id: logistics_buyer.com
-              bap_uri: https://logistics_buyer.com/ondc
-              bpp_id: logistics_seller.com
-              bpp_uri: https://logistics_seller.com/ondc
-              transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
-              message_id: '1755281254860'
-              timestamp: '2023-10-17T21:10:00.000Z'
-              ttl: PT30S
-            message:
-              catalog:
-                descriptor:
-                  name: LSP Aggregator Inc
-                  tags:
-                    - descriptor:
-                        code: BPP_Terms
-                      list:
+            context: null
+            domain: ONDC:LOG10
+            location:
+              city:
+                code: std:080
+              country:
+                code: IND
+            action: on_search
+            version: 2.0.0
+            bap_id: logistics_buyer.com
+            bap_uri: https://logistics_buyer.com/ondc
+            bpp_id: logistics_seller.com
+            bpp_uri: https://logistics_seller.com/ondc
+            transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
+            message_id: '1755281254860'
+            timestamp: '2023-10-17T21:10:00.000Z'
+            ttl: PT30S
+          message:
+            catalog:
+              descriptor:
+                name: LSP Aggregator Inc
+                tags:
+                  - descriptor:
+                      code: BPP_Terms
+                    list:
+                      - descriptor:
+                          code: Static_Terms
+                        value: ''
+                      - descriptor:
+                          code: Static_Terms_New
+                        value: >-
+                          https://github.com/ONDC-Official/NP-Static-Terms/lspNP_LSP/1.0/tc.pdf
+                      - descriptor:
+                          code: Effective_Date
+                        value: '2023-10-01T00:00:00.000Z'
+                  - descriptor:
+                      code: KYC
+                    list:
+                      - descriptor:
+                          code: url
+                        value: https://lsp.com/xxx/kyc
+                      - descriptor:
+                          code: required
+                        value: 'true'
+              fulfillments:
+                - id: '1'
+                  type: Delivery
+                - id: '2'
+                  type: RTO
+              providers:
+                - id: P1
+                  descriptor:
+                    name: Courier Inc
+                    short_desc: Courier Inc
+                    long_desc: Courier Inc
+                  categories:
+                    - id: C1
+                      descriptor:
+                        code: Surface_Delivery
+                      time:
+                        label: TAT
+                        duration: P7D
+                        timestamp: '2023-10-24'
+                    - id: C2
+                      descriptor:
+                        code: Air_Delivery
+                      time:
+                        label: TAT
+                        duration: P4D
+                        timestamp: '2023-10-21'
+                  locations:
+                    - id: L1
+                      gps: 12.967555,77.749666
+                      address:
+                        street: Jayanagar 4th Block
+                        city: Bengaluru
+                        area_code: '560076'
+                        state: KA
+                  items:
+                    - id: I1
+                      parent_item_id: ''
+                      category_ids:
+                        - C1
+                      fulfillment_ids:
+                        - '1'
+                      descriptor:
+                        code: P2H2P
+                        name: Road Delivery
+                        short_desc: Surface Delivery
+                        long_desc: Surface Delivery
+                      price:
+                        currency: INR
+                        value: '4000.0'
+                      time:
+                        label: TAT
+                        duration: P7D
+                        timestamp: '2023-10-24T21:00:00.000Z'
+                      tags:
                         - descriptor:
-                            code: Static_Terms
-                          value: ''
+                            code: Cargo_Details
+                          list:
+                            - descriptor:
+                                code: Delivery_Mode
+                              value: Road
+                            - descriptor:
+                                code: Vehicle_Type
+                              value: Truck
+                            - descriptor:
+                                code: Vehicle_Size
+                              value: 21Ft
+                            - descriptor:
+                                code: Load_Type
+                              value: FTL
+                    - id: I11
+                      parent_item_id: ''
+                      category_ids:
+                        - C1
+                      fulfillment_ids:
+                        - '1'
+                      descriptor:
+                        code: P2H2P
+                        name: Road Delivery
+                        short_desc: Surface Delivery
+                        long_desc: Surface Delivery
+                      price:
+                        currency: INR
+                        value: '4000.0'
+                      time:
+                        label: TAT
+                        duration: P7D
+                        timestamp: '2023-10-24T21:00:00.000Z'
+                      tags:
                         - descriptor:
-                            code: Static_Terms_New
-                          value: >-
-                            https://github.com/ONDC-Official/NP-Static-Terms/lspNP_LSP/1.0/tc.pdf
+                            code: Cargo_Details
+                          list:
+                            - descriptor:
+                                code: Delivery_Mode
+                              value: Road
+                            - descriptor:
+                                code: Vehicle_Type
+                              value: Truck
+                            - descriptor:
+                                code: Vehicle_Size
+                              value: 21Ft
+                            - descriptor:
+                                code: Load_Type
+                              value: PTL
+                    - id: I2
+                      parent_item_id: I1
+                      category_ids:
+                        - C1
+                      fulfillment_ids:
+                        - '2'
+                      descriptor:
+                        code: P2H2P
+                        name: RTO quote
+                        short_desc: RTO quote
+                        long_desc: RTO quote
+                      price:
+                        currency: INR
+                        value: '2000.0'
+                      time:
+                        label: TAT
+                        duration: P7D
+                        timestamp: '2023-10-24T21:00:00.000Z'
+                    - id: I22
+                      parent_item_id: I11
+                      category_ids:
+                        - C1
+                      fulfillment_ids:
+                        - '2'
+                      descriptor:
+                        code: P2H2P
+                        name: RTO quote
+                        short_desc: RTO quote
+                        long_desc: RTO quote
+                      price:
+                        currency: INR
+                        value: '2000.0'
+                      time:
+                        label: TAT
+                        duration: P7D
+                        timestamp: '2023-10-24T21:00:00.000Z'
+                    - id: I21
+                      parent_item_id: ''
+                      category_ids:
+                        - C1
+                      fulfillment_ids:
+                        - '1'
+                      descriptor:
+                        code: P2H2P
+                        name: Rail Delivery
+                        short_desc: Surface Delivery
+                        long_desc: Surface Delivery
+                      price:
+                        currency: INR
+                        value: '3000.0'
+                      time:
+                        label: TAT
+                        duration: P6D
+                        timestamp: '2023-10-23T21:00:00.000Z'
+                      tags:
                         - descriptor:
-                            code: Effective_Date
-                          value: '2023-10-01T00:00:00.000Z'
-                    - descriptor:
-                        code: KYC
-                      list:
+                            code: Cargo_Details
+                          list:
+                            - descriptor:
+                                code: Delivery_Mode
+                              value: Rail
+                    - id: I23
+                      parent_item_id: I21
+                      category_ids:
+                        - C1
+                      fulfillment_ids:
+                        - '2'
+                      descriptor:
+                        code: P2H2P
+                        name: RTO quote
+                        short_desc: RTO quote
+                        long_desc: RTO quote
+                      price:
+                        currency: INR
+                        value: '2000.0'
+                      time:
+                        label: TAT
+                        duration: P6D
+                        timestamp: '2023-10-23T21:00:00.000Z'
+                    - id: I3
+                      parent_item_id: ''
+                      category_ids:
+                        - C2
+                      fulfillment_ids:
+                        - '1'
+                      descriptor:
+                        code: P2H2P
+                        name: Air Delivery
+                        short_desc: Air Delivery
+                        long_desc: Air Delivery
+                      price:
+                        currency: INR
+                        value: '6000.0'
+                      time:
+                        label: TAT
+                        duration: P4D
+                        timestamp: '2023-10-21T21:00:00.000Z'
+                      tags:
                         - descriptor:
-                            code: url
-                          value: https://lsp.com/xxx/kyc
+                            code: Cargo_Details
+                          list:
+                            - descriptor:
+                                code: Delivery_Mode
+                              value: Air
+                            - descriptor:
+                                code: Vehicle_Type
+                              value: Container
+                            - descriptor:
+                                code: Vehicle_Size
+                              value: 24Ft
+                            - descriptor:
+                                code: Load_Type
+                              value: FCL
+                    - id: I33
+                      parent_item_id: ''
+                      category_ids:
+                        - C2
+                      fulfillment_ids:
+                        - '1'
+                      descriptor:
+                        code: P2H2P
+                        name: Air Delivery
+                        short_desc: Air Delivery
+                        long_desc: Air Delivery
+                      price:
+                        currency: INR
+                        value: '6000.0'
+                      time:
+                        label: TAT
+                        duration: P4D
+                        timestamp: '2023-10-21T21:00:00.000Z'
+                      tags:
                         - descriptor:
-                            code: required
-                          value: 'true'
-                fulfillments:
-                  - id: '1'
-                    type: Delivery
-                  - id: '2'
-                    type: RTO
-                providers:
-                  - id: P1
-                    descriptor:
-                      name: Courier Inc
-                      short_desc: Courier Inc
-                      long_desc: Courier Inc
-                    categories:
-                      - id: C1
-                        descriptor:
-                          code: Surface_Delivery
-                        time:
-                          label: TAT
-                          duration: P7D
-                          timestamp: '2023-10-24'
-                      - id: C2
-                        descriptor:
-                          code: Air_Delivery
-                        time:
-                          label: TAT
-                          duration: P4D
-                          timestamp: '2023-10-21'
-                    locations:
-                      - id: L1
-                        gps: 12.967555,77.749666
-                        address:
-                          street: Jayanagar 4th Block
-                          city: Bengaluru
-                          area_code: '560076'
-                          state: KA
-                    items:
-                      - id: I1
-                        parent_item_id: ''
-                        category_ids:
-                          - C1
-                        fulfillment_ids:
-                          - '1'
-                        descriptor:
-                          code: P2H2P
-                          name: Road Delivery
-                          short_desc: Surface Delivery
-                          long_desc: Surface Delivery
-                        price:
-                          currency: INR
-                          value: '4000.0'
-                        time:
-                          label: TAT
-                          duration: P7D
-                          timestamp: '2023-10-24T21:00:00.000Z'
-                        tags:
-                          - descriptor:
-                              code: Cargo_Details
-                            list:
-                              - descriptor:
-                                  code: Delivery_Mode
-                                value: Road
-                              - descriptor:
-                                  code: Vehicle_Type
-                                value: Truck
-                              - descriptor:
-                                  code: Vehicle_Size
-                                value: 21Ft
-                              - descriptor:
-                                  code: Load_Type
-                                value: FTL
-                      - id: I11
-                        parent_item_id: ''
-                        category_ids:
-                          - C1
-                        fulfillment_ids:
-                          - '1'
-                        descriptor:
-                          code: P2H2P
-                          name: Road Delivery
-                          short_desc: Surface Delivery
-                          long_desc: Surface Delivery
-                        price:
-                          currency: INR
-                          value: '4000.0'
-                        time:
-                          label: TAT
-                          duration: P7D
-                          timestamp: '2023-10-24T21:00:00.000Z'
-                        tags:
-                          - descriptor:
-                              code: Cargo_Details
-                            list:
-                              - descriptor:
-                                  code: Delivery_Mode
-                                value: Road
-                              - descriptor:
-                                  code: Vehicle_Type
-                                value: Truck
-                              - descriptor:
-                                  code: Vehicle_Size
-                                value: 21Ft
-                              - descriptor:
-                                  code: Load_Type
-                                value: PTL
-                      - id: I2
-                        parent_item_id: I1
-                        category_ids:
-                          - C1
-                        fulfillment_ids:
-                          - '2'
-                        descriptor:
-                          code: P2H2P
-                          name: RTO quote
-                          short_desc: RTO quote
-                          long_desc: RTO quote
-                        price:
-                          currency: INR
-                          value: '2000.0'
-                        time:
-                          label: TAT
-                          duration: P7D
-                          timestamp: '2023-10-24T21:00:00.000Z'
-                      - id: I22
-                        parent_item_id: I11
-                        category_ids:
-                          - C1
-                        fulfillment_ids:
-                          - '2'
-                        descriptor:
-                          code: P2H2P
-                          name: RTO quote
-                          short_desc: RTO quote
-                          long_desc: RTO quote
-                        price:
-                          currency: INR
-                          value: '2000.0'
-                        time:
-                          label: TAT
-                          duration: P7D
-                          timestamp: '2023-10-24T21:00:00.000Z'
-                      - id: I21
-                        parent_item_id: ''
-                        category_ids:
-                          - C1
-                        fulfillment_ids:
-                          - '1'
-                        descriptor:
-                          code: P2H2P
-                          name: Rail Delivery
-                          short_desc: Surface Delivery
-                          long_desc: Surface Delivery
-                        price:
-                          currency: INR
-                          value: '3000.0'
-                        time:
-                          label: TAT
-                          duration: P6D
-                          timestamp: '2023-10-23T21:00:00.000Z'
-                        tags:
-                          - descriptor:
-                              code: Cargo_Details
-                            list:
-                              - descriptor:
-                                  code: Delivery_Mode
-                                value: Rail
-                      - id: I23
-                        parent_item_id: I21
-                        category_ids:
-                          - C1
-                        fulfillment_ids:
-                          - '2'
-                        descriptor:
-                          code: P2H2P
-                          name: RTO quote
-                          short_desc: RTO quote
-                          long_desc: RTO quote
-                        price:
-                          currency: INR
-                          value: '2000.0'
-                        time:
-                          label: TAT
-                          duration: P6D
-                          timestamp: '2023-10-23T21:00:00.000Z'
-                      - id: I3
-                        parent_item_id: ''
-                        category_ids:
-                          - C2
-                        fulfillment_ids:
-                          - '1'
-                        descriptor:
-                          code: P2H2P
-                          name: Air Delivery
-                          short_desc: Air Delivery
-                          long_desc: Air Delivery
-                        price:
-                          currency: INR
-                          value: '6000.0'
-                        time:
-                          label: TAT
-                          duration: P4D
-                          timestamp: '2023-10-21T21:00:00.000Z'
-                        tags:
-                          - descriptor:
-                              code: Cargo_Details
-                            list:
-                              - descriptor:
-                                  code: Delivery_Mode
-                                value: Air
-                              - descriptor:
-                                  code: Vehicle_Type
-                                value: Container
-                              - descriptor:
-                                  code: Vehicle_Size
-                                value: 24Ft
-                              - descriptor:
-                                  code: Load_Type
-                                value: FCL
-                      - id: I33
-                        parent_item_id: ''
-                        category_ids:
-                          - C2
-                        fulfillment_ids:
-                          - '1'
-                        descriptor:
-                          code: P2H2P
-                          name: Air Delivery
-                          short_desc: Air Delivery
-                          long_desc: Air Delivery
-                        price:
-                          currency: INR
-                          value: '6000.0'
-                        time:
-                          label: TAT
-                          duration: P4D
-                          timestamp: '2023-10-21T21:00:00.000Z'
-                        tags:
-                          - descriptor:
-                              code: Cargo_Details
-                            list:
-                              - descriptor:
-                                  code: Delivery_Mode
-                                value: Air
-                              - descriptor:
-                                  code: Vehicle_Type
-                                value: Container
-                              - descriptor:
-                                  code: Vehicle_Size
-                                value: 22Ft
-                              - descriptor:
-                                  code: Load_Type
-                                value: LCL
-                      - id: I4
-                        parent_item_id: I3
-                        category_ids:
-                          - C2
-                        fulfillment_ids:
-                          - '2'
-                        descriptor:
-                          code: P2H2P
-                          name: RTO quote
-                          short_desc: RTO quote
-                          long_desc: RTO quote
-                        price:
-                          currency: INR
-                          value: '3000.0'
-                        time:
-                          label: TAT
-                          duration: P4D
-                          timestamp: '2023-10-21T21:00:00.000Z'
-                      - id: I44
-                        parent_item_id: I33
-                        category_ids:
-                          - C2
-                        fulfillment_ids:
-                          - '2'
-                        descriptor:
-                          code: P2H2P
-                          name: RTO quote
-                          short_desc: RTO quote
-                          long_desc: RTO quote
-                        price:
-                          currency: INR
-                          value: '3000.0'
-                        time:
-                          label: TAT
-                          duration: P4D
-                          timestamp: '2023-10-21T21:00:00.000Z'
+                            code: Cargo_Details
+                          list:
+                            - descriptor:
+                                code: Delivery_Mode
+                              value: Air
+                            - descriptor:
+                                code: Vehicle_Type
+                              value: Container
+                            - descriptor:
+                                code: Vehicle_Size
+                              value: 22Ft
+                            - descriptor:
+                                code: Load_Type
+                              value: LCL
+                    - id: I4
+                      parent_item_id: I3
+                      category_ids:
+                        - C2
+                      fulfillment_ids:
+                        - '2'
+                      descriptor:
+                        code: P2H2P
+                        name: RTO quote
+                        short_desc: RTO quote
+                        long_desc: RTO quote
+                      price:
+                        currency: INR
+                        value: '3000.0'
+                      time:
+                        label: TAT
+                        duration: P4D
+                        timestamp: '2023-10-21T21:00:00.000Z'
+                    - id: I44
+                      parent_item_id: I33
+                      category_ids:
+                        - C2
+                      fulfillment_ids:
+                        - '2'
+                      descriptor:
+                        code: P2H2P
+                        name: RTO quote
+                        short_desc: RTO quote
+                        long_desc: RTO quote
+                      price:
+                        currency: INR
+                        value: '3000.0'
+                      time:
+                        label: TAT
+                        duration: P4D
+                        timestamp: '2023-10-21T21:00:00.000Z'
       - summary: Logistics Buyer initializes the order.
         api: init
         description: >-
@@ -4776,7 +4776,7 @@ x-flows:
                         value: kilogram
                       - descriptor:
                           code: Value
-                        Value: '5'
+                        value: '5'
                   - descriptor:
                       code: Package_Dimensions
                     list:
@@ -5103,7 +5103,7 @@ x-flows:
                         value: kilogram
                       - descriptor:
                           code: Value
-                        Value: '50'
+                        value: '50'
                   - descriptor:
                       code: Package_Dimensions
                     list:
@@ -5721,7 +5721,7 @@ x-flows:
                         value: kilogram
                       - descriptor:
                           code: Value
-                        Value: '5'
+                        value: '5'
                   - descriptor:
                       code: Package_Dimensions
                     list:
@@ -6255,7 +6255,7 @@ x-flows:
                       code: P2H2P
                 fulfillments:
                   - id: '1'
-                    type: DELIVERY
+                    type: Delivery
                     agent:
                       person:
                         name: Ramu
@@ -6342,7 +6342,7 @@ x-flows:
                       currency: INR
                       bank_account_number: xxxxxxxx
                       virtual_payment_address: xxx@xxxx
-                    type: ON-FULFILMENT
+                    type: ON-FULFILLMENT
                     tags:
                       - descriptor:
                           code: Settlement_Details
@@ -6383,7 +6383,7 @@ x-flows:
                         value: kilogram
                       - descriptor:
                           code: Value
-                        Value: '5'
+                        value: '5'
                   - descriptor:
                       code: Package_Dimensions
                     list:
@@ -6706,7 +6706,7 @@ x-flows:
                         value: kilogram
                       - descriptor:
                           code: Value
-                        Value: '50'
+                        value: '50'
                   - descriptor:
                       code: Package_Dimensions
                     list:
@@ -7292,7 +7292,7 @@ x-flows:
                         value: kilogram
                       - descriptor:
                           code: Value
-                        Value: '5'
+                        value: '5'
                   - descriptor:
                       code: Package_Dimensions
                     list:
@@ -7689,18 +7689,6 @@ x-flows:
                             value: ON-FULFILLMENT
                 tags:
                   - descriptor:
-                      code: Quantity
-                    list:
-                      - descriptor:
-                          code: count
-                        value: '1000'
-                      - descriptor:
-                          code: MEASURE_UNIT
-                        value: kilogram
-                      - descriptor:
-                          code: MEASURE_VALUE
-                        value: '1000'
-                  - descriptor:
                       code: Package_Dimensions
                     list:
                       - descriptor:
@@ -7721,12 +7709,6 @@ x-flows:
                       - descriptor:
                           code: Category
                         value: Grocery
-                      - descriptor:
-                          code: UNIT_PRICE
-                        value: '100'
-                      - descriptor:
-                          code: ITEM_PRICE
-                        value: '100000'
                       - descriptor:
                           code: Dangerous_Goods
                         value: 'true'
@@ -7998,7 +7980,7 @@ x-flows:
                         value: kilogram
                       - descriptor:
                           code: Value
-                        Value: '5'
+                        value: '5'
                   - descriptor:
                       code: Package_Dimensions
                     list:
@@ -8140,7 +8122,7 @@ x-flows:
           Search intent sent by the buyer based on the start & end location +
           Product details.
         reference: if any
-        example: &ref_46
+        example: &ref_40
           summary: Search by category - Express Delivery
           description: null
           value:
@@ -8163,7 +8145,7 @@ x-flows:
               intent:
                 category:
                   descriptor:
-                    code: Express_Delivery
+                    code: Air_Delivery
                 provider:
                   time:
                     days: 1,2,3,4,5,6,7
@@ -8224,7 +8206,7 @@ x-flows:
                         value: kilogram
                       - descriptor:
                           code: Value
-                        Value: '5'
+                        value: '5'
                   - descriptor:
                       code: Package_Dimensions
                     list:
@@ -8303,7 +8285,7 @@ x-flows:
           Logistics service provider sends the catalog based on search + Sends
           the KYC Link.
         reference: if any
-        example: &ref_40
+        example: &ref_41
           summary: LSP sends catalog (International Logistics)
           description: >-
             Logistics service provider sends the catalog based on search + Sends
@@ -9099,13 +9081,13 @@ x-flows:
                         value: '500.0'
                     - item:
                         id: I3
-                      title: Clearance_Service_Origin
+                      title: Custom_Clearance_Service_Origin
                       price:
                         currency: INR
                         value: '500.0'
                     - item:
                         id: I3
-                      title: Clearance_Service_Destination
+                      title: Custom_Clearance_Service_Destination
                       price:
                         currency: INR
                         value: '500.0'
@@ -9165,7 +9147,7 @@ x-flows:
                         value: kilogram
                       - descriptor:
                           code: Value
-                        Value: '5'
+                        value: '5'
                   - descriptor:
                       code: Package_Dimensions
                     list:
@@ -9538,7 +9520,7 @@ x-flows:
                         value: kilogram
                       - descriptor:
                           code: Value
-                        Value: '5'
+                        value: '5'
                   - descriptor:
                       code: Package_Dimensions
                     list:
@@ -9718,7 +9700,7 @@ x-flows:
                         value: kilogram
                       - descriptor:
                           code: Value
-                        Value: '5'
+                        value: '5'
                   - descriptor:
                       code: Package_Dimensions
                     list:
@@ -10019,7 +10001,7 @@ x-flows:
                         value: kilogram
                       - descriptor:
                           code: Value
-                        Value: '5'
+                        value: '5'
                   - descriptor:
                       code: Package_Dimensions
                     list:
@@ -10100,7 +10082,7 @@ x-flows:
         api: on_status
         description: LSP sends status updates
         reference: if any
-        example: &ref_41
+        example: &ref_42
           summary: Status updates
           description: >-
             Logistics provider updates the status of fulfillment as Order Picked
@@ -10325,7 +10307,7 @@ x-flows:
                         value: kilogram
                       - descriptor:
                           code: Value
-                        Value: '5'
+                        value: '5'
                   - descriptor:
                       code: Package_Dimensions
                     list:
@@ -10406,7 +10388,7 @@ x-flows:
         api: on_status
         description: LSP sends status updates
         reference: if any
-        example: &ref_42
+        example: &ref_43
           summary: Status updates
           description: Logistics provider updates the status of fulfillment
           value:
@@ -10630,7 +10612,7 @@ x-flows:
                         value: kilogram
                       - descriptor:
                           code: Value
-                        Value: '5'
+                        value: '5'
                   - descriptor:
                       code: Package_Dimensions
                     list:
@@ -10711,7 +10693,7 @@ x-flows:
         api: on_status
         description: LSP sends status updates
         reference: if any
-        example: &ref_43
+        example: &ref_44
           summary: Status updates
           description: Logistics provider updates the status of fulfillment
           value:
@@ -10935,7 +10917,7 @@ x-flows:
                         value: kilogram
                       - descriptor:
                           code: Value
-                        Value: '5'
+                        value: '5'
                   - descriptor:
                       code: Package_Dimensions
                     list:
@@ -11016,7 +10998,7 @@ x-flows:
         api: status
         description: Logistics buyer requests for status update
         reference: if any
-        example: &ref_44
+        example: &ref_45
           summary: Logistics Buyer requests for status update
           description: null
           value:
@@ -11043,7 +11025,7 @@ x-flows:
         api: on_status
         description: LSP sends status updates
         reference: if any
-        example: &ref_45
+        example: &ref_46
           summary: Status updates
           description: Logistics provider updates the status of fulfillment
           value:
@@ -11268,7 +11250,7 @@ x-flows:
                         value: kilogram
                       - descriptor:
                           code: Value
-                        Value: '5'
+                        value: '5'
                   - descriptor:
                       code: Package_Dimensions
                     list:
@@ -11428,170 +11410,14 @@ x-flows:
           Search Logistics based on fulfilment start and end location + Product
           details.
         reference: if any
-        example:
-          summary: Search by Category - Standard Delivery
-          description: null
-          value:
-            context:
-              domain: ONDC:LOG11
-              location:
-                city:
-                  code: UN:SIN
-                country:
-                  code: SGP
-              action: search
-              version: 2.0.0
-              bap_id: logistics_buyer.com
-              bap_uri: https://logistics_buyer.com/ondc
-              transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
-              message_id: '1755281254860'
-              timestamp: '2023-10-17T21:00:00.000Z'
-              ttl: PT30S
-            message:
-              intent:
-                category:
-                  descriptor:
-                    code: Ocean_Delivery
-                provider:
-                  time:
-                    days: 1,2,3,4,5,6,7
-                    schedule:
-                      holidays:
-                        - '2023-10-18'
-                        - '2023-10-19'
-                    range:
-                      start: '1100'
-                      end: '2100'
-                fulfillments:
-                  type: Delivery
-                  stops:
-                    - id: L1
-                      parent_stop_id: ''
-                      type: start
-                      location:
-                        gps: 12.4535445,77.9283792
-                        area_code: '560041'
-                      time:
-                        range:
-                          start: '2023-10-23T10:00:00.000Z'
-                          end: '2023-10-25T10:30:00.000Z'
-                    - id: L2
-                      parent_stop_id: L1
-                      type: end
-                      location:
-                        gps: 1.3806217468119772, 103.74636438437074
-                        area_code: '680230'
-                  tags:
-                    descriptor:
-                      code: Delivery_Terms
-                    list:
-                      - descriptor:
-                          code: INCOTERMS
-                        value: CIF
-                      - descriptor:
-                          code: NAMED_PLACE_OF_DELIVERY
-                        value: UN:SGSIN
-                payment:
-                  collected_by: BPP
-                  tags:
-                    - descriptor:
-                        code: Collection_Details
-                      list:
-                        - descriptor:
-                            code: Amount
-                          value: '20000'
-                        - descriptor:
-                            code: Type
-                          value: ON-FULFILLMENT
-                tags:
-                  - descriptor:
-                      code: Package_Weight
-                    list:
-                      - descriptor:
-                          code: Unit
-                        value: kilogram
-                      - descriptor:
-                          code: Value
-                        Value: '5'
-                  - descriptor:
-                      code: Package_Dimensions
-                    list:
-                      - descriptor:
-                          code: Unit
-                        value: centimeter
-                      - descriptor:
-                          code: Length
-                        value: '100'
-                      - descriptor:
-                          code: Breadth
-                        value: '100'
-                      - descriptor:
-                          code: Height
-                        value: '100'
-                      - descriptor:
-                          code: Count
-                        value: '10'
-                  - descriptor:
-                      code: Package_Dimensions
-                    list:
-                      - descriptor:
-                          code: Unit
-                        value: centimeter
-                      - descriptor:
-                          code: Length
-                        value: '100'
-                      - descriptor:
-                          code: Breadth
-                        value: '100'
-                      - descriptor:
-                          code: Height
-                        value: '100'
-                      - descriptor:
-                          code: Count
-                        value: '5'
-                  - descriptor:
-                      code: Package_Details
-                    list:
-                      - descriptor:
-                          code: Category
-                        value: Grocery
-                      - descriptor:
-                          code: Dangerous_Goods
-                        value: 'true'
-                      - descriptor:
-                          code: Stackable
-                        value: 'true'
-                      - descriptor:
-                          code: Shipment_Value
-                        value: '50000'
-                      - descriptor:
-                          code: HSN_Code
-                        value: xxxxxxx
-                      - descriptor:
-                          code: Transit_Risk_Owner
-                        value: Carrier
-                  - descriptor:
-                      code: Cold_Logistics
-                    list:
-                      - descriptor:
-                          code: Temp_Control
-                        value: 'true'
-                      - descriptor:
-                          code: Temp_Unit
-                        value: Celsius
-                      - descriptor:
-                          code: Temp_Min
-                        value: '0'
-                      - descriptor:
-                          code: Temp_Max
-                        value: '4'
+        example: *ref_40
       - summary: LSP sends catalog - Air & Ocean Cargo
         api: on_search
         description: >-
           Logistics service provider sends the catalog based on search + Sends
           the KYC Link.
         reference: if any
-        example: *ref_40
+        example: *ref_41
       - summary: Logistics Buyer initializes the order.
         api: init
         description: >-
@@ -12097,13 +11923,13 @@ x-flows:
                         value: '500.0'
                     - item:
                         id: I1
-                      title: Clearance_Service_Origin
+                      title: Custom_Clearance_Service_Origin
                       price:
                         currency: INR
                         value: '500.0'
                     - item:
                         id: I1
-                      title: Clearance_Service_Destination
+                      title: Custom_Clearance_Service_Destination
                       price:
                         currency: INR
                         value: '500.0'
@@ -12163,7 +11989,7 @@ x-flows:
                         value: kilogram
                       - descriptor:
                           code: Value
-                        Value: '5'
+                        value: '5'
                   - descriptor:
                       code: Package_Dimensions
                     list:
@@ -12539,7 +12365,7 @@ x-flows:
                         value: kilogram
                       - descriptor:
                           code: Value
-                        Value: '5'
+                        value: '5'
                   - descriptor:
                       code: Package_Dimensions
                     list:
@@ -12722,7 +12548,7 @@ x-flows:
                         value: kilogram
                       - descriptor:
                           code: Value
-                        Value: '5'
+                        value: '5'
                   - descriptor:
                       code: Package_Dimensions
                     list:
@@ -13024,7 +12850,7 @@ x-flows:
                         value: kilogram
                       - descriptor:
                           code: Value
-                        Value: '5'
+                        value: '5'
                   - descriptor:
                       code: Package_Dimensions
                     list:
@@ -13108,27 +12934,27 @@ x-flows:
         api: on_status
         description: LSP sends status updates
         reference: if any
-        example: *ref_41
+        example: *ref_42
       - summary: LSP sends status updates - Order Picked up
         api: on_status
         description: LSP sends status updates
         reference: if any
-        example: *ref_42
+        example: *ref_43
       - summary: LSP sends status updates - Domestic Custom Cleared
         api: on_status
         description: LSP sends status updates
         reference: if any
-        example: *ref_43
+        example: *ref_44
       - summary: Logistics buyer requests for status update
         api: status
         description: Logistics buyer requests for status update
         reference: if any
-        example: *ref_44
+        example: *ref_45
       - summary: LSP sends status updates - Order Delivered
         api: on_status
         description: LSP sends status updates
         reference: if any
-        example: *ref_45
+        example: *ref_46
   - summary: Logistics Buyer Cancellation
     description: >-
       The below flow shows the journey of Logistics buyer buying  logistics
@@ -13139,14 +12965,14 @@ x-flows:
         api: search
         description: Search intent sent by the buyer based on the category
         reference: if any
-        example: *ref_46
+        example: *ref_40
       - summary: LSP sends catalog
         api: on_search
         description: >-
           Logistics service provider sends the catalog based on search + Sends
           the KYC Link.
         reference: if any
-        example: *ref_40
+        example: *ref_41
       - summary: Logistics Buyer initializes the order.
         api: init
         description: >-
@@ -13185,14 +13011,14 @@ x-flows:
         api: status
         description: Buyer requests for the order status update
         reference: if any
-        example: *ref_44
+        example: *ref_45
       - summary: Responds to order status update - Pickup Approved
         api: on_status
         description: >-
           Seller app sends an on_status call to the buyer app informing about
           the current status of the order.
         reference: if any
-        example: *ref_41
+        example: *ref_42
       - summary: Logistics Buyer cancels the order
         api: cancel
         description: Logistics Buyer cancels the order
@@ -13446,7 +13272,7 @@ x-flows:
                         value: kilogram
                       - descriptor:
                           code: Value
-                        Value: '5'
+                        value: '5'
                   - descriptor:
                       code: Package_Dimensions
                     list:
@@ -13557,7 +13383,7 @@ x-examples:
                 intent:
                   category:
                     descriptor:
-                      code: EXPRESS_DELIVERY
+                      code: Surface_Delivery
                   provider:
                     time:
                       days: 1,2,3,4,5,6,7
@@ -13608,7 +13434,7 @@ x-examples:
                           value: kilogram
                         - descriptor:
                             code: Value
-                          Value: '5'
+                          value: '5'
                     - descriptor:
                         code: Package_Dimensions
                       list:
@@ -13700,7 +13526,7 @@ x-examples:
                 intent:
                   category:
                     descriptor:
-                      code: STANDARD_DELIVERY
+                      code: Air_Delivery
                   provider:
                     time:
                       days: 1,2,3,4,5,6,7
@@ -13751,7 +13577,7 @@ x-examples:
                           value: kilogram
                         - descriptor:
                             code: Value
-                          Value: '5'
+                          value: '5'
                     - descriptor:
                         code: Package_Dimensions
                       list:
@@ -13891,7 +13717,7 @@ x-examples:
                           value: kilogram
                         - descriptor:
                             code: Value
-                          Value: '5'
+                          value: '5'
                     - descriptor:
                         code: Package_Dimensions
                       list:
@@ -14241,7 +14067,7 @@ x-examples:
                         code: P2H2P
                   fulfillments:
                     - id: '1'
-                      type: DELIVERY
+                      type: Delivery
                       agent:
                         person:
                           name: Ramu
@@ -14328,7 +14154,7 @@ x-examples:
                         currency: INR
                         bank_account_number: xxxxxxxx
                         virtual_payment_address: xxx@xxxx
-                      type: ON-FULFILMENT
+                      type: ON-FULFILLMENT
                       tags:
                         - descriptor:
                             code: Settlement_Details
@@ -14369,7 +14195,7 @@ x-examples:
                           value: kilogram
                         - descriptor:
                             code: Value
-                          Value: '5'
+                          value: '5'
                     - descriptor:
                         code: Package_Dimensions
                       list:
@@ -14613,7 +14439,7 @@ x-examples:
                           value: kilogram
                         - descriptor:
                             code: Value
-                          Value: '5'
+                          value: '5'
                     - descriptor:
                         code: Package_Dimensions
                       list:
@@ -14790,7 +14616,7 @@ x-examples:
                           value: kilogram
                         - descriptor:
                             code: Value
-                          Value: '5'
+                          value: '5'
                     - descriptor:
                         code: Package_Dimensions
                       list:
@@ -15061,336 +14887,336 @@ x-examples:
               Logistics service provider sends the catalog based on search +
               Sends the KYC Link.
             value:
-              context:
-                domain: ONDC:LOG10
-                location:
-                  city:
-                    code: std:080
-                  country:
-                    code: IND
-                action: on_search
-                version: 2.0.0
-                bap_id: logistics_buyer.com
-                bap_uri: https://logistics_buyer.com/ondc
-                bpp_id: logistics_seller.com
-                bpp_uri: https://logistics_seller.com/ondc
-                transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
-                message_id: '1755281254860'
-                timestamp: '2023-10-17T21:10:00.000Z'
-                ttl: PT30S
-              message:
-                catalog:
-                  descriptor:
-                    name: LSP Aggregator Inc
-                    tags:
-                      - descriptor:
-                          code: BPP_Terms
-                        list:
+              context: null
+              domain: ONDC:LOG10
+              location:
+                city:
+                  code: std:080
+                country:
+                  code: IND
+              action: on_search
+              version: 2.0.0
+              bap_id: logistics_buyer.com
+              bap_uri: https://logistics_buyer.com/ondc
+              bpp_id: logistics_seller.com
+              bpp_uri: https://logistics_seller.com/ondc
+              transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
+              message_id: '1755281254860'
+              timestamp: '2023-10-17T21:10:00.000Z'
+              ttl: PT30S
+            message:
+              catalog:
+                descriptor:
+                  name: LSP Aggregator Inc
+                  tags:
+                    - descriptor:
+                        code: BPP_Terms
+                      list:
+                        - descriptor:
+                            code: Static_Terms
+                          value: ''
+                        - descriptor:
+                            code: Static_Terms_New
+                          value: >-
+                            https://github.com/ONDC-Official/NP-Static-Terms/lspNP_LSP/1.0/tc.pdf
+                        - descriptor:
+                            code: Effective_Date
+                          value: '2023-10-01T00:00:00.000Z'
+                    - descriptor:
+                        code: KYC
+                      list:
+                        - descriptor:
+                            code: url
+                          value: https://lsp.com/xxx/kyc
+                        - descriptor:
+                            code: required
+                          value: 'true'
+                fulfillments:
+                  - id: '1'
+                    type: Delivery
+                  - id: '2'
+                    type: RTO
+                providers:
+                  - id: P1
+                    descriptor:
+                      name: Courier Inc
+                      short_desc: Courier Inc
+                      long_desc: Courier Inc
+                    categories:
+                      - id: C1
+                        descriptor:
+                          code: Surface_Delivery
+                        time:
+                          label: TAT
+                          duration: P7D
+                          timestamp: '2023-10-24'
+                      - id: C2
+                        descriptor:
+                          code: Air_Delivery
+                        time:
+                          label: TAT
+                          duration: P4D
+                          timestamp: '2023-10-21'
+                    locations:
+                      - id: L1
+                        gps: 12.967555,77.749666
+                        address:
+                          street: Jayanagar 4th Block
+                          city: Bengaluru
+                          area_code: '560076'
+                          state: KA
+                    items:
+                      - id: I1
+                        parent_item_id: ''
+                        category_ids:
+                          - C1
+                        fulfillment_ids:
+                          - '1'
+                        descriptor:
+                          code: P2H2P
+                          name: Road Delivery
+                          short_desc: Surface Delivery
+                          long_desc: Surface Delivery
+                        price:
+                          currency: INR
+                          value: '4000.0'
+                        time:
+                          label: TAT
+                          duration: P7D
+                          timestamp: '2023-10-24T21:00:00.000Z'
+                        tags:
                           - descriptor:
-                              code: Static_Terms
-                            value: ''
+                              code: Cargo_Details
+                            list:
+                              - descriptor:
+                                  code: Delivery_Mode
+                                value: Road
+                              - descriptor:
+                                  code: Vehicle_Type
+                                value: Truck
+                              - descriptor:
+                                  code: Vehicle_Size
+                                value: 21Ft
+                              - descriptor:
+                                  code: Load_Type
+                                value: FTL
+                      - id: I11
+                        parent_item_id: ''
+                        category_ids:
+                          - C1
+                        fulfillment_ids:
+                          - '1'
+                        descriptor:
+                          code: P2H2P
+                          name: Road Delivery
+                          short_desc: Surface Delivery
+                          long_desc: Surface Delivery
+                        price:
+                          currency: INR
+                          value: '4000.0'
+                        time:
+                          label: TAT
+                          duration: P7D
+                          timestamp: '2023-10-24T21:00:00.000Z'
+                        tags:
                           - descriptor:
-                              code: Static_Terms_New
-                            value: >-
-                              https://github.com/ONDC-Official/NP-Static-Terms/lspNP_LSP/1.0/tc.pdf
+                              code: Cargo_Details
+                            list:
+                              - descriptor:
+                                  code: Delivery_Mode
+                                value: Road
+                              - descriptor:
+                                  code: Vehicle_Type
+                                value: Truck
+                              - descriptor:
+                                  code: Vehicle_Size
+                                value: 21Ft
+                              - descriptor:
+                                  code: Load_Type
+                                value: PTL
+                      - id: I2
+                        parent_item_id: I1
+                        category_ids:
+                          - C1
+                        fulfillment_ids:
+                          - '2'
+                        descriptor:
+                          code: P2H2P
+                          name: RTO quote
+                          short_desc: RTO quote
+                          long_desc: RTO quote
+                        price:
+                          currency: INR
+                          value: '2000.0'
+                        time:
+                          label: TAT
+                          duration: P7D
+                          timestamp: '2023-10-24T21:00:00.000Z'
+                      - id: I22
+                        parent_item_id: I11
+                        category_ids:
+                          - C1
+                        fulfillment_ids:
+                          - '2'
+                        descriptor:
+                          code: P2H2P
+                          name: RTO quote
+                          short_desc: RTO quote
+                          long_desc: RTO quote
+                        price:
+                          currency: INR
+                          value: '2000.0'
+                        time:
+                          label: TAT
+                          duration: P7D
+                          timestamp: '2023-10-24T21:00:00.000Z'
+                      - id: I21
+                        parent_item_id: ''
+                        category_ids:
+                          - C1
+                        fulfillment_ids:
+                          - '1'
+                        descriptor:
+                          code: P2H2P
+                          name: Rail Delivery
+                          short_desc: Surface Delivery
+                          long_desc: Surface Delivery
+                        price:
+                          currency: INR
+                          value: '3000.0'
+                        time:
+                          label: TAT
+                          duration: P6D
+                          timestamp: '2023-10-23T21:00:00.000Z'
+                        tags:
                           - descriptor:
-                              code: Effective_Date
-                            value: '2023-10-01T00:00:00.000Z'
-                      - descriptor:
-                          code: KYC
-                        list:
+                              code: Cargo_Details
+                            list:
+                              - descriptor:
+                                  code: Delivery_Mode
+                                value: Rail
+                      - id: I23
+                        parent_item_id: I21
+                        category_ids:
+                          - C1
+                        fulfillment_ids:
+                          - '2'
+                        descriptor:
+                          code: P2H2P
+                          name: RTO quote
+                          short_desc: RTO quote
+                          long_desc: RTO quote
+                        price:
+                          currency: INR
+                          value: '2000.0'
+                        time:
+                          label: TAT
+                          duration: P6D
+                          timestamp: '2023-10-23T21:00:00.000Z'
+                      - id: I3
+                        parent_item_id: ''
+                        category_ids:
+                          - C2
+                        fulfillment_ids:
+                          - '1'
+                        descriptor:
+                          code: P2H2P
+                          name: Air Delivery
+                          short_desc: Air Delivery
+                          long_desc: Air Delivery
+                        price:
+                          currency: INR
+                          value: '6000.0'
+                        time:
+                          label: TAT
+                          duration: P4D
+                          timestamp: '2023-10-21T21:00:00.000Z'
+                        tags:
                           - descriptor:
-                              code: url
-                            value: https://lsp.com/xxx/kyc
+                              code: Cargo_Details
+                            list:
+                              - descriptor:
+                                  code: Delivery_Mode
+                                value: Air
+                              - descriptor:
+                                  code: Vehicle_Type
+                                value: Container
+                              - descriptor:
+                                  code: Vehicle_Size
+                                value: 24Ft
+                              - descriptor:
+                                  code: Load_Type
+                                value: FCL
+                      - id: I33
+                        parent_item_id: ''
+                        category_ids:
+                          - C2
+                        fulfillment_ids:
+                          - '1'
+                        descriptor:
+                          code: P2H2P
+                          name: Air Delivery
+                          short_desc: Air Delivery
+                          long_desc: Air Delivery
+                        price:
+                          currency: INR
+                          value: '6000.0'
+                        time:
+                          label: TAT
+                          duration: P4D
+                          timestamp: '2023-10-21T21:00:00.000Z'
+                        tags:
                           - descriptor:
-                              code: required
-                            value: 'true'
-                  fulfillments:
-                    - id: '1'
-                      type: Delivery
-                    - id: '2'
-                      type: RTO
-                  providers:
-                    - id: P1
-                      descriptor:
-                        name: Courier Inc
-                        short_desc: Courier Inc
-                        long_desc: Courier Inc
-                      categories:
-                        - id: C1
-                          descriptor:
-                            code: Surface_Delivery
-                          time:
-                            label: TAT
-                            duration: P7D
-                            timestamp: '2023-10-24'
-                        - id: C2
-                          descriptor:
-                            code: Air_Delivery
-                          time:
-                            label: TAT
-                            duration: P4D
-                            timestamp: '2023-10-21'
-                      locations:
-                        - id: L1
-                          gps: 12.967555,77.749666
-                          address:
-                            street: Jayanagar 4th Block
-                            city: Bengaluru
-                            area_code: '560076'
-                            state: KA
-                      items:
-                        - id: I1
-                          parent_item_id: ''
-                          category_ids:
-                            - C1
-                          fulfillment_ids:
-                            - '1'
-                          descriptor:
-                            code: P2H2P
-                            name: Road Delivery
-                            short_desc: Surface Delivery
-                            long_desc: Surface Delivery
-                          price:
-                            currency: INR
-                            value: '4000.0'
-                          time:
-                            label: TAT
-                            duration: P7D
-                            timestamp: '2023-10-24T21:00:00.000Z'
-                          tags:
-                            - descriptor:
-                                code: Cargo_Details
-                              list:
-                                - descriptor:
-                                    code: Delivery_Mode
-                                  value: Road
-                                - descriptor:
-                                    code: Vehicle_Type
-                                  value: Truck
-                                - descriptor:
-                                    code: Vehicle_Size
-                                  value: 21Ft
-                                - descriptor:
-                                    code: Load_Type
-                                  value: FTL
-                        - id: I11
-                          parent_item_id: ''
-                          category_ids:
-                            - C1
-                          fulfillment_ids:
-                            - '1'
-                          descriptor:
-                            code: P2H2P
-                            name: Road Delivery
-                            short_desc: Surface Delivery
-                            long_desc: Surface Delivery
-                          price:
-                            currency: INR
-                            value: '4000.0'
-                          time:
-                            label: TAT
-                            duration: P7D
-                            timestamp: '2023-10-24T21:00:00.000Z'
-                          tags:
-                            - descriptor:
-                                code: Cargo_Details
-                              list:
-                                - descriptor:
-                                    code: Delivery_Mode
-                                  value: Road
-                                - descriptor:
-                                    code: Vehicle_Type
-                                  value: Truck
-                                - descriptor:
-                                    code: Vehicle_Size
-                                  value: 21Ft
-                                - descriptor:
-                                    code: Load_Type
-                                  value: PTL
-                        - id: I2
-                          parent_item_id: I1
-                          category_ids:
-                            - C1
-                          fulfillment_ids:
-                            - '2'
-                          descriptor:
-                            code: P2H2P
-                            name: RTO quote
-                            short_desc: RTO quote
-                            long_desc: RTO quote
-                          price:
-                            currency: INR
-                            value: '2000.0'
-                          time:
-                            label: TAT
-                            duration: P7D
-                            timestamp: '2023-10-24T21:00:00.000Z'
-                        - id: I22
-                          parent_item_id: I11
-                          category_ids:
-                            - C1
-                          fulfillment_ids:
-                            - '2'
-                          descriptor:
-                            code: P2H2P
-                            name: RTO quote
-                            short_desc: RTO quote
-                            long_desc: RTO quote
-                          price:
-                            currency: INR
-                            value: '2000.0'
-                          time:
-                            label: TAT
-                            duration: P7D
-                            timestamp: '2023-10-24T21:00:00.000Z'
-                        - id: I21
-                          parent_item_id: ''
-                          category_ids:
-                            - C1
-                          fulfillment_ids:
-                            - '1'
-                          descriptor:
-                            code: P2H2P
-                            name: Rail Delivery
-                            short_desc: Surface Delivery
-                            long_desc: Surface Delivery
-                          price:
-                            currency: INR
-                            value: '3000.0'
-                          time:
-                            label: TAT
-                            duration: P6D
-                            timestamp: '2023-10-23T21:00:00.000Z'
-                          tags:
-                            - descriptor:
-                                code: Cargo_Details
-                              list:
-                                - descriptor:
-                                    code: Delivery_Mode
-                                  value: Rail
-                        - id: I23
-                          parent_item_id: I21
-                          category_ids:
-                            - C1
-                          fulfillment_ids:
-                            - '2'
-                          descriptor:
-                            code: P2H2P
-                            name: RTO quote
-                            short_desc: RTO quote
-                            long_desc: RTO quote
-                          price:
-                            currency: INR
-                            value: '2000.0'
-                          time:
-                            label: TAT
-                            duration: P6D
-                            timestamp: '2023-10-23T21:00:00.000Z'
-                        - id: I3
-                          parent_item_id: ''
-                          category_ids:
-                            - C2
-                          fulfillment_ids:
-                            - '1'
-                          descriptor:
-                            code: P2H2P
-                            name: Air Delivery
-                            short_desc: Air Delivery
-                            long_desc: Air Delivery
-                          price:
-                            currency: INR
-                            value: '6000.0'
-                          time:
-                            label: TAT
-                            duration: P4D
-                            timestamp: '2023-10-21T21:00:00.000Z'
-                          tags:
-                            - descriptor:
-                                code: Cargo_Details
-                              list:
-                                - descriptor:
-                                    code: Delivery_Mode
-                                  value: Air
-                                - descriptor:
-                                    code: Vehicle_Type
-                                  value: Container
-                                - descriptor:
-                                    code: Vehicle_Size
-                                  value: 24Ft
-                                - descriptor:
-                                    code: Load_Type
-                                  value: FCL
-                        - id: I33
-                          parent_item_id: ''
-                          category_ids:
-                            - C2
-                          fulfillment_ids:
-                            - '1'
-                          descriptor:
-                            code: P2H2P
-                            name: Air Delivery
-                            short_desc: Air Delivery
-                            long_desc: Air Delivery
-                          price:
-                            currency: INR
-                            value: '6000.0'
-                          time:
-                            label: TAT
-                            duration: P4D
-                            timestamp: '2023-10-21T21:00:00.000Z'
-                          tags:
-                            - descriptor:
-                                code: Cargo_Details
-                              list:
-                                - descriptor:
-                                    code: Delivery_Mode
-                                  value: Air
-                                - descriptor:
-                                    code: Vehicle_Type
-                                  value: Container
-                                - descriptor:
-                                    code: Vehicle_Size
-                                  value: 22Ft
-                                - descriptor:
-                                    code: Load_Type
-                                  value: LCL
-                        - id: I4
-                          parent_item_id: I3
-                          category_ids:
-                            - C2
-                          fulfillment_ids:
-                            - '2'
-                          descriptor:
-                            code: P2H2P
-                            name: RTO quote
-                            short_desc: RTO quote
-                            long_desc: RTO quote
-                          price:
-                            currency: INR
-                            value: '3000.0'
-                          time:
-                            label: TAT
-                            duration: P4D
-                            timestamp: '2023-10-21T21:00:00.000Z'
-                        - id: I44
-                          parent_item_id: I33
-                          category_ids:
-                            - C2
-                          fulfillment_ids:
-                            - '2'
-                          descriptor:
-                            code: P2H2P
-                            name: RTO quote
-                            short_desc: RTO quote
-                            long_desc: RTO quote
-                          price:
-                            currency: INR
-                            value: '3000.0'
-                          time:
-                            label: TAT
-                            duration: P4D
-                            timestamp: '2023-10-21T21:00:00.000Z'
+                              code: Cargo_Details
+                            list:
+                              - descriptor:
+                                  code: Delivery_Mode
+                                value: Air
+                              - descriptor:
+                                  code: Vehicle_Type
+                                value: Container
+                              - descriptor:
+                                  code: Vehicle_Size
+                                value: 22Ft
+                              - descriptor:
+                                  code: Load_Type
+                                value: LCL
+                      - id: I4
+                        parent_item_id: I3
+                        category_ids:
+                          - C2
+                        fulfillment_ids:
+                          - '2'
+                        descriptor:
+                          code: P2H2P
+                          name: RTO quote
+                          short_desc: RTO quote
+                          long_desc: RTO quote
+                        price:
+                          currency: INR
+                          value: '3000.0'
+                        time:
+                          label: TAT
+                          duration: P4D
+                          timestamp: '2023-10-21T21:00:00.000Z'
+                      - id: I44
+                        parent_item_id: I33
+                        category_ids:
+                          - C2
+                        fulfillment_ids:
+                          - '2'
+                        descriptor:
+                          code: P2H2P
+                          name: RTO quote
+                          short_desc: RTO quote
+                          long_desc: RTO quote
+                        price:
+                          currency: INR
+                          value: '3000.0'
+                        time:
+                          label: TAT
+                          duration: P4D
+                          timestamp: '2023-10-21T21:00:00.000Z'
       on_init:
         examples:
           - summary: Response to order initialization - KYC Successful (Air Delivery)
@@ -16480,7 +16306,7 @@ x-examples:
                           value: kilogram
                         - descriptor:
                             code: Value
-                          Value: '50'
+                          value: '50'
                     - descriptor:
                         code: Package_Dimensions
                       list:
@@ -16802,7 +16628,7 @@ x-examples:
                           value: kilogram
                         - descriptor:
                             code: Value
-                          Value: '50'
+                          value: '50'
                     - descriptor:
                         code: Package_Dimensions
                       list:
@@ -17086,7 +16912,7 @@ x-examples:
                           value: kilogram
                         - descriptor:
                             code: Value
-                          Value: '5'
+                          value: '5'
                     - descriptor:
                         code: Package_Dimensions
                       list:
@@ -17390,7 +17216,7 @@ x-examples:
                           value: kilogram
                         - descriptor:
                             code: Value
-                          Value: '5'
+                          value: '5'
                     - descriptor:
                         code: Package_Dimensions
                       list:
@@ -17691,7 +17517,7 @@ x-examples:
                           value: kilogram
                         - descriptor:
                             code: Value
-                          Value: '5'
+                          value: '5'
                     - descriptor:
                         code: Package_Dimensions
                       list:
@@ -17954,7 +17780,7 @@ x-examples:
                           value: kilogram
                         - descriptor:
                             code: Value
-                          Value: '5'
+                          value: '5'
                     - descriptor:
                         code: Package_Dimensions
                       list:
@@ -18229,7 +18055,7 @@ x-examples:
                           value: kilogram
                         - descriptor:
                             code: Value
-                          Value: '50'
+                          value: '50'
                     - descriptor:
                         code: Package_Dimensions
                       list:
@@ -18716,7 +18542,7 @@ x-examples:
                           value: kilogram
                         - descriptor:
                             code: Value
-                          Value: '5'
+                          value: '5'
                     - descriptor:
                         code: Package_Dimensions
                       list:
@@ -19243,18 +19069,6 @@ x-examples:
                               value: ON-FULFILLMENT
                   tags:
                     - descriptor:
-                        code: Quantity
-                      list:
-                        - descriptor:
-                            code: count
-                          value: '1000'
-                        - descriptor:
-                            code: MEASURE_UNIT
-                          value: kilogram
-                        - descriptor:
-                            code: MEASURE_VALUE
-                          value: '1000'
-                    - descriptor:
                         code: Package_Dimensions
                       list:
                         - descriptor:
@@ -19275,12 +19089,6 @@ x-examples:
                         - descriptor:
                             code: Category
                           value: Grocery
-                        - descriptor:
-                            code: UNIT_PRICE
-                          value: '100'
-                        - descriptor:
-                            code: ITEM_PRICE
-                          value: '100000'
                         - descriptor:
                             code: Dangerous_Goods
                           value: 'true'
@@ -19565,18 +19373,6 @@ x-examples:
                               value: ON-FULFILLMENT
                   tags:
                     - descriptor:
-                        code: Quantity
-                      list:
-                        - descriptor:
-                            code: count
-                          value: '1000'
-                        - descriptor:
-                            code: MEASURE_UNIT
-                          value: kilogram
-                        - descriptor:
-                            code: MEASURE_VALUE
-                          value: '1000'
-                    - descriptor:
                         code: Package_Dimensions
                       list:
                         - descriptor:
@@ -19597,12 +19393,6 @@ x-examples:
                         - descriptor:
                             code: Category
                           value: Grocery
-                        - descriptor:
-                            code: UNIT_PRICE
-                          value: '100'
-                        - descriptor:
-                            code: ITEM_PRICE
-                          value: '100000'
                         - descriptor:
                             code: Dangerous_Goods
                           value: 'true'
@@ -19810,18 +19600,6 @@ x-examples:
                               value: ON-FULFILLMENT
                   tags:
                     - descriptor:
-                        code: Quantity
-                      list:
-                        - descriptor:
-                            code: count
-                          value: '1000'
-                        - descriptor:
-                            code: MEASURE_UNIT
-                          value: kilogram
-                        - descriptor:
-                            code: MEASURE_VALUE
-                          value: '1000'
-                    - descriptor:
                         code: Package_Dimensions
                       list:
                         - descriptor:
@@ -19842,12 +19620,6 @@ x-examples:
                         - descriptor:
                             code: Category
                           value: Grocery
-                        - descriptor:
-                            code: UNIT_PRICE
-                          value: '100'
-                        - descriptor:
-                            code: ITEM_PRICE
-                          value: '100000'
                         - descriptor:
                             code: Dangerous_Goods
                           value: 'true'
@@ -19900,7 +19672,7 @@ x-examples:
                 intent:
                   category:
                     descriptor:
-                      code: Express_Delivery
+                      code: Air_Delivery
                   provider:
                     time:
                       days: 1,2,3,4,5,6,7
@@ -19961,7 +19733,7 @@ x-examples:
                           value: kilogram
                         - descriptor:
                             code: Value
-                          Value: '5'
+                          value: '5'
                     - descriptor:
                         code: Package_Dimensions
                       list:
@@ -20117,7 +19889,7 @@ x-examples:
                           value: kilogram
                         - descriptor:
                             code: Value
-                          Value: '5'
+                          value: '5'
                     - descriptor:
                         code: Package_Dimensions
                       list:
@@ -20565,13 +20337,13 @@ x-examples:
                           value: '500.0'
                       - item:
                           id: I3
-                        title: Clearance_Service_Origin
+                        title: Custom_Clearance_Service_Origin
                         price:
                           currency: INR
                           value: '500.0'
                       - item:
                           id: I3
-                        title: Clearance_Service_Destination
+                        title: Custom_Clearance_Service_Destination
                         price:
                           currency: INR
                           value: '500.0'
@@ -20631,7 +20403,7 @@ x-examples:
                           value: kilogram
                         - descriptor:
                             code: Value
-                          Value: '5'
+                          value: '5'
                     - descriptor:
                         code: Package_Dimensions
                       list:
@@ -20826,13 +20598,13 @@ x-examples:
                           value: '500.0'
                       - item:
                           id: I1
-                        title: Clearance_Service_Origin
+                        title: Custom_Clearance_Service_Origin
                         price:
                           currency: INR
                           value: '500.0'
                       - item:
                           id: I1
-                        title: Clearance_Service_Destination
+                        title: Custom_Clearance_Service_Destination
                         price:
                           currency: INR
                           value: '500.0'
@@ -20892,7 +20664,7 @@ x-examples:
                           value: kilogram
                         - descriptor:
                             code: Value
-                          Value: '5'
+                          value: '5'
                     - descriptor:
                         code: Package_Dimensions
                       list:
@@ -21072,7 +20844,7 @@ x-examples:
                           value: kilogram
                         - descriptor:
                             code: Value
-                          Value: '5'
+                          value: '5'
                     - descriptor:
                         code: Package_Dimensions
                       list:
@@ -21218,7 +20990,7 @@ x-examples:
                           value: kilogram
                         - descriptor:
                             code: Value
-                          Value: '5'
+                          value: '5'
                     - descriptor:
                         code: Package_Dimensions
                       list:
@@ -22560,7 +22332,7 @@ x-examples:
                           value: kilogram
                         - descriptor:
                             code: Value
-                          Value: '5'
+                          value: '5'
                     - descriptor:
                         code: Package_Dimensions
                       list:
@@ -22859,7 +22631,7 @@ x-examples:
                           value: kilogram
                         - descriptor:
                             code: Value
-                          Value: '5'
+                          value: '5'
                     - descriptor:
                         code: Package_Dimensions
                       list:
@@ -23159,7 +22931,7 @@ x-examples:
                           value: kilogram
                         - descriptor:
                             code: Value
-                          Value: '5'
+                          value: '5'
                     - descriptor:
                         code: Package_Dimensions
                       list:
@@ -23459,7 +23231,7 @@ x-examples:
                           value: kilogram
                         - descriptor:
                             code: Value
-                          Value: '5'
+                          value: '5'
                     - descriptor:
                         code: Package_Dimensions
                       list:
@@ -23760,7 +23532,7 @@ x-examples:
                           value: kilogram
                         - descriptor:
                             code: Value
-                          Value: '5'
+                          value: '5'
                     - descriptor:
                         code: Package_Dimensions
                       list:
@@ -24125,7 +23897,7 @@ x-examples:
                           value: kilogram
                         - descriptor:
                             code: Value
-                          Value: '5'
+                          value: '5'
                     - descriptor:
                         code: Package_Dimensions
                       list:
@@ -24493,7 +24265,7 @@ x-examples:
                           value: kilogram
                         - descriptor:
                             code: Value
-                          Value: '5'
+                          value: '5'
                     - descriptor:
                         code: Package_Dimensions
                       list:
@@ -24821,7 +24593,7 @@ x-examples:
                           value: kilogram
                         - descriptor:
                             code: Value
-                          Value: '5'
+                          value: '5'
                     - descriptor:
                         code: Package_Dimensions
                       list:
@@ -25139,7 +24911,7 @@ x-examples:
                           value: kilogram
                         - descriptor:
                             code: Value
-                          Value: '5'
+                          value: '5'
                     - descriptor:
                         code: Package_Dimensions
                       list:
