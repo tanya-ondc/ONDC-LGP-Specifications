@@ -50,7 +50,7 @@ value:
                 email: abcd.efgh@gmail.com
             - type: end
               location:
-                gps: 1.3806217468119772, 103.74636438437074
+                gps: 1.380621746811977, 103.74636438437074
                 address: 'My House #, My buildin'
                 city:
                   name: Jurong East
