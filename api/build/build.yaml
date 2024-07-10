@@ -8775,7 +8775,7 @@ x-flows:
                           email: abcd.efgh@gmail.com
                       - type: end
                         location:
-                          gps: 1.3806217468119772, 103.74636438437074
+                          gps: 1.380621746811977, 103.74636438437074
                           address: 'My House #, My buildin'
                           city:
                             name: Jurong East
@@ -11617,7 +11617,7 @@ x-flows:
                           email: abcd.efgh@gmail.com
                       - type: end
                         location:
-                          gps: 1.3806217468119772, 103.74636438437074
+                          gps: 1.380621746811977, 103.74636438437074
                           address: 'My House #, My buildin'
                           city:
                             name: Jurong East
@@ -11664,13 +11664,13 @@ x-flows:
                         value: '500.0'
                     - item:
                         id: I1
-                      title: Clearance_Service_Origin
+                      title: Custom_Clearance_Service_Origin
                       price:
                         currency: INR
                         value: '300.0'
                     - item:
                         id: I1
-                      title: Clearance_Service_Destination
+                      title: Custom_Clearance_Service_Destination
                       price:
                         currency: INR
                         value: '300.0'
@@ -21420,7 +21420,7 @@ x-examples:
                             email: abcd.efgh@gmail.com
                         - type: end
                           location:
-                            gps: 1.3806217468119772, 103.74636438437074
+                            gps: 1.380621746811977, 103.74636438437074
                             address: 'My House #, My buildin'
                             city:
                               name: Jurong East
@@ -21662,7 +21662,7 @@ x-examples:
                             email: abcd.efgh@gmail.com
                         - type: end
                           location:
-                            gps: 1.3806217468119772, 103.74636438437074
+                            gps: 1.380621746811977, 103.74636438437074
                             address: 'My House #, My buildin'
                             city:
                               name: Jurong East
@@ -21918,7 +21918,7 @@ x-examples:
                             email: abcd.efgh@gmail.com
                         - type: end
                           location:
-                            gps: 1.3806217468119772, 103.74636438437074
+                            gps: 1.380621746811977, 103.74636438437074
                             address: 'My House #, My buildin'
                             city:
                               name: Jurong East
@@ -21965,13 +21965,13 @@ x-examples:
                           value: '500.0'
                       - item:
                           id: I1
-                        title: Clearance_Service_Origin
+                        title: Custom_Clearance_Service_Origin
                         price:
                           currency: INR
                           value: '300.0'
                       - item:
                           id: I1
-                        title: Clearance_Service_Destination
+                        title: Custom_Clearance_Service_Destination
                         price:
                           currency: INR
                           value: '300.0'
