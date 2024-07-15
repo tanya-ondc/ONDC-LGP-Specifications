@@ -38,6 +38,11 @@ function onFirstLoad(build_spec, features) {
   } catch (error) {
     console.trace(error);
   }
+  try {
+    loadErrors(data["x-errorcodes"]);
+  } catch (error) {
+    console.trace(error);
+  }
 }
 
 // window.onload = function(){

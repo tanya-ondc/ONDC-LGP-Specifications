@@ -3,7 +3,9 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>ONDC Logistic Services Developer Guide</title>
+
+  <title>ONDC Logistics Developer Guide</title>
+
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swagger-ui-dist/swagger-ui.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
@@ -90,9 +92,9 @@
     <div class="me-5 mt-1 ms-3">
       <label for="api-contracts"> Version:</label>
       <select id="contract-dropdown" onchange="upadteContract()">
-        <!-- <option value="draft-1.x">draft-1.x</option> -->
         <option value="draft-2.x">draft-2.x</option>
-        <option value="master">master</option>
+        <!-- <option value="draft-2.x">draft-2.x</option>
+        <option value="master">master</option> -->
       </select>
     </div>
   </header>
@@ -113,6 +115,17 @@
             <li class="nav-item">
               <a class="nav-link" id="attribute-tab" data-bs-toggle="tab" href="#attribute" role="tab"
                 aria-selected="false">Attribute-UI</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="error-tab"
+                data-bs-toggle="tab"
+                href="#error"
+                role="tab"
+                aria-selected="false"
+                >Error-UI</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" id="feature-tab" data-bs-toggle="tab" href="#feature" role="tab"
@@ -200,6 +213,29 @@
               </table>
             </div>
           </div>
+          <div class="tab-pane fade" id="error" role="tabpanel">
+            <table class="table">
+              <tr>
+                <td><b>Error Set</b></td>
+                <td>
+                  <!-- <select
+                    id="error-dropdown"
+                    class="form-select"
+                    onchange="loadErrors()"
+                  ></select> -->
+                  <select id="error-dropdown" class="form-select" value = "Cancellation" onchange="updateErrors()">
+                    <option value="Cancellation">Cancellation Codes</option>
+                    <option value="ErrorCodes">Error Codes</option>
+                  </select>
+                </td>
+              </tr>
+            </table>
+            <div class="table-wrapper">
+              <table id="errorset">
+               
+              </table>
+            </div>
+          </div>
           <div class="tab-pane fade" id="feature" role="tabpanel">
             <table class="table">
               <tr>
@@ -229,21 +265,29 @@
               <h5 class="card-title">Enum</h5>
               <table class="table">
                 <tr>
+                  <td colspan="2">
+                    <select
+                      id="enum-l1-dropdown"
+                      class="form-select"
+                    ></select>
+                  </td>
+                </tr>
+                <tr>
                   <td><b>API</b></td>
                   <td>
-                    <select id="dropdown1" class="form-select" onchange="loadDropdown2()"></select>
+                    <select id="dropdown1" class="form-select"></select>
                   </td>
                 </tr>
                 <tr>
                   <td><b>Field</b></td>
                   <td>
-                    <select id="dropdown2" class="form-select" onchange="loadDropdown4()"></select>
+                    <select id="dropdown2" class="form-select"></select>
                   </td>
                 </tr>
                 <tr>
                   <td><b>Enum</b></td>
                   <td>
-                    <select id="dropdown4" class="form-select" onchange="displayTable()"></select>
+                    <select id="dropdown4" class="form-select"></select>
                   </td>
                 </tr>
               </table>
@@ -272,13 +316,17 @@
                     <select id="tag-group-dropdown" class="form-select" onchange="loadTag()"></select>
                   </td>
                 </tr>
+                <td><b>Required</b></td>
+                <td id="tag-group-required">
+                </td>
+              </tr>
                 <tr>
                   <td><b>Tag</b></td>
                   <td>
                     <select id="tag-dropdown" class="form-select" onchange="displayTag()"></select>
                   </td>
                 </tr>
-                <tr id="tag-value-row" style="display: none;">
+                <tr id="tag-value-row" >
                   <td><b>Tag Value</b></td>
                   <td>
                     <select id="tag-value-dropdown" class="form-select" onchange="displayTagValue()"></select>
@@ -287,7 +335,7 @@
               </table>
               <table id="tag-group-table" class="table"></table>
               <table id="tag-table" class="table"></table>
-              <table id="tag-value-table" class="table" style="display: none;"></table>
+              <table id="tag-value-table" class="table" ></table>
             </div>
           </div>
         </div>
@@ -316,6 +364,7 @@
   <script src="ui/flow.js"></script>
   <script src="ui/examples.js"></script>
   <script src="ui/attribute.js"></script>
+  <script src="ui/error.js"></script>
   <script src="ui/features.js"></script>
 
 
