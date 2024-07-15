@@ -9,7 +9,7 @@
         "code": "IND"
       }
     },
-    "action": "on_cancel",
+    "action": "on_update",
     "version": "2.0.0",
     "bap_id": "logistics_buyer.com",
     "bap_uri": "https://logistics_buyer.com/ondc",
@@ -23,13 +23,7 @@
   "message": {
     "order": {
       "id": "O2",
-      "status": "Cancelled",
-      "cancellation": {
-        "cancelled_by": "logistics_seller.com",
-        "reason": {
-          "id": "013"
-        }
-      },
+      "status": "In-progress",
       "provider": {
         "id": "P1",
         "locations": [
@@ -42,42 +36,25 @@
         {
           "id": "I3",
           "category_ids": [
-            "C1"
+            "C2"
           ],
-          "descriptor": {
-            "code": "P2H2P"
-          },
           "fulfillment_ids": [
             "1"
           ],
-          "time": {
-            "label": "TAT",
-            "duration": "P4D",
-            "timestamp": "2023-10-27"
-          }
-        },
-        {
-          "id": "I4",
-          "category_ids": [
-            "C2"
-          ],
           "descriptor": {
             "code": "P2H2P"
           },
-          "fulfillment_ids": [
-            "2"
-          ],
           "time": {
             "label": "TAT",
-            "duration": "P4D",
-            "timestamp": "2023-10-27"
+            "duration": "PT45M",
+            "timestamp": "2023-10-23"
           }
         }
       ],
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "7500.00"
+          "value": "6206.0"
         },
         "breakup": [
           {
@@ -87,14 +64,14 @@
             "title": "delivery",
             "price": {
               "currency": "INR",
-              "value": "3000.00"
+              "value": "5480.0"
             }
           },
           {
             "item": {
               "id": "I3"
             },
-            "title": "insurance",
+            "title": "tax",
             "price": {
               "currency": "INR",
               "value": "500.0"
@@ -104,30 +81,20 @@
             "item": {
               "id": "I3"
             },
-            "title": "tax",
+            "title": "delivery_diff",
             "price": {
               "currency": "INR",
-              "value": "500.00"
+              "value": "50.0"
             }
           },
           {
             "item": {
-              "id": "I4"
+              "id": "I3"
             },
-            "title": "rto",
+            "title": "tax_diff",
             "price": {
               "currency": "INR",
-              "value": "3000.00"
-            }
-          },
-          {
-            "item": {
-              "id": "I4"
-            },
-            "title": "tax",
-            "price": {
-              "currency": "INR",
-              "value": "500.00"
+              "value": "6.0"
             }
           }
         ]
@@ -138,7 +105,7 @@
           "type": "Delivery",
           "state": {
             "descriptor": {
-              "code": "Cancelled"
+              "code": "Pending"
             }
           },
           "tracking": false,
@@ -149,24 +116,24 @@
               "type": "start",
               "location": {
                 "gps": "12.4535445,77.9283792",
-                "area_code": "560041",
-                "map_url": "",
                 "address": "My house or building name, street name",
-                "city": "Bengaluru",
-                "state": "Karnataka",
-                "country": "India"
+                "city": {
+                  "name": "Bengaluru"
+                },
+                "state": {
+                  "name": "Karnataka"
+                },
+                "country": {
+                  "code": "IND"
+                },
+                "area_code": "560041"
               },
               "contact": {
                 "phone": "9886098860",
                 "email": "abcd.efgh@gmail.com"
               },
-              "authorization": {
-                "type": "QR",
-                "token": "XYZ2",
-                "valid_from": "",
-                "valid_to": ""
-              },
               "instructions": {
+                "code": "AWB_No",
                 "short_desc": "Shipping label",
                 "long_desc": "",
                 "additional_desc": {
@@ -179,9 +146,10 @@
               },
               "time": {
                 "range": {
-                  "start": "2023-10-17T21:12:00.710Z",
-                  "end": "2023-10-20T21:12:00.710Z"
-                }
+                  "start": "2023-02-06T22:30:00.000Z",
+                  "end": "2023-02-06T22:45:00.000Z"
+                },
+                "timestamp": "2023-06-07T00:00:00.000Z"
               }
             },
             {
@@ -190,22 +158,22 @@
               "type": "end",
               "location": {
                 "gps": "12.342769,77.9129423",
-                "map_url": "",
                 "address": "My house or building name, street name",
-                "city": "Bengaluru",
-                "state": "Karnataka",
-                "country": "India",
+                "city": {
+                  "name": "Bengaluru"
+                },
+                "state": {
+                  "name": "Karnataka"
+                },
+                "country": {
+                  "name": "India",
+                  "code": "IND"
+                },
                 "area_code": "560043"
               },
               "contact": {
                 "phone": "9886098860",
                 "email": "abcd.efgh@gmail.com"
-              },
-              "authorization": {
-                "type": "QR",
-                "token": "XYZ2",
-                "valid_from": "",
-                "valid_to": ""
               },
               "instructions": {
                 "short_desc": "",
@@ -217,8 +185,8 @@
               },
               "time": {
                 "range": {
-                  "start": "2023-10-21T21:12:00.710Z",
-                  "end": "2023-10-24T21:12:00.710Z"
+                  "start": "2023-02-14T22:30:00.000Z",
+                  "end": "2023-02-14T22:45:00.000Z"
                 }
               }
             }
@@ -231,72 +199,37 @@
               "list": [
                 {
                   "descriptor": {
+                    "code": "Ready_To_Ship"
+                  },
+                  "value": "yes"
+                },
+                {
+                  "descriptor": {
                     "code": "AWB_No"
                   },
                   "value": "1209878992826353"
-                }
-              ]
-            },
-            {
-              "code": "RTO_Event",
-              "list": [
-                {
-                  "code": "Retry_Count",
-                  "value": "3"
                 },
                 {
-                  "code": "RTO_Id",
-                  "value": "2"
+                  "descriptor": {
+                    "code": "RTO_Action"
+                  },
+                  "value": "no"
                 },
                 {
-                  "code": "Cancellation_Reason_Id",
-                  "value": "013"
+                  "descriptor": {
+                    "code": "Eway_Bill_No"
+                  },
+                  "value": "1209567899003"
                 },
                 {
-                  "code": "Sub_Reason_Id",
-                  "value": "004"
-                },
-                {
-                  "code": "Cancelled_By",
-                  "value": "logistics_seller.com"
+                  "descriptor": {
+                    "code": "Doc_Way_Bill_No"
+                  },
+                  "value": "1209567899003"
                 }
               ]
             }
           ]
-        },
-        {
-          "id": "2",
-          "type": "RTO",
-          "state": {
-            "descriptor": {
-              "code": "RTO-Initiated"
-            }
-          },
-          "start": {
-            "location": {
-              "gps": "12.342769,77.9129423",
-              "map_url": "",
-              "address": "My house or building name, street name",
-              "city": "Bengaluru",
-              "state": "Karnataka",
-              "country": "India",
-              "area_code": "560043"
-            },
-            "time": {
-              "timestamp": "2023-06-07T14:00:00.000Z"
-            }
-          },
-          "end": {
-            "location": {
-              "gps": "12.4535445,77.9283792",
-              "area_code": "560041",
-              "map_url": "",
-              "address": "My house or building name, street name",
-              "city": "Bengaluru",
-              "state": "Karnataka",
-              "country": "India"
-            }
-          }
         }
       ],
       "billing": {
@@ -306,14 +239,17 @@
         "state": "Karnataka",
         "tax_id": "XXXXXXXXXXXXXXX",
         "phone": "9886098860",
-        "email": "abcd.efgh@gmail.com"
+        "email": "abcd.efgh@gmail.com",
+        "time": {
+          "timestamp": "2023-10-17T21:11:00.000Z"
+        }
       },
       "payments": [
         {
           "id": "P1",
           "collected_by": "BPP",
           "params": {
-            "amount": "4000",
+            "amount": "6000",
             "currency": "INR",
             "bank_account_number": "xxxxxxxx",
             "virtual_payment_address": "xxx@xxxx"
@@ -388,26 +324,20 @@
       "tags": [
         {
           "descriptor": {
-            "code": "Quantity"
+            "code": "Package_Weight"
           },
           "list": [
             {
               "descriptor": {
-                "code": "count"
-              },
-              "value": "1000"
-            },
-            {
-              "descriptor": {
-                "code": "MEASURE_UNIT"
+                "code": "Unit"
               },
               "value": "kilogram"
             },
             {
               "descriptor": {
-                "code": "MEASURE_VALUE"
+                "code": "Value"
               },
-              "value": "1000"
+              "value": "50"
             }
           ]
         },
@@ -426,19 +356,19 @@
               "descriptor": {
                 "code": "Length"
               },
-              "value": "1"
+              "value": "100"
             },
             {
               "descriptor": {
                 "code": "Breadth"
               },
-              "value": "1"
+              "value": "100"
             },
             {
               "descriptor": {
                 "code": "Height"
               },
-              "value": "1"
+              "value": "100"
             }
           ]
         },
@@ -455,21 +385,58 @@
             },
             {
               "descriptor": {
-                "code": "UNIT_PRICE"
-              },
-              "value": "100"
-            },
-            {
-              "descriptor": {
-                "code": "ITEM_PRICE"
-              },
-              "value": "100000"
-            },
-            {
-              "descriptor": {
                 "code": "Dangerous_Goods"
               },
               "value": "true"
+            },
+            {
+              "descriptor": {
+                "code": "Stackable"
+              },
+              "value": "true"
+            },
+            {
+              "descriptor": {
+                "code": "Shipment_Value"
+              },
+              "value": "50000"
+            },
+            {
+              "descriptor": {
+                "code": "Package_Count"
+              },
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "descriptor": {
+            "code": "Cold_Logistics"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "Temp_Control"
+              },
+              "value": "true"
+            },
+            {
+              "descriptor": {
+                "code": "Temp_Unit"
+              },
+              "value": "Celsius"
+            },
+            {
+              "descriptor": {
+                "code": "Temp_Min"
+              },
+              "value": "0"
+            },
+            {
+              "descriptor": {
+                "code": "Temp_Max"
+              },
+              "value": "4"
             }
           ]
         },
@@ -503,9 +470,28 @@
               "value": "1.5"
             }
           ]
+        },
+        {
+          "descriptor": {
+            "code": "Diff_Proof"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "type"
+              },
+              "value": "image"
+            },
+            {
+              "descriptor": {
+                "code": "url"
+              },
+              "value": "https://xxxxx/xx.png"
+            }
+          ]
         }
       ],
-      "updated_at": "2023-10-17T22:00:00.811Z"
+      "updated_at": "2023-02-06T22:00:30.000Z"
     }
   }
 }

@@ -178,8 +178,7 @@
         "form": {
           "url": "https://lsp.com/xxx/kyc",
           "mime_type": "text/html",
-          "submission_id": "xxxx44567789999",
-          "status": "SUCCESS"
+          "submission_id": "xxxx44567789999"
         },
         "required": true
       }

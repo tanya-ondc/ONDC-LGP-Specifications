@@ -9,7 +9,7 @@
         "code": "IND"
       }
     },
-    "action": "on_update",
+    "action": "on_confirm",
     "version": "2.0.0",
     "bap_id": "logistics_buyer.com",
     "bap_uri": "https://logistics_buyer.com/ondc",
@@ -17,13 +17,13 @@
     "bpp_uri": "https://logistics_seller.com/ondc",
     "transaction_id": "9fdb667c-76c6-456a-9742-ba9caa5eb765",
     "message_id": "1755281254860",
-    "timestamp": "2023-10-23T21:00:00.000Z",
+    "timestamp": "2023-02-06T21:00:00.000Z",
     "ttl": "PT30S"
   },
   "message": {
     "order": {
       "id": "O2",
-      "status": "In-progress",
+      "status": "Accepted",
       "provider": {
         "id": "P1",
         "locations": [
@@ -36,25 +36,21 @@
         {
           "id": "I3",
           "category_ids": [
-            "C2"
+            "C1",
+            "R1"
           ],
           "fulfillment_ids": [
             "1"
           ],
           "descriptor": {
             "code": "P2H2P"
-          },
-          "time": {
-            "label": "TAT",
-            "duration": "PT45M",
-            "timestamp": "2023-10-23"
           }
         }
       ],
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "6206.0"
+          "value": "4000.0"
         },
         "breakup": [
           {
@@ -64,7 +60,7 @@
             "title": "delivery",
             "price": {
               "currency": "INR",
-              "value": "5480.0"
+              "value": "3000.0"
             }
           },
           {
@@ -81,20 +77,10 @@
             "item": {
               "id": "I3"
             },
-            "title": "delivery_diff",
+            "title": "insurance",
             "price": {
               "currency": "INR",
-              "value": "50.0"
-            }
-          },
-          {
-            "item": {
-              "id": "I3"
-            },
-            "title": "tax_diff",
-            "price": {
-              "currency": "INR",
-              "value": "6.0"
+              "value": "500.0"
             }
           }
         ]
@@ -124,6 +110,7 @@
                   "name": "Karnataka"
                 },
                 "country": {
+                  "name": "India",
                   "code": "IND"
                 },
                 "area_code": "560041"
@@ -133,23 +120,18 @@
                 "email": "abcd.efgh@gmail.com"
               },
               "instructions": {
-                "code": "AWB_No",
-                "short_desc": "Shipping label",
-                "long_desc": "",
+                "short_desc": "",
+                "long_desc": "drop package at security gate",
                 "additional_desc": {
                   "content_type": "text/html",
                   "url": "URL for instructions"
-                },
-                "images": [
-                  "link/to/shipping/label"
-                ]
+                }
               },
               "time": {
                 "range": {
                   "start": "2023-02-06T22:30:00.000Z",
                   "end": "2023-02-06T22:45:00.000Z"
-                },
-                "timestamp": "2023-06-07T00:00:00.000Z"
+                }
               }
             },
             {
@@ -199,27 +181,21 @@
               "list": [
                 {
                   "descriptor": {
-                    "code": "Ready_To_Ship"
-                  },
-                  "value": "yes"
-                },
-                {
-                  "descriptor": {
                     "code": "AWB_No"
                   },
                   "value": "1209878992826353"
                 },
                 {
                   "descriptor": {
-                    "code": "RTO_Action"
+                    "code": "LR_No"
                   },
-                  "value": "no"
+                  "value": "1209878992826353"
                 },
                 {
                   "descriptor": {
-                    "code": "Eway_Bill_No"
+                    "code": "Transporter_Id"
                   },
-                  "value": "1209567899003"
+                  "value": "1209878992826353"
                 },
                 {
                   "descriptor": {
@@ -230,6 +206,83 @@
               ]
             }
           ]
+        }
+      ],
+      "cancellation_terms": [
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Pending",
+              "short_desc": ""
+            }
+          },
+          "reason_required": false,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "0.0"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Out-for-pickup",
+              "short_desc": ""
+            }
+          },
+          "reason_required": false,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "500.00"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "In-transit",
+              "short_desc": ""
+            }
+          },
+          "reason_required": false,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "700.00"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "At-destination-hub",
+              "short_desc": ""
+            }
+          },
+          "reason_required": false,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "1000.00"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Out-for-delivery",
+              "short_desc": ""
+            }
+          },
+          "reason_required": false,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "4000.00"
+            }
+          }
         }
       ],
       "billing": {
@@ -249,7 +302,7 @@
           "id": "P1",
           "collected_by": "BPP",
           "params": {
-            "amount": "6000",
+            "amount": "4000",
             "currency": "INR",
             "bank_account_number": "xxxxxxxx",
             "virtual_payment_address": "xxx@xxxx"
@@ -337,7 +390,7 @@
               "descriptor": {
                 "code": "Value"
               },
-              "Value": "50"
+              "value": "50"
             }
           ]
         },
@@ -442,55 +495,62 @@
         },
         {
           "descriptor": {
-            "code": "Package_Dimensions_Diff"
+            "code": "BPP_Terms"
           },
           "list": [
             {
               "descriptor": {
-                "code": "Unit"
+                "code": "Max_Liability"
               },
-              "value": "centimeter"
+              "value": "2"
             },
             {
               "descriptor": {
-                "code": "Length"
+                "code": "Max_Liability_Cap"
               },
-              "value": "1.5"
+              "value": "10000"
             },
             {
               "descriptor": {
-                "code": "Breadth"
+                "code": "Mandatory_Arbitration"
               },
-              "value": "1.5"
+              "value": "false"
             },
             {
               "descriptor": {
-                "code": "Height"
+                "code": "Court_Jurisdiction"
               },
-              "value": "1.5"
+              "value": "Bengaluru"
+            },
+            {
+              "descriptor": {
+                "code": "Delay_Interest"
+              },
+              "value": "1000"
+            },
+            {
+              "descriptor": {
+                "code": "Static_Terms"
+              },
+              "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
             }
           ]
         },
         {
           "descriptor": {
-            "code": "Diff_Proof"
+            "code": "BAP_Terms"
           },
           "list": [
             {
               "descriptor": {
-                "code": "type"
+                "code": "Accept_BPP_Terms"
               },
-              "value": "image"
-            },
-            {
-              "descriptor": {
-                "code": "url"
-              },
-              "value": "https://xxxxx/xx.png"
+              "value": "Y"
             }
           ]
         }
       ],
+      "created_at": "2023-02-06T22:00:00.000Z",
       "updated_at": "2023-02-06T22:00:30.000Z"
     }
   }

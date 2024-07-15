@@ -9,7 +9,7 @@
         "code": "IND"
       }
     },
-    "action": "on_status",
+    "action": "on_cancel",
     "version": "2.0.0",
     "bap_id": "logistics_buyer.com",
     "bap_uri": "https://logistics_buyer.com/ondc",
@@ -25,7 +25,7 @@
       "id": "O2",
       "status": "Cancelled",
       "cancellation": {
-        "cancelled_by": "buyerNP.com",
+        "cancelled_by": "logistics_buyer.com",
         "reason": {
           "id": "004"
         }
@@ -42,82 +42,45 @@
         {
           "id": "I3",
           "category_ids": [
-            "C2"
+            "C1"
           ],
+          "descriptor": {
+            "code": "P2H2P"
+          },
           "fulfillment_ids": [
             "1"
           ],
-          "descriptor": {
-            "code": "P2H2P"
-          },
           "time": {
             "label": "TAT",
-            "duration": "PT45M",
-            "timestamp": "2023-10-23"
-          }
-        },
-        {
-          "id": "I4",
-          "category_ids": [
-            "C2"
-          ],
-          "fulfillment_ids": [
-            "2"
-          ],
-          "descriptor": {
-            "code": "P2H2P"
-          },
-          "time": {
-            "label": "TAT",
-            "duration": "PT45M",
-            "timestamp": "2023-10-23"
+            "duration": "P4D",
+            "timestamp": "2023-10-27"
           }
         }
       ],
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "6206.0"
+          "value": "0.00"
         },
         "breakup": [
           {
             "item": {
-              "id": "I3"
+              "id": "I1"
             },
             "title": "delivery",
             "price": {
               "currency": "INR",
-              "value": "5480.0"
+              "value": "0.00"
             }
           },
           {
             "item": {
-              "id": "I3"
+              "id": "I1"
             },
             "title": "tax",
             "price": {
               "currency": "INR",
-              "value": "500.0"
-            }
-          },
-          {
-            "item": {
-              "id": "I4"
-            },
-            "title": "rto",
-            "price": {
-              "currency": "INR",
-              "value": "3000.0"
-            }
-          },
-          {
-            "item": {
-              "id": "I4"
-            },
-            "title": "tax",
-            "price": {
-              "currency": "INR",
-              "value": "200.0"
+              "value": "0.00"
             }
           }
         ]
@@ -171,8 +134,7 @@
                 "range": {
                   "start": "2023-02-06T22:30:00.000Z",
                   "end": "2023-02-06T22:45:00.000Z"
-                },
-                "timestamp": "2023-06-07T00:00:00.000Z"
+                }
               }
             },
             {
@@ -229,50 +191,6 @@
               ]
             }
           ]
-        },
-        {
-          "id": "2",
-          "type": "RTO",
-          "state": {
-            "descriptor": {
-              "code": "RTO-Delivered"
-            }
-          },
-          "tracking": false,
-          "stops": [
-            {
-              "id": "L1",
-              "parent_stop_id": "",
-              "type": "start",
-              "time": {
-                "range": {
-                  "start": "2023-02-06T22:30:00.000Z",
-                  "end": "2023-02-06T22:45:00.000Z"
-                },
-                "timestamp": "2023-06-07T00:00:00.000Z"
-              }
-            },
-            {
-              "id": "L2",
-              "parent_stop_id": "",
-              "type": "end",
-              "time": {
-                "range": {
-                  "start": "2023-02-06T22:30:00.000Z",
-                  "end": "2023-02-06T22:45:00.000Z"
-                },
-                "timestamp": "2023-06-07T00:00:00.000Z"
-              }
-            }
-          ],
-          "agent": {
-            "person": {
-              "name": "xxxxx"
-            },
-            "contact": {
-              "phone": "9999999999"
-            }
-          }
         }
       ],
       "billing": {
@@ -282,7 +200,10 @@
         "state": "Karnataka",
         "tax_id": "XXXXXXXXXXXXXXX",
         "phone": "9886098860",
-        "email": "abcd.efgh@gmail.com"
+        "email": "abcd.efgh@gmail.com",
+        "time": {
+          "timestamp": "2023-10-17T21:11:00.000Z"
+        }
       },
       "payments": [
         {
@@ -294,7 +215,7 @@
             "bank_account_number": "xxxxxxxx",
             "virtual_payment_address": "xxx@xxxx"
           },
-          "type": "ON-FULFILMENT",
+          "type": "ON-FULFILLMENT",
           "tags": [
             {
               "descriptor": {
@@ -364,25 +285,6 @@
       "tags": [
         {
           "descriptor": {
-            "code": "Package_Weight"
-          },
-          "list": [
-            {
-              "descriptor": {
-                "code": "Unit"
-              },
-              "value": "kilogram"
-            },
-            {
-              "descriptor": {
-                "code": "Value"
-              },
-              "Value": "5"
-            }
-          ]
-        },
-        {
-          "descriptor": {
             "code": "Package_Dimensions"
           },
           "list": [
@@ -396,19 +298,19 @@
               "descriptor": {
                 "code": "Length"
               },
-              "value": "100"
+              "value": "1"
             },
             {
               "descriptor": {
                 "code": "Breadth"
               },
-              "value": "100"
+              "value": "1"
             },
             {
               "descriptor": {
                 "code": "Height"
               },
-              "value": "100"
+              "value": "1"
             }
           ]
         },
@@ -428,24 +330,6 @@
                 "code": "Dangerous_Goods"
               },
               "value": "true"
-            },
-            {
-              "descriptor": {
-                "code": "Stackable"
-              },
-              "value": "true"
-            },
-            {
-              "descriptor": {
-                "code": "Shipment_Value"
-              },
-              "value": "50000"
-            },
-            {
-              "descriptor": {
-                "code": "Package_Count"
-              },
-              "value": "10"
             }
           ]
         },
@@ -477,25 +361,6 @@
                 "code": "Height"
               },
               "value": "1.5"
-            }
-          ]
-        },
-        {
-          "descriptor": {
-            "code": "Diff_Proof"
-          },
-          "list": [
-            {
-              "descriptor": {
-                "code": "type"
-              },
-              "value": "image"
-            },
-            {
-              "descriptor": {
-                "code": "url"
-              },
-              "value": "https://xxxxx/xx.png"
             }
           ]
         }

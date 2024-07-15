@@ -93,23 +93,23 @@
             {
               "id": "C1",
               "descriptor": {
-                "code": "STANDARD_DELIVERY"
+                "code": "Ocean_Delivery"
               },
               "time": {
                 "label": "TAT",
                 "duration": "P7D",
-                "timestamp": "2023-10-17"
+                "timestamp": "2023-10-24"
               }
             },
             {
               "id": "C2",
               "descriptor": {
-                "code": "EXPRESS_Delivery"
+                "code": "Air_Delivery"
               },
               "time": {
                 "label": "TAT",
                 "duration": "P4D",
-                "timestamp": "2023-10-17"
+                "timestamp": "2023-10-21"
               }
             }
           ],
@@ -264,7 +264,7 @@
               "time": {
                 "label": "TAT",
                 "duration": "P7D",
-                "timestamp": "2023-10-31T21:00:00.000Z"
+                "timestamp": "2023-10-24T21:00:00.000Z"
               }
             },
             {
@@ -289,7 +289,7 @@
               "time": {
                 "label": "TAT",
                 "duration": "P7D",
-                "timestamp": "2023-10-31T21:00:00.000Z"
+                "timestamp": "2023-10-24T21:00:00.000Z"
               }
             },
             {
@@ -430,7 +430,7 @@
               "time": {
                 "label": "TAT",
                 "duration": "P4D",
-                "timestamp": "2023-10-25T21:00:00.000Z"
+                "timestamp": "2023-10-21T21:00:00.000Z"
               }
             },
             {
@@ -455,7 +455,7 @@
               "time": {
                 "label": "TAT",
                 "duration": "P4D",
-                "timestamp": "2023-10-25T21:00:00.000Z"
+                "timestamp": "2023-10-21T21:00:00.000Z"
               }
             }
           ]
