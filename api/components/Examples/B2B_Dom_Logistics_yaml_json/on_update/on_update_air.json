@@ -206,6 +206,12 @@
                     "code": "Doc_Way_Bill_No"
                   },
                   "value": "1209567899003"
+                },
+                {
+                  "descriptor": {
+                    "code": "Invoice_Number"
+                  },
+                  "value": "94395859020203"
                 }
               ]
             }

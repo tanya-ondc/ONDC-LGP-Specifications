@@ -3613,6 +3613,11 @@ x-tags:
                 - code: LR_No
                   description: Lorry Number
                   reference: <PR/Issue/Discussion Links md format text>
+                - code: Invoice_Number
+                  description: >-
+                    Invoice number of the retail order provided by seller. It is
+                    optional.
+                  reference: <PR/Issue/Discussion Links md format text>
                 - code: Doc_Way_Bill_No
                   description: about the tag
                   reference: <PR/Issue/Discussion Links md format text>
@@ -5272,6 +5277,9 @@ x-flows:
                           - descriptor:
                               code: Eway_Bill_No
                             value: '1227262193237777'
+                          - descriptor:
+                              code: Invoice_Number
+                            value: '94395859020203'
                 updated_at: '2023-10-17T21:13:00.000Z'
       - summary: LSP updates the weight and measurement differential charges.
         api: on_update
@@ -5426,6 +5434,9 @@ x-flows:
                           - descriptor:
                               code: Doc_Way_Bill_No
                             value: '1209567899003'
+                          - descriptor:
+                              code: Invoice_Number
+                            value: '94395859020203'
                 billing:
                   name: ONDC sellerapp
                   address: My house or building name
@@ -5988,7 +5999,6 @@ x-flows:
                     url: https://lsp.com/xxx/kyc
                     mime_type: text/html
                     submission_id: xxxx44567789999
-                    status: SUCCESS
                   required: true
       - summary: Response to order initialization - KYC Successful
         api: on_init
@@ -6871,6 +6881,9 @@ x-flows:
                           - descriptor:
                               code: Eway_Bill_No
                             value: '1227262193237777'
+                          - descriptor:
+                              code: Invoice_Number
+                            value: '94395859020203'
                 updated_at: '2023-02-06T22:00:30.000Z'
       - summary: LSP updates the weight and measurement differential charges.
         api: on_update
@@ -7020,6 +7033,9 @@ x-flows:
                           - descriptor:
                               code: Doc_Way_Bill_No
                             value: '1209567899003'
+                          - descriptor:
+                              code: Invoice_Number
+                            value: '94395859020203'
                 billing:
                   name: ONDC sellerapp
                   address: My house or building name
@@ -8706,7 +8722,6 @@ x-flows:
                     url: https://lsp.com/xxx/kyc
                     mime_type: text/html
                     submission_id: xxxx44567789999
-                    status: SUCCESS
                   required: true
       - summary: Response to order initialization - KYC Successful
         api: on_init
@@ -9685,6 +9700,9 @@ x-flows:
                           - descriptor:
                               code: Eway_Bill_No
                             value: '1209878992826353'
+                          - descriptor:
+                              code: Invoice_Number
+                            value: '94395859020203'
                 tags:
                   - descriptor:
                       code: Package_Weight
@@ -9936,6 +9954,9 @@ x-flows:
                           - descriptor:
                               code: Doc_Way_Bill_No
                             value: '1209567899003'
+                          - descriptor:
+                              code: Invoice_Number
+                            value: '94395859020203'
                 billing:
                   name: ONDC sellerapp
                   address: My house or building name
@@ -11546,7 +11567,6 @@ x-flows:
                     url: https://lsp.com/xxx/kyc
                     mime_type: text/html
                     submission_id: xxxx44567789999
-                    status: SUCCESS
                   required: true
       - summary: Response to order initialization - KYC Successful
         api: on_init
@@ -12533,6 +12553,9 @@ x-flows:
                           - descriptor:
                               code: Eway_Bill_No
                             value: '1209878992826353'
+                          - descriptor:
+                              code: Invoice_Number
+                            value: '94395859020203'
                 tags:
                   - descriptor:
                       code: Package_Weight
@@ -12785,6 +12808,9 @@ x-flows:
                           - descriptor:
                               code: Doc_Way_Bill_No
                             value: '1209567899003'
+                          - descriptor:
+                              code: Invoice_Number
+                            value: '94395859020203'
                 billing:
                   name: ONDC sellerapp
                   address: My house or building name
@@ -13900,7 +13926,6 @@ x-examples:
                       url: https://lsp.com/xxx/kyc
                       mime_type: text/html
                       submission_id: xxxx44567789999
-                      status: SUCCESS
                     required: true
           - summary: Logistics Buyer initializes the order (Surface Delivery)
             description: >-
@@ -14601,6 +14626,9 @@ x-examples:
                             - descriptor:
                                 code: Eway_Bill_No
                               value: '1227262193237777'
+                            - descriptor:
+                                code: Invoice_Number
+                              value: '94395859020203'
                   tags:
                     - descriptor:
                         code: Package_Weight
@@ -14732,6 +14760,9 @@ x-examples:
                             - descriptor:
                                 code: Eway_Bill_No
                               value: '1227262193237777'
+                            - descriptor:
+                                code: Invoice_Number
+                              value: '94395859020203'
                   updated_at: '2023-02-06T22:00:30.000Z'
           - summary: Logistics Buyer updates RTS (Surface Delivery)
             description: null
@@ -14824,6 +14855,9 @@ x-examples:
                             - descriptor:
                                 code: Eway_Bill_No
                               value: '1227262193237777'
+                            - descriptor:
+                                code: Invoice_Number
+                              value: '94395859020203'
                   updated_at: '2023-10-17T21:13:00.000Z'
       status:
         examples:
@@ -17990,6 +18024,9 @@ x-examples:
                             - descriptor:
                                 code: Doc_Way_Bill_No
                               value: '1209567899003'
+                            - descriptor:
+                                code: Invoice_Number
+                              value: '94395859020203'
                   billing:
                     name: ONDC sellerapp
                     address: My house or building name
@@ -18266,6 +18303,9 @@ x-examples:
                             - descriptor:
                                 code: Doc_Way_Bill_No
                               value: '1209567899003'
+                            - descriptor:
+                                code: Invoice_Number
+                              value: '94395859020203'
                   billing:
                     name: ONDC sellerapp
                     address: My house or building name
@@ -18477,6 +18517,9 @@ x-examples:
                             - descriptor:
                                 code: Doc_Way_Bill_No
                               value: '1209567899003'
+                            - descriptor:
+                                code: Invoice_Number
+                              value: '94395859020203'
                   billing:
                     name: ONDC sellerapp
                     address: My house or building name
@@ -18743,6 +18786,9 @@ x-examples:
                             - descriptor:
                                 code: Doc_Way_Bill_No
                               value: '1209567899003'
+                            - descriptor:
+                                code: Invoice_Number
+                              value: '94395859020203'
                   billing:
                     name: ONDC sellerapp
                     address: My house or building name
@@ -20085,7 +20131,6 @@ x-examples:
                       url: https://lsp.com/xxx/kyc
                       mime_type: text/html
                       submission_id: xxxx44567789999
-                      status: SUCCESS
                     required: true
           - summary: Logistics Buyer initializes the order.
             description: >-
@@ -20214,7 +20259,6 @@ x-examples:
                       url: https://lsp.com/xxx/kyc
                       mime_type: text/html
                       submission_id: xxxx44567789999
-                      status: SUCCESS
                     required: true
       confirm:
         examples:
@@ -20829,6 +20873,9 @@ x-examples:
                             - descriptor:
                                 code: Eway_Bill_No
                               value: '1209878992826353'
+                            - descriptor:
+                                code: Invoice_Number
+                              value: '94395859020203'
                   tags:
                     - descriptor:
                         code: Package_Weight
@@ -20975,6 +21022,9 @@ x-examples:
                             - descriptor:
                                 code: Eway_Bill_No
                               value: '1209878992826353'
+                            - descriptor:
+                                code: Invoice_Number
+                              value: '94395859020203'
                   tags:
                     - descriptor:
                         code: Package_Weight
@@ -24528,6 +24578,9 @@ x-examples:
                             - descriptor:
                                 code: Doc_Way_Bill_No
                               value: '1209567899003'
+                            - descriptor:
+                                code: Invoice_Number
+                              value: '94395859020203'
                   billing:
                     name: ONDC sellerapp
                     address: My house or building name
@@ -24846,6 +24899,9 @@ x-examples:
                             - descriptor:
                                 code: Doc_Way_Bill_No
                               value: '1209567899003'
+                            - descriptor:
+                                code: Invoice_Number
+                              value: '94395859020203'
                   billing:
                     name: ONDC sellerapp
                     address: My house or building name

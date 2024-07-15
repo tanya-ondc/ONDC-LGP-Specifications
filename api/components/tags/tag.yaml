@@ -222,6 +222,9 @@ Delivery_Terms:
     reference: <PR/Issue/Discussion Links md format text>   
   - code: LR_No
     description: Lorry Number
+    reference: <PR/Issue/Discussion Links md format text> 
+  - code: Invoice_Number
+    description: Invoice number of the retail order provided by seller. It is optional. 
     reference: <PR/Issue/Discussion Links md format text>   
   - code: Doc_Way_Bill_No
     description: about the tag
