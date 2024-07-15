@@ -25,9 +25,9 @@
       "id": "O2",
       "status": "Cancelled",
       "cancellation": {
-        "cancelled_by": "logistics_buyer.com",
+        "cancelled_by": "logistics_seller.com",
         "reason": {
-          "id": "004"
+          "id": "013"
         }
       },
       "provider": {
@@ -55,32 +55,79 @@
             "duration": "P4D",
             "timestamp": "2023-10-27"
           }
+        },
+        {
+          "id": "I4",
+          "category_ids": [
+            "C2"
+          ],
+          "descriptor": {
+            "code": "P2H2P"
+          },
+          "fulfillment_ids": [
+            "2"
+          ],
+          "time": {
+            "label": "TAT",
+            "duration": "P4D",
+            "timestamp": "2023-10-27"
+          }
         }
       ],
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "0.00"
+          "value": "7500.00"
         },
         "breakup": [
           {
             "item": {
-              "id": "I1"
+              "id": "I3"
             },
             "title": "delivery",
             "price": {
               "currency": "INR",
-              "value": "0.00"
+              "value": "3000.00"
             }
           },
           {
             "item": {
-              "id": "I1"
+              "id": "I3"
+            },
+            "title": "insurance",
+            "price": {
+              "currency": "INR",
+              "value": "500.0"
+            }
+          },
+          {
+            "item": {
+              "id": "I3"
             },
             "title": "tax",
             "price": {
               "currency": "INR",
-              "value": "0.00"
+              "value": "500.00"
+            }
+          },
+          {
+            "item": {
+              "id": "I4"
+            },
+            "title": "rto",
+            "price": {
+              "currency": "INR",
+              "value": "3000.00"
+            }
+          },
+          {
+            "item": {
+              "id": "I4"
+            },
+            "title": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "500.00"
             }
           }
         ]
@@ -132,8 +179,8 @@
               },
               "time": {
                 "range": {
-                  "start": "2023-02-06T22:30:00.000Z",
-                  "end": "2023-02-06T22:45:00.000Z"
+                  "start": "2023-10-17T21:12:00.710Z",
+                  "end": "2023-10-20T21:12:00.710Z"
                 }
               }
             },
@@ -170,8 +217,8 @@
               },
               "time": {
                 "range": {
-                  "start": "2023-02-14T22:30:00.000Z",
-                  "end": "2023-02-14T22:45:00.000Z"
+                  "start": "2023-10-21T21:12:00.710Z",
+                  "end": "2023-10-24T21:12:00.710Z"
                 }
               }
             }
@@ -189,6 +236,83 @@
                   "value": "1209878992826353"
                 }
               ]
+            },
+            {
+              "descriptor": {
+                "code": "RTO_Event"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "Retry_Count"
+                  },
+                  "value": "3"
+                },
+                {
+                  "descriptor": {
+                    "code": "RTO_Id"
+                  },
+                  "value": "2"
+                },
+                {
+                  "descriptor": {
+                    "code": "Cancellation_Reason_Id"
+                  },
+                  "value": "013"
+                },
+                {
+                  "descriptor": {
+                    "code": "Sub_Reason_Id"
+                  },
+                  "value": "004"
+                },
+                {
+                  "descriptor": {
+                    "code": "Cancelled_By"
+                  },
+                  "value": "logistics_seller.com"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "type": "RTO",
+          "state": {
+            "descriptor": {
+              "code": "RTO-Initiated"
+            }
+          },
+          "stops": [
+            {
+              "id": "L2",
+              "type": "start",
+              "location": {
+                "gps": "12.342769,77.9129423",
+                "map_url": "",
+                "address": "My house or building name, street name",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560043"
+              },
+              "time": {
+                "timestamp": "2023-06-07T14:00:00.000Z"
+              }
+            },
+            {
+              "id": "L1",
+              "type": "end",
+              "location": {
+                "gps": "12.4535445,77.9283792",
+                "area_code": "560041",
+                "map_url": "",
+                "address": "My house or building name, street name",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "India"
+              }
             }
           ]
         }
@@ -200,14 +324,17 @@
         "state": "Karnataka",
         "tax_id": "XXXXXXXXXXXXXXX",
         "phone": "9886098860",
-        "email": "abcd.efgh@gmail.com"
+        "email": "abcd.efgh@gmail.com",
+        "time": {
+          "timestamp": "2023-10-17T21:11:00.000Z"
+        }
       },
       "payments": [
         {
           "id": "P1",
           "collected_by": "BPP",
           "params": {
-            "amount": "6000",
+            "amount": "4000",
             "currency": "INR",
             "bank_account_number": "xxxxxxxx",
             "virtual_payment_address": "xxx@xxxx"
@@ -282,31 +409,6 @@
       "tags": [
         {
           "descriptor": {
-            "code": "Quantity"
-          },
-          "list": [
-            {
-              "descriptor": {
-                "code": "count"
-              },
-              "value": "1000"
-            },
-            {
-              "descriptor": {
-                "code": "MEASURE_UNIT"
-              },
-              "value": "kilogram"
-            },
-            {
-              "descriptor": {
-                "code": "MEASURE_VALUE"
-              },
-              "value": "1000"
-            }
-          ]
-        },
-        {
-          "descriptor": {
             "code": "Package_Dimensions"
           },
           "list": [
@@ -349,18 +451,6 @@
             },
             {
               "descriptor": {
-                "code": "UNIT_PRICE"
-              },
-              "value": "100"
-            },
-            {
-              "descriptor": {
-                "code": "ITEM_PRICE"
-              },
-              "value": "100000"
-            },
-            {
-              "descriptor": {
                 "code": "Dangerous_Goods"
               },
               "value": "true"
@@ -399,7 +489,7 @@
           ]
         }
       ],
-      "updated_at": "2023-02-06T22:00:30.000Z"
+      "updated_at": "2023-10-17T22:00:00.811Z"
     }
   }
 }
