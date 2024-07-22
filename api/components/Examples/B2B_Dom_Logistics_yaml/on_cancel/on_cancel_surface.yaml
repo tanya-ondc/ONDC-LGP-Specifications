@@ -54,7 +54,7 @@ value:
           time:
             label: TAT
             duration: PT7D
-            timestamp: '2023-10-17'
+            timestamp: '2023-10-24'
       quote:
         price:
           currency: INR
@@ -103,12 +103,15 @@ value:
               type: start
               location:
                 gps: 12.4535445,77.9283792
-                area_code: '560041'
-                map_url: ''
                 address: My house or building name, street name
-                city: Bengaluru
-                state: Karnataka
-                country: India
+                city:
+                  name: Bengaluru
+                state:
+                  name: Karnataka
+                country:
+                  name: India
+                  code: IND
+                area_code: '560041'
               contact:
                 phone: '9886098860'
                 email: abcd.efgh@gmail.com
@@ -129,16 +132,20 @@ value:
                 range:
                   start: '2023-10-17T21:12:00.710Z'
                   end: '2023-10-20T21:12:00.710Z'
+                timestamp: '2023-10-20T21:12:00.710Z'
             - id: L2
               parent_stop_id: L1
               type: end
               location:
                 gps: 12.342769,77.9129423
-                map_url: ''
                 address: My house or building name, street name
-                city: Bengaluru
-                state: Karnataka
-                country: India
+                city:
+                  name: Bengaluru
+                state:
+                  name: Karnataka
+                country:
+                  name: India
+                  code: IND
                 area_code: '560043'
               contact:
                 phone: '9886098860'
@@ -193,11 +200,14 @@ value:
               type: start
               location:
                 gps: 12.342769,77.9129423
-                map_url: ''
                 address: My house or building name, street name
-                city: Bengaluru
-                state: Karnataka
-                country: India
+                city:
+                  name: Bengaluru
+                state:
+                  name: Karnataka
+                country:
+                  name: India
+                  code: IND
                 area_code: '560043'
               time:
                 timestamp: '2023-06-07T14:00:00.000Z'
@@ -205,12 +215,15 @@ value:
               type: end
               location:
                 gps: 12.4535445,77.9283792
-                area_code: '560041'
-                map_url: ''
                 address: My house or building name, street name
-                city: Bengaluru
-                state: Karnataka
-                country: India
+                city:
+                  name: Bengaluru
+                state:
+                  name: Karnataka
+                country:
+                  name: India
+                  code: IND
+                area_code: '560041'
       billing:
         name: ONDC sellerapp
         address: My house or building name

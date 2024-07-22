@@ -31,6 +31,9 @@ value:
           category_ids:
             - C1
             - R1
+          time:
+            label: TAT
+            duration: P7D
       fulfillments:
         - id: '1'
           type: Delivery

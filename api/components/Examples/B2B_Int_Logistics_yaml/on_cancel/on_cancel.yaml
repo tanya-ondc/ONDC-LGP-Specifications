@@ -159,7 +159,7 @@ value:
                   value: "1209878992826353"
                 - descriptor:
                     code: RTO_Action
-                  value: no
+                  value: 'no'
                 - descriptor:
                     code: INCOTERMS
                   value: CIF

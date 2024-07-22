@@ -107,7 +107,6 @@ value:
                 range:
                   start: '2023-10-17T21:12:00.710Z'
                   end: '2023-10-20T21:12:00.710Z'
-                timestamp: '2023-10-17T21:13:00.601Z'
             - id: L2
               parent_stop_id: L1
               type: end

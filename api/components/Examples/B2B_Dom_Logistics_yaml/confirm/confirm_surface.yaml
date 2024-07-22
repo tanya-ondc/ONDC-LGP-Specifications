@@ -35,6 +35,9 @@ value:
             - R1
           descriptor:
             code: P2H2P
+          time:
+            label: TAT
+            duration: P7D
       quote:
         price:
           currency: INR
