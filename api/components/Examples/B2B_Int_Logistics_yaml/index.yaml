@@ -40,3 +40,5 @@ on_update:
   examples:
     - $ref: ./on_update/on_update_air.yaml
     - $ref: ./on_update/on_update_ocean.yaml
+    - $ref: ./on_update/on_update_air_diff.yaml
+    - $ref: ./on_update/on_update_ocean_diff.yaml
