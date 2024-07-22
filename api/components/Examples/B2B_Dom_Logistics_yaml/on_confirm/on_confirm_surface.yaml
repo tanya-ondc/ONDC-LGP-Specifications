@@ -35,6 +35,9 @@ value:
             - '1'
           descriptor:
             code: P2H2P
+          time:
+            label: TAT
+            duration: P4D
       quote:
         price:
           currency: INR
