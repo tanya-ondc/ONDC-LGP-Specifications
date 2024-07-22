@@ -92,12 +92,15 @@ value:
               type: start
               location:
                 gps: 12.4535445,77.9283792
-                area_code: "560041"
-                map_url: ""
                 address: My house or building name, street name
-                city: Bengaluru
-                state: Karnataka
-                country: India
+                city:
+                  name: Bengaluru
+                state:
+                  name: Karnataka
+                country:
+                  name: India
+                  code: IND
+                area_code: '560041'
               contact:
                 phone: "9886098860"
                 email: abcd.efgh@gmail.com
@@ -124,12 +127,14 @@ value:
               type: end
               location:
                 gps: 12.342769,77.9129423
-                map_url: ""
                 address: My house or building name, street name
-                city: Bengaluru
-                state: Karnataka
-                country: India
-                area_code: "560043"
+                city:
+                  name: Bengaluru
+                state:
+                  name: Karnataka
+                country:
+                  code: IND
+                area_code: '560043'
               contact:
                 phone: "9886098860"
                 email: abcd.efgh@gmail.com
@@ -168,16 +173,16 @@ value:
               type: start
               time:
                 range:
-                  start: "2023-02-06T22:30:00.000Z"
-                  end: "2023-02-06T22:45:00.000Z"
+                  start: "2023-10-17T22:30:00.000Z"
+                  end: "2023-10-17T22:45:00.000Z"
                 timestamp: "2023-06-07T00:00:00.000Z"
             - id: L2
               parent_stop_id: ""
               type: end
               time:
                 range:
-                  start: "2023-02-06T22:30:00.000Z"
-                  end: "2023-02-06T22:45:00.000Z"
+                  start: "2023-10-17T22:30:00.000Z"
+                  end: "2023-10-17T22:45:00.000Z"
                 timestamp: "2023-06-07T00:00:00.000Z"
           agent:
             person:

@@ -32,6 +32,9 @@ value:
             - '1'
           descriptor:
             code: P2H2P
+          time:
+            label: TAT
+            duration: P7D
       fulfillments:
         - id: '1'
           type: Delivery
@@ -69,10 +72,10 @@ value:
               code: Delivery_Terms
             list:
               - descriptor:
-                  code: INCOTERMS
+                  code: Incoterms
                 value: CIF
               - descriptor:
-                  code: NAMED_PLACE_OF_DELIVERY
+                  code: Named_Place_Of_Delivery
                 value: UN:SIN
       billing:
         name: ONDC sellerapp

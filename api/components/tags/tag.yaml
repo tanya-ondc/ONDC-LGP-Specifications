@@ -230,7 +230,7 @@ Delivery_Terms:
     description: about the tag
     reference: <PR/Issue/Discussion Links md format text>  
 Delivery_terms_international:
-  - code: INCOTERMS
+  - code: Incoterms
     description: Incoterms (International Commercial Terms) present in International Logistics are the terms to clarify the responsibilities of buyers and sellers for the delivery of goods.
     reference: <PR/Issue/Discussion Links md format text>
     value:
@@ -249,7 +249,7 @@ Delivery_terms_international:
       - code: DDP
         description: Under DDP (Delivered Duty Paid) terms, the seller assumes a high level of responsibility and covers all costs associated with delivering the goods to the buyer's destination. The buyer, on the other hand, is responsible for unloading the goods and any subsequent transportation from the named place to their final destination.
         reference: <PR/Issue/Discussion Links md format text>
-  - code: NAMED_PLACE_OF_DELIVERY
+  - code: Named_Place_Of_Delivery
     description: If the delivery is on port based on incoterm, the port code should be sent as per UN standard.
     reference: <PR/Issue/Discussion Links md format text>
 Quantity:

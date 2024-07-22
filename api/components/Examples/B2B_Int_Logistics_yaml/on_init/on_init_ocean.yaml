@@ -16,7 +16,7 @@ value:
     bpp_uri: https://logistics_seller.com/ondc
     transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
     message_id: '1755281254861'
-    timestamp: '2023-02-06T21:11:00.801Z'
+    timestamp: '2023-10-17T21:11:00.801Z'
     ttl: PT30S
   message:
     order:
@@ -32,6 +32,9 @@ value:
             - C1
           descriptor:
             code: P2H2P
+          time:
+            label: TAT
+            duration: P7D
       fulfillments:
         - id: '1'
           type: Delivery
@@ -69,16 +72,22 @@ value:
               code: Delivery_Terms
             list:
               - descriptor:
-                  code: INCOTERMS
+                  code: Incoterms
                 value: CIF
               - descriptor:
-                  code: NAMED_PLACE_OF_DELIVERY
+                  code: Named_Place_Of_Delivery
                 value: UN:SIN
       quote:
         price:
           currency: INR
           value: '4000.0'
         breakup:
+          - item:
+              id: I1
+            title: delivery
+            price:
+              currency: INR
+              value: '500.0'
           - item:
               id: I1
             title: Origin

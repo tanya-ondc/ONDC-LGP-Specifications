@@ -93,10 +93,10 @@ message:
   created_at: 
         description: order created at 
         required: required
-        usage: "2023-02-06T22:00:00.000Z"
+        usage: "2023-10-17T22:00:00.000Z"
         reference: if any
   updated_at: 
         description: order updated at
         required: required
-        usage: "2023-02-06T22:00:00.000Z"
+        usage: "2023-10-17T22:00:00.000Z"
         reference: if any

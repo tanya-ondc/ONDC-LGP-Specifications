@@ -246,13 +246,13 @@
                 },
                 {
                   "descriptor": {
-                    "code": "INCOTERMS"
+                    "code": "Incoterms"
                   },
                   "value": "CIF"
                 },
                 {
                   "descriptor": {
-                    "code": "NAMED_PLACE_OF_DELIVERY"
+                    "code": "Named_Place_Of_Delivery"
                   },
                   "value": "UN:SIN"
                 },
@@ -562,7 +562,7 @@
           ]
         }
       ],
-      "updated_at": "2023-02-06T22:00:30.000Z"
+      "updated_at": "2023-10-17T22:00:30.000Z"
     }
   }
 }

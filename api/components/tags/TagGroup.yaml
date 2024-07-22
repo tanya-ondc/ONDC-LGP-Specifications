@@ -2,7 +2,7 @@ intent:
   fulfillments:
     tags:
       - code: Delivery_Terms
-        description: Define incoterms for Delivery here for internation logistics
+        description: Define Incoterms for Delivery here for internation logistics
         reference: <PR/Issue/Discussion Links md format text>
         required: required for international logistics
         list:

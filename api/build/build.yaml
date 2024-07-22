@@ -3195,11 +3195,11 @@ x-tags:
         fulfillments: &ref_18
           tags:
             - code: Delivery_Terms
-              description: Define incoterms for Delivery here for internation logistics
+              description: Define Incoterms for Delivery here for internation logistics
               reference: <PR/Issue/Discussion Links md format text>
               required: required for international logistics
               list:
-                - code: INCOTERMS
+                - code: Incoterms
                   description: >-
                     Incoterms (International Commercial Terms) present in
                     International Logistics are the terms to clarify the
@@ -3245,7 +3245,7 @@ x-tags:
                         transportation from the named place to their final
                         destination.
                       reference: <PR/Issue/Discussion Links md format text>
-                - code: NAMED_PLACE_OF_DELIVERY
+                - code: Named_Place_Of_Delivery
                   description: >-
                     If the delivery is on port based on incoterm, the port code
                     should be sent as per UN standard.
@@ -4886,7 +4886,7 @@ x-flows:
               bpp_uri: https://logistics_seller.com/ondc
               transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
               message_id: '1755281254860'
-              timestamp: '2023-02-06T21:00:00.000Z'
+              timestamp: '2023-10-17T21:00:00.000Z'
               ttl: PT30S
             message:
               order:
@@ -4961,8 +4961,8 @@ x-flows:
                             url: URL for instructions
                         time:
                           range:
-                            start: '2023-02-06T22:30:00.000Z'
-                            end: '2023-02-06T22:45:00.000Z'
+                            start: '2023-10-17T22:30:00.000Z'
+                            end: '2023-10-17T22:45:00.000Z'
                       - id: L2
                         parent_stop_id: L1
                         type: end
@@ -5188,8 +5188,8 @@ x-flows:
                       - descriptor:
                           code: Accept_BPP_Terms
                         value: 'Y'
-                created_at: '2023-02-06T22:00:00.000Z'
-                updated_at: '2023-02-06T22:00:30.000Z'
+                created_at: '2023-10-17T22:00:00.000Z'
+                updated_at: '2023-10-17T22:00:30.000Z'
       - summary: Logistics Buyer updates RTS
         api: update
         description: Logistics Buyer updates RTS - Ready to Ship
@@ -5613,12 +5613,15 @@ x-flows:
                         type: start
                         location:
                           gps: 12.4535445,77.9283792
-                          area_code: '560041'
-                          map_url: ''
                           address: My house or building name, street name
-                          city: Bengaluru
-                          state: Karnataka
-                          country: India
+                          city:
+                            name: Bengaluru
+                          state:
+                            name: Karnataka
+                          country:
+                            name: India
+                            code: IND
+                          area_code: '560041'
                         contact:
                           phone: '9886098860'
                           email: abcd.efgh@gmail.com
@@ -5646,11 +5649,13 @@ x-flows:
                         type: end
                         location:
                           gps: 12.342769,77.9129423
-                          map_url: ''
                           address: My house or building name, street name
-                          city: Bengaluru
-                          state: Karnataka
-                          country: India
+                          city:
+                            name: Bengaluru
+                          state:
+                            name: Karnataka
+                          country:
+                            code: IND
                           area_code: '560043'
                         contact:
                           phone: '9886098860'
@@ -6038,7 +6043,7 @@ x-flows:
               bpp_uri: https://logistics_seller.com/ondc
               transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
               message_id: '1755281254860'
-              timestamp: '2023-02-06T21:00:00.000Z'
+              timestamp: '2023-10-17T21:00:00.000Z'
               ttl: PT30S
             message:
               order:
@@ -6253,7 +6258,7 @@ x-flows:
               bpp_uri: https://logistics_seller.com/ondc
               transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
               message_id: '1755281254860'
-              timestamp: '2023-02-06T21:00:00.000Z'
+              timestamp: '2023-10-17T21:00:00.000Z'
               ttl: PT30S
             message:
               order:
@@ -6481,8 +6486,8 @@ x-flows:
                       - descriptor:
                           code: Accept_BPP_Terms
                         value: 'Y'
-                created_at: '2023-02-06T22:00:00.000Z'
-                updated_at: '2023-02-06T22:00:00.000Z'
+                created_at: '2023-10-17T22:00:00.000Z'
+                updated_at: '2023-10-17T22:00:00.000Z'
       - summary: Logistics Provider accepts the order.
         api: on_confirm
         description: Logistics Provider accepts the order.
@@ -6506,7 +6511,7 @@ x-flows:
               bpp_uri: https://logistics_seller.com/ondc
               transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
               message_id: '1755281254860'
-              timestamp: '2023-02-06T21:00:00.000Z'
+              timestamp: '2023-10-17T21:00:00.000Z'
               ttl: PT30S
             message:
               order:
@@ -6580,8 +6585,8 @@ x-flows:
                             url: URL for instructions
                         time:
                           range:
-                            start: '2023-02-06T22:30:00.000Z'
-                            end: '2023-02-06T22:45:00.000Z'
+                            start: '2023-10-17T22:30:00.000Z'
+                            end: '2023-10-17T22:45:00.000Z'
                       - id: L2
                         parent_stop_id: L1
                         type: end
@@ -6804,8 +6809,8 @@ x-flows:
                       - descriptor:
                           code: Accept_BPP_Terms
                         value: 'Y'
-                created_at: '2023-02-06T22:00:00.000Z'
-                updated_at: '2023-02-06T22:00:30.000Z'
+                created_at: '2023-10-17T22:00:00.000Z'
+                updated_at: '2023-10-17T22:00:30.000Z'
       - summary: Logistics Buyer updates RTS
         api: update
         description: Logistics Buyer updates RTS - Ready to Ship
@@ -6829,7 +6834,7 @@ x-flows:
               bpp_uri: https://logistics_seller.com/ondc
               transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
               message_id: '1755281254860'
-              timestamp: '2023-02-06T21:00:00.000Z'
+              timestamp: '2023-10-17T21:00:00.000Z'
               ttl: PT30S
             message:
               update_target: fulfillment
@@ -6901,7 +6906,7 @@ x-flows:
                           - descriptor:
                               code: Invoice_Number
                             value: '94395859020203'
-                updated_at: '2023-02-06T22:00:30.000Z'
+                updated_at: '2023-10-17T22:00:30.000Z'
       - summary: LSP updates the weight and measurement differential charges.
         api: on_update
         description: LSP updates the weight and measurement differential charges.
@@ -7001,8 +7006,8 @@ x-flows:
                             - link/to/shipping/label
                         time:
                           range:
-                            start: '2023-02-06T22:30:00.000Z'
-                            end: '2023-02-06T22:45:00.000Z'
+                            start: '2023-10-17T22:30:00.000Z'
+                            end: '2023-10-17T22:45:00.000Z'
                       - id: L2
                         parent_stop_id: L1
                         type: end
@@ -7102,7 +7107,7 @@ x-flows:
                           - descriptor:
                               code: Type
                             value: ON-FULFILLMENT
-                updated_at: '2023-02-06T22:00:30.000Z'
+                updated_at: '2023-10-17T22:00:30.000Z'
       - summary: Logistics Buyer requests for status update
         api: status
         description: Logistics Buyer requests for order status update
@@ -7135,7 +7140,7 @@ x-flows:
               bpp_uri: https://logistics_seller.com/ondc
               transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
               message_id: '1755281254860'
-              timestamp: '2023-10-23T21:00:00.000Z'
+              timestamp: '2023-10-17T21:00:00.000Z'
               ttl: PT30S
             message:
               order:
@@ -7153,8 +7158,8 @@ x-flows:
                       code: P2H2P
                     time:
                       label: TAT
-                      duration: PT45M
-                      timestamp: '2023-10-23'
+                      duration: P4D
+                      timestamp: '2023-10-21'
                 quote:
                   price:
                     currency: INR
@@ -7197,12 +7202,15 @@ x-flows:
                         type: start
                         location:
                           gps: 12.4535445,77.9283792
-                          area_code: '560041'
-                          map_url: ''
                           address: My house or building name, street name
-                          city: Bengaluru
-                          state: Karnataka
-                          country: India
+                          city:
+                            name: Bengaluru
+                          state:
+                            name: Karnataka
+                          country:
+                            name: India
+                            code: IND
+                          area_code: '560041'
                         contact:
                           phone: '9886098860'
                           email: abcd.efgh@gmail.com
@@ -7222,19 +7230,21 @@ x-flows:
                             - link/to/shipping/label
                         time:
                           range:
-                            start: '2023-02-06T22:30:00.000Z'
-                            end: '2023-02-06T22:45:00.000Z'
+                            start: '2023-10-17T22:30:00.000Z'
+                            end: '2023-10-17T22:45:00.000Z'
                           timestamp: '2023-06-07T00:00:00.000Z'
                       - id: L2
                         parent_stop_id: L1
                         type: end
                         location:
                           gps: 12.342769,77.9129423
-                          map_url: ''
                           address: My house or building name, street name
-                          city: Bengaluru
-                          state: Karnataka
-                          country: India
+                          city:
+                            name: Bengaluru
+                          state:
+                            name: Karnataka
+                          country:
+                            code: IND
                           area_code: '560043'
                         contact:
                           phone: '9886098860'
@@ -7376,7 +7386,7 @@ x-flows:
                       - descriptor:
                           code: url
                         value: https://xxxxx/xx.png
-                updated_at: '2023-02-06T22:00:30.000Z'
+                updated_at: '2023-10-17T22:00:30.000Z'
   - summary: B2B Domestic Logistics Cancellation - RTO
     description: >-
       The below flow shows the journey of Logistics buyer buying logistics
@@ -7792,7 +7802,7 @@ x-flows:
               bpp_uri: https://logistics_seller.com/ondc
               transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
               message_id: '1755281254860'
-              timestamp: '2023-10-23T21:00:00.000Z'
+              timestamp: '2023-10-21T21:00:00.000Z'
               ttl: PT30S
             message:
               order:
@@ -7816,8 +7826,8 @@ x-flows:
                       code: P2H2P
                     time:
                       label: TAT
-                      duration: PT45M
-                      timestamp: '2023-10-23'
+                      duration: P4D
+                      timestamp: '2023-10-21'
                   - id: I4
                     category_ids:
                       - C2
@@ -7827,8 +7837,8 @@ x-flows:
                       code: P2H2P
                     time:
                       label: TAT
-                      duration: PT45M
-                      timestamp: '2023-10-23'
+                      duration: P4D
+                      timestamp: '2023-10-25'
                 quote:
                   price:
                     currency: INR
@@ -7871,12 +7881,15 @@ x-flows:
                         type: start
                         location:
                           gps: 12.4535445,77.9283792
-                          area_code: '560041'
-                          map_url: ''
                           address: My house or building name, street name
-                          city: Bengaluru
-                          state: Karnataka
-                          country: India
+                          city:
+                            name: Bengaluru
+                          state:
+                            name: Karnataka
+                          country:
+                            name: India
+                            code: IND
+                          area_code: '560041'
                         contact:
                           phone: '9886098860'
                           email: abcd.efgh@gmail.com
@@ -7895,19 +7908,21 @@ x-flows:
                             - link/to/shipping/label
                         time:
                           range:
-                            start: '2023-02-06T22:30:00.000Z'
-                            end: '2023-02-06T22:45:00.000Z'
+                            start: '2023-10-17T22:30:00.000Z'
+                            end: '2023-10-17T22:45:00.000Z'
                           timestamp: '2023-06-07T00:00:00.000Z'
                       - id: L2
                         parent_stop_id: L1
                         type: end
                         location:
                           gps: 12.342769,77.9129423
-                          map_url: ''
                           address: My house or building name, street name
-                          city: Bengaluru
-                          state: Karnataka
-                          country: India
+                          city:
+                            name: Bengaluru
+                          state:
+                            name: Karnataka
+                          country:
+                            code: IND
                           area_code: '560043'
                         contact:
                           phone: '9886098860'
@@ -7946,16 +7961,16 @@ x-flows:
                         type: start
                         time:
                           range:
-                            start: '2023-02-06T22:30:00.000Z'
-                            end: '2023-02-06T22:45:00.000Z'
+                            start: '2023-10-17T22:30:00.000Z'
+                            end: '2023-10-17T22:45:00.000Z'
                           timestamp: '2023-06-07T00:00:00.000Z'
                       - id: L2
                         parent_stop_id: ''
                         type: end
                         time:
                           range:
-                            start: '2023-02-06T22:30:00.000Z'
-                            end: '2023-02-06T22:45:00.000Z'
+                            start: '2023-10-17T22:30:00.000Z'
+                            end: '2023-10-17T22:45:00.000Z'
                           timestamp: '2023-06-07T00:00:00.000Z'
                     agent:
                       person:
@@ -8077,7 +8092,7 @@ x-flows:
                       - descriptor:
                           code: url
                         value: https://xxxxx/xx.png
-                updated_at: '2023-02-06T22:00:30.000Z'
+                updated_at: '2023-10-17T22:00:30.000Z'
   - summary: B2B International Logistics - Air Delivery
     description: >-
       The below flow shows the journey of Logistics buyer buying International
@@ -8095,7 +8110,7 @@ x-flows:
             B2B BAP->> B2B BPP: RFQ is requested
 
             note over B2B BPP,Logistics BPP: **SERVICABILITY & QUOTATION**
-            B2B BPP->>Logistics BPP: **/search**  - Check for servicability based on start and end location and <br/> quotation based on product dimensions & INCOTERMS
+            B2B BPP->>Logistics BPP: **/search**  - Check for servicability based on start and end location and <br/> quotation based on product dimensions & Incoterms
             Logistics BPP->>B2B BPP: **/on_search** - Returns possible fulfillments and categories of fulfillment <br/>                      + Quotation of each fulfilment type + e-KYC form
 
 
@@ -8219,10 +8234,10 @@ x-flows:
                       code: Delivery_Terms
                     list:
                       - descriptor:
-                          code: INCOTERMS
+                          code: Incoterms
                         value: CIF
                       - descriptor:
-                          code: NAMED_PLACE_OF_DELIVERY
+                          code: Named_Place_Of_Delivery
                         value: UN:SGSIN
                 payment:
                   collected_by: BPP
@@ -8660,6 +8675,9 @@ x-flows:
                       - '1'
                     descriptor:
                       code: P2H2P
+                    time:
+                      label: TAT
+                      duration: P4D
                 fulfillments:
                   - id: '1'
                     type: Delivery
@@ -8697,10 +8715,10 @@ x-flows:
                         code: Delivery_Terms
                       list:
                         - descriptor:
-                            code: INCOTERMS
+                            code: Incoterms
                           value: CIF
                         - descriptor:
-                            code: NAMED_PLACE_OF_DELIVERY
+                            code: Named_Place_Of_Delivery
                           value: UN:SIN
                 billing:
                   name: ONDC sellerapp
@@ -8779,7 +8797,7 @@ x-flows:
               bpp_uri: https://logistics_seller.com/ondc
               transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
               message_id: '1755281254860'
-              timestamp: '2023-02-06T21:00:00.000Z'
+              timestamp: '2023-10-17T21:00:00.000Z'
               ttl: PT30S
             message:
               order:
@@ -8793,6 +8811,9 @@ x-flows:
                       - '1'
                     category_ids:
                       - C1
+                    time:
+                      label: TAT
+                      duration: P4D
                 fulfillments:
                   - id: '1'
                     type: Delivery
@@ -8830,16 +8851,22 @@ x-flows:
                         code: Delivery_Terms
                       list:
                         - descriptor:
-                            code: INCOTERMS
+                            code: Incoterms
                           value: CIF
                         - descriptor:
-                            code: NAMED_PLACE_OF_DELIVERY
+                            code: Named_Place_Of_Delivery
                           value: UN:SIN
                 quote:
                   price:
                     currency: INR
-                    value: '6000.0'
+                    value: '3500.0'
                   breakup:
+                    - item:
+                        id: I3
+                      title: delivery
+                      price:
+                        currency: INR
+                        value: '500.0'
                     - item:
                         id: I3
                       title: Origin
@@ -9024,7 +9051,7 @@ x-flows:
               bpp_uri: https://logistics_seller.com/ondc
               transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
               message_id: '1755281254860'
-              timestamp: '2023-02-06T21:00:00.000Z'
+              timestamp: '2023-10-17T21:00:00.000Z'
               ttl: PT30S
             message:
               order:
@@ -9042,6 +9069,9 @@ x-flows:
                       - C1
                     descriptor:
                       code: P2H2P
+                    time:
+                      label: TAT
+                      duration: P4D
                 fulfillments:
                   - id: '1'
                     type: Delivery
@@ -9089,10 +9119,10 @@ x-flows:
                         code: Delivery_Terms
                       list:
                         - descriptor:
-                            code: INCOTERMS
+                            code: Incoterms
                           value: CIF
                         - descriptor:
-                            code: NAMED_PLACE_OF_DELIVERY
+                            code: Named_Place_Of_Delivery
                           value: UN:SIN
                 quote:
                   price:
@@ -9265,8 +9295,8 @@ x-flows:
                       - descriptor:
                           code: Accept_BPP_Terms
                         value: 'Y'
-                created_at: '2023-02-06T22:00:00.000Z'
-                updated_at: '2023-02-06T22:00:00.000Z'
+                created_at: '2023-10-17T22:00:00.000Z'
+                updated_at: '2023-10-17T22:00:00.000Z'
       - summary: Logistics Provider accepts the order.
         api: on_confirm
         description: Logistics Provider accepts the order.
@@ -9290,7 +9320,7 @@ x-flows:
               bpp_uri: https://logistics_seller.com/ondc
               transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
               message_id: '1755281254860'
-              timestamp: '2023-02-06T21:00:00.000Z'
+              timestamp: '2023-10-17T21:00:00.000Z'
               ttl: PT30S
             message:
               order:
@@ -9308,6 +9338,9 @@ x-flows:
                       - C1
                     descriptor:
                       code: P2H2P
+                    time:
+                      label: TAT
+                      duration: P4D
                 quote:
                   price:
                     currency: INR
@@ -9388,8 +9421,8 @@ x-flows:
                             url: https://shipping/label/image.htm
                         time:
                           range:
-                            start: '2023-02-06T22:30:00.000Z'
-                            end: '2023-02-06T22:45:00.000Z'
+                            start: '2023-10-17T22:30:00.000Z'
+                            end: '2023-10-17T22:45:00.000Z'
                       - id: L2
                         parent_stop_id: L1
                         type: end
@@ -9427,10 +9460,10 @@ x-flows:
                               code: RTO_Action
                             value: 'no'
                           - descriptor:
-                              code: INCOTERMS
+                              code: Incoterms
                             value: CIF
                           - descriptor:
-                              code: NAMED_PLACE_OF_DELIVERY
+                              code: Named_Place_Of_Delivery
                             value: UN:SIN
                           - descriptor:
                               code: AWB_No
@@ -9638,8 +9671,8 @@ x-flows:
                       - descriptor:
                           code: Accept_BPP_Terms
                         value: 'Y'
-                created_at: '2023-02-06T22:00:00.000Z'
-                updated_at: '2023-02-06T22:00:30.000Z'
+                created_at: '2023-10-17T22:00:00.000Z'
+                updated_at: '2023-10-17T22:00:30.000Z'
       - summary: Logistics Buyer updates RTS
         api: update
         description: Logistics Buyer updates RTS - Ready to Ship
@@ -9663,7 +9696,7 @@ x-flows:
               bpp_uri: https://logistics_seller.com/ondc
               transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
               message_id: '1755281254860'
-              timestamp: '2023-02-06T21:00:00.000Z'
+              timestamp: '2023-10-17T21:00:00.000Z'
               ttl: PT30S
             message:
               update_target: fulfillment
@@ -9793,7 +9826,7 @@ x-flows:
                       - descriptor:
                           code: Temp_Max
                         value: '4'
-                updated_at: '2023-02-06T22:00:00.000Z'
+                updated_at: '2023-10-17T22:00:00.000Z'
       - summary: LSP updates the weight and measurement differential charges.
         api: on_update
         description: >-
@@ -9819,7 +9852,7 @@ x-flows:
               bpp_uri: https://logistics_seller.com/ondc
               transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
               message_id: '1755281254860'
-              timestamp: '2023-02-06T21:00:00.000Z'
+              timestamp: '2023-10-17T21:00:00.000Z'
               ttl: PT30S
             message:
               order:
@@ -9839,8 +9872,8 @@ x-flows:
                       code: P2H2P
                     time:
                       label: TAT
-                      duration: PT45M
-                      timestamp: '2023-10-23'
+                      duration: P4D
+                      timestamp: '2023-10-21'
                 quote:
                   price:
                     currency: INR
@@ -9923,9 +9956,8 @@ x-flows:
                             - link/to/shipping/label
                         time:
                           range:
-                            start: '2023-02-06T22:30:00.000Z'
-                            end: '2023-02-06T22:45:00.000Z'
-                          timestamp: '2023-06-07T00:00:00.000Z'
+                            start: '2023-10-17T22:30:00.000Z'
+                            end: '2023-10-17T22:45:00.000Z'
                       - id: L2
                         parent_stop_id: L1
                         type: end
@@ -9966,10 +9998,10 @@ x-flows:
                               code: RTO_Action
                             value: 'no'
                           - descriptor:
-                              code: INCOTERMS
+                              code: Incoterms
                             value: CIF
                           - descriptor:
-                              code: NAMED_PLACE_OF_DELIVERY
+                              code: Named_Place_Of_Delivery
                             value: UN:SIN
                           - descriptor:
                               code: AWB_No
@@ -10097,31 +10129,7 @@ x-flows:
                       - descriptor:
                           code: Temp_Max
                         value: '4'
-                  - descriptor:
-                      code: Package_Dimensions_Diff
-                    list:
-                      - descriptor:
-                          code: Unit
-                        value: centimeter
-                      - descriptor:
-                          code: Length
-                        value: '1.5'
-                      - descriptor:
-                          code: Breadth
-                        value: '1.5'
-                      - descriptor:
-                          code: Height
-                        value: '1.5'
-                  - descriptor:
-                      code: Diff_Proof
-                    list:
-                      - descriptor:
-                          code: type
-                        value: image
-                      - descriptor:
-                          code: url
-                        value: https://xxxxx/xx.png
-                updated_at: '2023-02-06T22:00:30.000Z'
+                updated_at: '2023-10-17T22:00:30.000Z'
       - summary: LSP sends status updates - Pickup Approved
         api: on_status
         description: LSP sends status updates
@@ -10147,7 +10155,7 @@ x-flows:
               bpp_uri: https://logistics_seller.com/ondc
               transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
               message_id: '1755281254860'
-              timestamp: '2023-02-06T21:00:00.000Z'
+              timestamp: '2023-10-17T21:00:00.000Z'
               ttl: PT30S
             message:
               order:
@@ -10167,13 +10175,19 @@ x-flows:
                       code: P2H2P
                     time:
                       label: TAT
-                      duration: PT45M
-                      timestamp: '2023-10-23'
+                      duration: P4D
+                      timestamp: '2023-10-21'
                 quote:
                   price:
                     currency: INR
                     value: '6000.0'
                   breakup:
+                    - item:
+                        id: I3
+                      title: delivery
+                      price:
+                        currency: INR
+                        value: '500.0'
                     - item:
                         id: I3
                       title: Origin
@@ -10197,19 +10211,37 @@ x-flows:
                       title: Clearance_Service_Origin
                       price:
                         currency: INR
-                        value: '500.0'
+                        value: '300.0'
                     - item:
                         id: I3
                       title: Clearance_Service_Destination
                       price:
                         currency: INR
-                        value: '500.0'
+                        value: '300.0'
                     - item:
                         id: I3
                       title: tax
                       price:
                         currency: INR
                         value: '500.0'
+                    - item:
+                        id: I3
+                      title: insurance
+                      price:
+                        currency: INR
+                        value: '400.0'
+                    - item:
+                        id: I3
+                      title: delivery_diff
+                      price:
+                        currency: INR
+                        value: '200.0'
+                    - item:
+                        id: I3
+                      title: tax_diff
+                      price:
+                        currency: INR
+                        value: '200.0'
                 fulfillments:
                   - id: '1'
                     type: Delivery
@@ -10245,8 +10277,8 @@ x-flows:
                             - link/to/shipping/label
                         time:
                           range:
-                            start: '2023-02-06T22:30:00.000Z'
-                            end: '2023-02-06T22:45:00.000Z'
+                            start: '2023-10-17T22:30:00.000Z'
+                            end: '2023-10-17T22:45:00.000Z'
                       - id: L2
                         parent_stop_id: L1
                         type: end
@@ -10287,10 +10319,10 @@ x-flows:
                               code: RTO_Action
                             value: 'no'
                           - descriptor:
-                              code: INCOTERMS
+                              code: Incoterms
                             value: CIF
                           - descriptor:
-                              code: NAMED_PLACE_OF_DELIVERY
+                              code: Named_Place_Of_Delivery
                             value: UN:SIN
                 billing:
                   name: ONDC sellerapp
@@ -10427,7 +10459,7 @@ x-flows:
                       - descriptor:
                           code: url
                         value: https://xxxxx/xx.png
-                updated_at: '2023-02-06T22:00:30.000Z'
+                updated_at: '2023-10-17T22:00:30.000Z'
       - summary: LSP sends status updates - Order Picked up
         api: on_status
         description: LSP sends status updates
@@ -10451,7 +10483,7 @@ x-flows:
               bpp_uri: https://logistics_seller.com/ondc
               transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
               message_id: '1755281254860'
-              timestamp: '2023-02-06T21:00:00.000Z'
+              timestamp: '2023-10-17T21:00:00.000Z'
               ttl: PT30S
             message:
               order:
@@ -10471,13 +10503,19 @@ x-flows:
                       code: P2H2P
                     time:
                       label: TAT
-                      duration: PT45M
-                      timestamp: '2023-10-23'
+                      duration: P4D
+                      timestamp: '2023-10-21'
                 quote:
                   price:
                     currency: INR
                     value: '6000.0'
                   breakup:
+                    - item:
+                        id: I3
+                      title: delivery
+                      price:
+                        currency: INR
+                        value: '500.0'
                     - item:
                         id: I3
                       title: Origin
@@ -10501,19 +10539,37 @@ x-flows:
                       title: Clearance_Service_Origin
                       price:
                         currency: INR
-                        value: '500.0'
+                        value: '300.0'
                     - item:
                         id: I3
                       title: Clearance_Service_Destination
                       price:
                         currency: INR
-                        value: '500.0'
+                        value: '300.0'
                     - item:
                         id: I3
                       title: tax
                       price:
                         currency: INR
                         value: '500.0'
+                    - item:
+                        id: I3
+                      title: insurance
+                      price:
+                        currency: INR
+                        value: '400.0'
+                    - item:
+                        id: I3
+                      title: delivery_diff
+                      price:
+                        currency: INR
+                        value: '200.0'
+                    - item:
+                        id: I3
+                      title: tax_diff
+                      price:
+                        currency: INR
+                        value: '200.0'
                 fulfillments:
                   - id: '1'
                     type: Delivery
@@ -10549,8 +10605,8 @@ x-flows:
                             - link/to/shipping/label
                         time:
                           range:
-                            start: '2023-02-06T22:30:00.000Z'
-                            end: '2023-02-06T22:45:00.000Z'
+                            start: '2023-10-17T22:30:00.000Z'
+                            end: '2023-10-17T22:45:00.000Z'
                           timestamp: '2023-06-07T00:00:00.000Z'
                       - id: L2
                         parent_stop_id: L1
@@ -10592,10 +10648,10 @@ x-flows:
                               code: RTO_Action
                             value: 'no'
                           - descriptor:
-                              code: INCOTERMS
+                              code: Incoterms
                             value: CIF
                           - descriptor:
-                              code: NAMED_PLACE_OF_DELIVERY
+                              code: Named_Place_Of_Delivery
                             value: UN:SIN
                 billing:
                   name: ONDC sellerapp
@@ -10732,7 +10788,7 @@ x-flows:
                       - descriptor:
                           code: url
                         value: https://xxxxx/xx.png
-                updated_at: '2023-02-06T22:00:30.000Z'
+                updated_at: '2023-10-17T22:00:30.000Z'
       - summary: LSP sends status updates - Custom Cleared
         api: on_status
         description: LSP sends status updates
@@ -10756,7 +10812,7 @@ x-flows:
               bpp_uri: https://logistics_seller.com/ondc
               transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
               message_id: '1755281254860'
-              timestamp: '2023-02-06T21:00:00.000Z'
+              timestamp: '2023-10-17T21:00:00.000Z'
               ttl: PT30S
             message:
               order:
@@ -10776,13 +10832,19 @@ x-flows:
                       code: P2H2P
                     time:
                       label: TAT
-                      duration: PT45M
-                      timestamp: '2023-10-23'
+                      duration: P4D
+                      timestamp: '2023-10-21'
                 quote:
                   price:
                     currency: INR
                     value: '6000.0'
                   breakup:
+                    - item:
+                        id: I3
+                      title: delivery
+                      price:
+                        currency: INR
+                        value: '500.0'
                     - item:
                         id: I3
                       title: Origin
@@ -10806,19 +10868,37 @@ x-flows:
                       title: Clearance_Service_Origin
                       price:
                         currency: INR
-                        value: '500.0'
+                        value: '300.0'
                     - item:
                         id: I3
                       title: Clearance_Service_Destination
                       price:
                         currency: INR
-                        value: '500.0'
+                        value: '300.0'
                     - item:
                         id: I3
                       title: tax
                       price:
                         currency: INR
                         value: '500.0'
+                    - item:
+                        id: I3
+                      title: insurance
+                      price:
+                        currency: INR
+                        value: '400.0'
+                    - item:
+                        id: I3
+                      title: delivery_diff
+                      price:
+                        currency: INR
+                        value: '200.0'
+                    - item:
+                        id: I3
+                      title: tax_diff
+                      price:
+                        currency: INR
+                        value: '200.0'
                 fulfillments:
                   - id: '1'
                     type: Delivery
@@ -10854,8 +10934,8 @@ x-flows:
                             - link/to/shipping/label
                         time:
                           range:
-                            start: '2023-02-06T22:30:00.000Z'
-                            end: '2023-02-06T22:45:00.000Z'
+                            start: '2023-10-17T22:30:00.000Z'
+                            end: '2023-10-17T22:45:00.000Z'
                           timestamp: '2023-06-07T00:00:00.000Z'
                       - id: L2
                         parent_stop_id: L1
@@ -10897,10 +10977,10 @@ x-flows:
                               code: RTO_Action
                             value: 'no'
                           - descriptor:
-                              code: INCOTERMS
+                              code: Incoterms
                             value: CIF
                           - descriptor:
-                              code: NAMED_PLACE_OF_DELIVERY
+                              code: Named_Place_Of_Delivery
                             value: UN:SIN
                 billing:
                   name: ONDC sellerapp
@@ -11037,7 +11117,7 @@ x-flows:
                       - descriptor:
                           code: url
                         value: https://xxxxx/xx.png
-                updated_at: '2023-02-06T22:00:30.000Z'
+                updated_at: '2023-10-17T22:00:30.000Z'
       - summary: Logistics buyer requests for status update
         api: status
         description: Logistics buyer requests for status update
@@ -11088,7 +11168,7 @@ x-flows:
               bpp_uri: https://logistics_seller.com/ondc
               transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
               message_id: '1755281254860'
-              timestamp: '2023-02-06T21:00:00.000Z'
+              timestamp: '2023-10-17T21:00:00.000Z'
               ttl: PT30S
             message:
               order:
@@ -11108,13 +11188,19 @@ x-flows:
                       code: P2H2P
                     time:
                       label: TAT
-                      duration: PT45M
-                      timestamp: '2023-10-23'
+                      duration: P4D
+                      timestamp: '2023-10-21'
                 quote:
                   price:
                     currency: INR
                     value: '6000.0'
                   breakup:
+                    - item:
+                        id: I3
+                      title: delivery
+                      price:
+                        currency: INR
+                        value: '500.0'
                     - item:
                         id: I3
                       title: Origin
@@ -11138,19 +11224,37 @@ x-flows:
                       title: Clearance_Service_Origin
                       price:
                         currency: INR
-                        value: '500.0'
+                        value: '300.0'
                     - item:
                         id: I3
                       title: Clearance_Service_Destination
                       price:
                         currency: INR
-                        value: '500.0'
+                        value: '300.0'
                     - item:
                         id: I3
                       title: tax
                       price:
                         currency: INR
                         value: '500.0'
+                    - item:
+                        id: I3
+                      title: insurance
+                      price:
+                        currency: INR
+                        value: '400.0'
+                    - item:
+                        id: I3
+                      title: delivery_diff
+                      price:
+                        currency: INR
+                        value: '200.0'
+                    - item:
+                        id: I3
+                      title: tax_diff
+                      price:
+                        currency: INR
+                        value: '200.0'
                 fulfillments:
                   - id: '1'
                     type: Delivery
@@ -11186,8 +11290,8 @@ x-flows:
                             - link/to/shipping/label
                         time:
                           range:
-                            start: '2023-02-06T22:30:00.000Z'
-                            end: '2023-02-06T22:45:00.000Z'
+                            start: '2023-10-17T22:30:00.000Z'
+                            end: '2023-10-17T22:45:00.000Z'
                           timestamp: '2023-06-07T00:00:00.000Z'
                       - id: L2
                         parent_stop_id: L1
@@ -11230,10 +11334,10 @@ x-flows:
                               code: RTO_Action
                             value: 'no'
                           - descriptor:
-                              code: INCOTERMS
+                              code: Incoterms
                             value: CIF
                           - descriptor:
-                              code: NAMED_PLACE_OF_DELIVERY
+                              code: Named_Place_Of_Delivery
                             value: UN:SIN
                 billing:
                   name: ONDC sellerapp
@@ -11370,7 +11474,7 @@ x-flows:
                       - descriptor:
                           code: url
                         value: https://xxxxx/xx.png
-                updated_at: '2023-02-06T22:00:30.000Z'
+                updated_at: '2023-10-17T22:00:30.000Z'
   - summary: B2B International Logistics - Ocean Delivery
     description: >-
       The below flow shows the journey of Logistics buyer buying International
@@ -11388,7 +11492,7 @@ x-flows:
             B2B BAP->> B2B BPP: RFQ is requested
 
             note over B2B BPP,Logistics BPP: **SERVICABILITY & QUOTATION**
-            B2B BPP->>Logistics BPP: **/search**  - Check for servicability based on start and end location and <br/> quotation based on product dimensions & INCOTERMS
+            B2B BPP->>Logistics BPP: **/search**  - Check for servicability based on start and end location and <br/> quotation based on product dimensions & Incoterms
             Logistics BPP->>B2B BPP: **/on_search** - Returns possible fulfillments and categories of fulfillment <br/>                      + Quotation of each fulfilment type + e-KYC form
 
 
@@ -11505,6 +11609,9 @@ x-flows:
                       - '1'
                     descriptor:
                       code: P2H2P
+                    time:
+                      label: TAT
+                      duration: P7D
                 fulfillments:
                   - id: '1'
                     type: Delivery
@@ -11542,10 +11649,10 @@ x-flows:
                         code: Delivery_Terms
                       list:
                         - descriptor:
-                            code: INCOTERMS
+                            code: Incoterms
                           value: CIF
                         - descriptor:
-                            code: NAMED_PLACE_OF_DELIVERY
+                            code: Named_Place_Of_Delivery
                           value: UN:SIN
                 billing:
                   name: ONDC sellerapp
@@ -11624,7 +11731,7 @@ x-flows:
               bpp_uri: https://logistics_seller.com/ondc
               transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
               message_id: '1755281254861'
-              timestamp: '2023-02-06T21:11:00.801Z'
+              timestamp: '2023-10-17T21:11:00.801Z'
               ttl: PT30S
             message:
               order:
@@ -11640,6 +11747,9 @@ x-flows:
                       - C1
                     descriptor:
                       code: P2H2P
+                    time:
+                      label: TAT
+                      duration: P7D
                 fulfillments:
                   - id: '1'
                     type: Delivery
@@ -11677,16 +11787,22 @@ x-flows:
                         code: Delivery_Terms
                       list:
                         - descriptor:
-                            code: INCOTERMS
+                            code: Incoterms
                           value: CIF
                         - descriptor:
-                            code: NAMED_PLACE_OF_DELIVERY
+                            code: Named_Place_Of_Delivery
                           value: UN:SIN
                 quote:
                   price:
                     currency: INR
                     value: '4000.0'
                   breakup:
+                    - item:
+                        id: I1
+                      title: delivery
+                      price:
+                        currency: INR
+                        value: '500.0'
                     - item:
                         id: I1
                       title: Origin
@@ -11889,6 +12005,9 @@ x-flows:
                       - C1
                     descriptor:
                       code: P2H2P
+                    time:
+                      label: TAT
+                      duration: P7D
                 fulfillments:
                   - id: '1'
                     type: Delivery
@@ -11936,10 +12055,10 @@ x-flows:
                         code: Delivery_Terms
                       list:
                         - descriptor:
-                            code: INCOTERMS
+                            code: Incoterms
                           value: CIF
                         - descriptor:
-                            code: NAMED_PLACE_OF_DELIVERY
+                            code: Named_Place_Of_Delivery
                           value: UN:SIN
                 quote:
                   price:
@@ -12158,6 +12277,9 @@ x-flows:
                       - C1
                     descriptor:
                       code: P2H2P
+                    time:
+                      label: TAT
+                      duration: P7D
                 quote:
                   price:
                     currency: INR
@@ -12277,10 +12399,10 @@ x-flows:
                               code: RTO_Action
                             value: 'no'
                           - descriptor:
-                              code: INCOTERMS
+                              code: Incoterms
                             value: CIF
                           - descriptor:
-                              code: NAMED_PLACE_OF_DELIVERY
+                              code: Named_Place_Of_Delivery
                             value: UN:SIN
                           - descriptor:
                               code: AWB_No
@@ -12693,8 +12815,8 @@ x-flows:
                       code: P2H2P
                     time:
                       label: TAT
-                      duration: PT7D
-                      timestamp: '2023-10-17'
+                      duration: P7D
+                      timestamp: '2023-10-24'
                 quote:
                   price:
                     currency: INR
@@ -12779,7 +12901,6 @@ x-flows:
                           range:
                             start: '2023-10-17T21:12:00.720Z'
                             end: '2023-10-20T21:12:00.720Z'
-                          timestamp: '2023-10-17T21:13:00.720Z'
                       - id: L2
                         parent_stop_id: L1
                         type: end
@@ -12820,10 +12941,10 @@ x-flows:
                               code: RTO_Action
                             value: 'no'
                           - descriptor:
-                              code: INCOTERMS
+                              code: Incoterms
                             value: CIF
                           - descriptor:
-                              code: NAMED_PLACE_OF_DELIVERY
+                              code: Named_Place_Of_Delivery
                             value: UN:SIN
                           - descriptor:
                               code: AWB_No
@@ -12954,31 +13075,7 @@ x-flows:
                       - descriptor:
                           code: Packaging
                         value: Barrels
-                  - descriptor:
-                      code: Package_Dimensions_Diff
-                    list:
-                      - descriptor:
-                          code: Unit
-                        value: centimeter
-                      - descriptor:
-                          code: Length
-                        value: '1.5'
-                      - descriptor:
-                          code: Breadth
-                        value: '1.5'
-                      - descriptor:
-                          code: Height
-                        value: '1.5'
-                  - descriptor:
-                      code: Diff_Proof
-                    list:
-                      - descriptor:
-                          code: type
-                        value: image
-                      - descriptor:
-                          code: url
-                        value: https://xxxxx/xx.png
-                updated_at: '2023-02-06T22:00:30.000Z'
+                updated_at: '2023-10-17T22:00:30.000Z'
       - summary: LSP sends status updates - Pickup Approved
         api: on_status
         description: LSP sends status updates
@@ -13122,7 +13219,7 @@ x-flows:
               bpp_uri: https://logistics_seller.com/ondc
               transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
               message_id: '1755281254860'
-              timestamp: '2023-02-06T21:00:00.000Z'
+              timestamp: '2023-10-17T21:00:00.000Z'
               ttl: PT30S
             message:
               order:
@@ -13224,8 +13321,8 @@ x-flows:
                             - link/to/shipping/label
                         time:
                           range:
-                            start: '2023-02-06T22:30:00.000Z'
-                            end: '2023-02-06T22:45:00.000Z'
+                            start: '2023-10-17T22:30:00.000Z'
+                            end: '2023-10-17T22:45:00.000Z'
                       - id: L2
                         parent_stop_id: L1
                         type: end
@@ -13266,10 +13363,10 @@ x-flows:
                               code: RTO_Action
                             value: 'no'
                           - descriptor:
-                              code: INCOTERMS
+                              code: Incoterms
                             value: CIF
                           - descriptor:
-                              code: NAMED_PLACE_OF_DELIVERY
+                              code: Named_Place_Of_Delivery
                             value: UN:SIN
                 billing:
                   name: ONDC sellerapp
@@ -13397,7 +13494,7 @@ x-flows:
                       - descriptor:
                           code: url
                         value: https://xxxxx/xx.png
-                updated_at: '2023-02-06T22:00:30.000Z'
+                updated_at: '2023-10-17T22:00:30.000Z'
 x-examples:
   B2B Logistics - Domestic:
     summary: B2B Logistics - Domestic Use Case Specification
@@ -14101,7 +14198,7 @@ x-examples:
                 bpp_uri: https://logistics_seller.com/ondc
                 transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
                 message_id: '1755281254860'
-                timestamp: '2023-02-06T21:00:00.000Z'
+                timestamp: '2023-10-17T21:00:00.000Z'
                 ttl: PT30S
               message:
                 order:
@@ -14329,8 +14426,8 @@ x-examples:
                         - descriptor:
                             code: Accept_BPP_Terms
                           value: 'Y'
-                  created_at: '2023-02-06T22:00:00.000Z'
-                  updated_at: '2023-02-06T22:00:00.000Z'
+                  created_at: '2023-10-17T22:00:00.000Z'
+                  updated_at: '2023-10-17T22:00:00.000Z'
           - summary: Logistics buyer confirms the order (Surface Delivery)
             description: Logistics buyer confirms the order.
             value:
@@ -14598,7 +14695,7 @@ x-examples:
                 bpp_uri: https://logistics_seller.com/ondc
                 transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
                 message_id: '1755281254860'
-                timestamp: '2023-02-06T21:00:00.000Z'
+                timestamp: '2023-10-17T21:00:00.000Z'
                 ttl: PT30S
               message:
                 update_target: fulfillment
@@ -14713,7 +14810,7 @@ x-examples:
                         - descriptor:
                             code: Package_Count
                           value: '10'
-                  updated_at: '2023-02-06T22:00:30.000Z'
+                  updated_at: '2023-10-17T22:00:30.000Z'
           - summary: Logistics Buyer updates RTS (Air Delivery)
             description: null
             value:
@@ -14732,7 +14829,7 @@ x-examples:
                 bpp_uri: https://logistics_seller.com/ondc
                 transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
                 message_id: '1755281254860'
-                timestamp: '2023-02-06T21:00:00.000Z'
+                timestamp: '2023-10-17T21:00:00.000Z'
                 ttl: PT30S
               message:
                 update_target: fulfillment
@@ -14804,7 +14901,7 @@ x-examples:
                             - descriptor:
                                 code: Invoice_Number
                               value: '94395859020203'
-                  updated_at: '2023-02-06T22:00:30.000Z'
+                  updated_at: '2023-10-17T22:00:30.000Z'
           - summary: Logistics Buyer updates RTS (Surface Delivery)
             description: null
             value:
@@ -15308,7 +15405,7 @@ x-examples:
                 bpp_uri: https://logistics_seller.com/ondc
                 transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
                 message_id: '1755281254860'
-                timestamp: '2023-02-06T21:00:00.000Z'
+                timestamp: '2023-10-17T21:00:00.000Z'
                 ttl: PT30S
               message:
                 order:
@@ -15520,7 +15617,7 @@ x-examples:
                 bpp_uri: https://logistics_seller.com/ondc
                 transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
                 message_id: '1755281254860'
-                timestamp: '2023-02-06T21:00:00.000Z'
+                timestamp: '2023-10-17T21:00:00.000Z'
                 ttl: PT30S
               message:
                 order:
@@ -16166,7 +16263,7 @@ x-examples:
                 bpp_uri: https://logistics_seller.com/ondc
                 transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
                 message_id: '1755281254860'
-                timestamp: '2023-02-06T21:00:00.000Z'
+                timestamp: '2023-10-17T21:00:00.000Z'
                 ttl: PT30S
               message:
                 order:
@@ -16240,8 +16337,8 @@ x-examples:
                               url: URL for instructions
                           time:
                             range:
-                              start: '2023-02-06T22:30:00.000Z'
-                              end: '2023-02-06T22:45:00.000Z'
+                              start: '2023-10-17T22:30:00.000Z'
+                              end: '2023-10-17T22:45:00.000Z'
                         - id: L2
                           parent_stop_id: L1
                           type: end
@@ -16464,8 +16561,8 @@ x-examples:
                         - descriptor:
                             code: Accept_BPP_Terms
                           value: 'Y'
-                  created_at: '2023-02-06T22:00:00.000Z'
-                  updated_at: '2023-02-06T22:00:30.000Z'
+                  created_at: '2023-10-17T22:00:00.000Z'
+                  updated_at: '2023-10-17T22:00:30.000Z'
           - summary: Logistics Provider accepts the order (Surface Delivery)
             description: Logistics Provider accepts the order.
             value:
@@ -16484,7 +16581,7 @@ x-examples:
                 bpp_uri: https://logistics_seller.com/ondc
                 transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
                 message_id: '1755281254860'
-                timestamp: '2023-02-06T21:00:00.000Z'
+                timestamp: '2023-10-17T21:00:00.000Z'
                 ttl: PT30S
               message:
                 order:
@@ -16559,8 +16656,8 @@ x-examples:
                               url: URL for instructions
                           time:
                             range:
-                              start: '2023-02-06T22:30:00.000Z'
-                              end: '2023-02-06T22:45:00.000Z'
+                              start: '2023-10-17T22:30:00.000Z'
+                              end: '2023-10-17T22:45:00.000Z'
                         - id: L2
                           parent_stop_id: L1
                           type: end
@@ -16786,8 +16883,8 @@ x-examples:
                         - descriptor:
                             code: Accept_BPP_Terms
                           value: 'Y'
-                  created_at: '2023-02-06T22:00:00.000Z'
-                  updated_at: '2023-02-06T22:00:30.000Z'
+                  created_at: '2023-10-17T22:00:00.000Z'
+                  updated_at: '2023-10-17T22:00:30.000Z'
       on_status:
         examples:
           - summary: Status updates
@@ -16810,7 +16907,7 @@ x-examples:
                 bpp_uri: https://logistics_seller.com/ondc
                 transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
                 message_id: '1755281254860'
-                timestamp: '2023-10-23T21:00:00.000Z'
+                timestamp: '2023-10-17T21:00:00.000Z'
                 ttl: PT30S
               message:
                 order:
@@ -16828,8 +16925,8 @@ x-examples:
                         code: P2H2P
                       time:
                         label: TAT
-                        duration: PT45M
-                        timestamp: '2023-10-23'
+                        duration: P4D
+                        timestamp: '2023-10-21'
                   quote:
                     price:
                       currency: INR
@@ -16872,12 +16969,15 @@ x-examples:
                           type: start
                           location:
                             gps: 12.4535445,77.9283792
-                            area_code: '560041'
-                            map_url: ''
                             address: My house or building name, street name
-                            city: Bengaluru
-                            state: Karnataka
-                            country: India
+                            city:
+                              name: Bengaluru
+                            state:
+                              name: Karnataka
+                            country:
+                              name: India
+                              code: IND
+                            area_code: '560041'
                           contact:
                             phone: '9886098860'
                             email: abcd.efgh@gmail.com
@@ -16897,19 +16997,21 @@ x-examples:
                               - link/to/shipping/label
                           time:
                             range:
-                              start: '2023-02-06T22:30:00.000Z'
-                              end: '2023-02-06T22:45:00.000Z'
+                              start: '2023-10-17T22:30:00.000Z'
+                              end: '2023-10-17T22:45:00.000Z'
                             timestamp: '2023-06-07T00:00:00.000Z'
                         - id: L2
                           parent_stop_id: L1
                           type: end
                           location:
                             gps: 12.342769,77.9129423
-                            map_url: ''
                             address: My house or building name, street name
-                            city: Bengaluru
-                            state: Karnataka
-                            country: India
+                            city:
+                              name: Bengaluru
+                            state:
+                              name: Karnataka
+                            country:
+                              code: IND
                             area_code: '560043'
                           contact:
                             phone: '9886098860'
@@ -17051,7 +17153,7 @@ x-examples:
                         - descriptor:
                             code: url
                           value: https://xxxxx/xx.png
-                  updated_at: '2023-02-06T22:00:30.000Z'
+                  updated_at: '2023-10-17T22:00:30.000Z'
           - summary: Status updates (Air Delivery - Cancelled)
             description: Logistics provider updates the status of fulfillment of RTO.
             value:
@@ -17070,7 +17172,7 @@ x-examples:
                 bpp_uri: https://logistics_seller.com/ondc
                 transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
                 message_id: '1755281254860'
-                timestamp: '2023-10-23T21:00:00.000Z'
+                timestamp: '2023-10-21T21:00:00.000Z'
                 ttl: PT30S
               message:
                 order:
@@ -17094,8 +17196,8 @@ x-examples:
                         code: P2H2P
                       time:
                         label: TAT
-                        duration: PT45M
-                        timestamp: '2023-10-23'
+                        duration: P4D
+                        timestamp: '2023-10-21'
                     - id: I4
                       category_ids:
                         - C2
@@ -17105,8 +17207,8 @@ x-examples:
                         code: P2H2P
                       time:
                         label: TAT
-                        duration: PT45M
-                        timestamp: '2023-10-23'
+                        duration: P4D
+                        timestamp: '2023-10-25'
                   quote:
                     price:
                       currency: INR
@@ -17149,12 +17251,15 @@ x-examples:
                           type: start
                           location:
                             gps: 12.4535445,77.9283792
-                            area_code: '560041'
-                            map_url: ''
                             address: My house or building name, street name
-                            city: Bengaluru
-                            state: Karnataka
-                            country: India
+                            city:
+                              name: Bengaluru
+                            state:
+                              name: Karnataka
+                            country:
+                              name: India
+                              code: IND
+                            area_code: '560041'
                           contact:
                             phone: '9886098860'
                             email: abcd.efgh@gmail.com
@@ -17173,19 +17278,21 @@ x-examples:
                               - link/to/shipping/label
                           time:
                             range:
-                              start: '2023-02-06T22:30:00.000Z'
-                              end: '2023-02-06T22:45:00.000Z'
+                              start: '2023-10-17T22:30:00.000Z'
+                              end: '2023-10-17T22:45:00.000Z'
                             timestamp: '2023-06-07T00:00:00.000Z'
                         - id: L2
                           parent_stop_id: L1
                           type: end
                           location:
                             gps: 12.342769,77.9129423
-                            map_url: ''
                             address: My house or building name, street name
-                            city: Bengaluru
-                            state: Karnataka
-                            country: India
+                            city:
+                              name: Bengaluru
+                            state:
+                              name: Karnataka
+                            country:
+                              code: IND
                             area_code: '560043'
                           contact:
                             phone: '9886098860'
@@ -17224,16 +17331,16 @@ x-examples:
                           type: start
                           time:
                             range:
-                              start: '2023-02-06T22:30:00.000Z'
-                              end: '2023-02-06T22:45:00.000Z'
+                              start: '2023-10-17T22:30:00.000Z'
+                              end: '2023-10-17T22:45:00.000Z'
                             timestamp: '2023-06-07T00:00:00.000Z'
                         - id: L2
                           parent_stop_id: ''
                           type: end
                           time:
                             range:
-                              start: '2023-02-06T22:30:00.000Z'
-                              end: '2023-02-06T22:45:00.000Z'
+                              start: '2023-10-17T22:30:00.000Z'
+                              end: '2023-10-17T22:45:00.000Z'
                             timestamp: '2023-06-07T00:00:00.000Z'
                       agent:
                         person:
@@ -17355,7 +17462,7 @@ x-examples:
                         - descriptor:
                             code: url
                           value: https://xxxxx/xx.png
-                  updated_at: '2023-02-06T22:00:30.000Z'
+                  updated_at: '2023-10-17T22:00:30.000Z'
           - summary: Status updates (Surface Delivery - Cancelled)
             description: Logistics provider updates the status of fulfillment of RTO.
             value:
@@ -17450,12 +17557,15 @@ x-examples:
                           type: start
                           location:
                             gps: 12.4535445,77.9283792
-                            area_code: '560041'
-                            map_url: ''
                             address: My house or building name, street name
-                            city: Bengaluru
-                            state: Karnataka
-                            country: India
+                            city:
+                              name: Bengaluru
+                            state:
+                              name: Karnataka
+                            country:
+                              name: India
+                              code: IND
+                            area_code: '560041'
                           contact:
                             phone: '9886098860'
                             email: abcd.efgh@gmail.com
@@ -17482,11 +17592,13 @@ x-examples:
                           type: end
                           location:
                             gps: 12.342769,77.9129423
-                            map_url: ''
                             address: My house or building name, street name
-                            city: Bengaluru
-                            state: Karnataka
-                            country: India
+                            city:
+                              name: Bengaluru
+                            state:
+                              name: Karnataka
+                            country:
+                              code: IND
                             area_code: '560043'
                           contact:
                             phone: '9886098860'
@@ -17525,16 +17637,16 @@ x-examples:
                           type: start
                           time:
                             range:
-                              start: '2023-02-06T22:30:00.000Z'
-                              end: '2023-02-06T22:45:00.000Z'
+                              start: '2023-10-17T22:30:00.000Z'
+                              end: '2023-10-17T22:45:00.000Z'
                             timestamp: '2023-06-07T00:00:00.000Z'
                         - id: L2
                           parent_stop_id: ''
                           type: end
                           time:
                             range:
-                              start: '2023-02-06T22:30:00.000Z'
-                              end: '2023-02-06T22:45:00.000Z'
+                              start: '2023-10-17T22:30:00.000Z'
+                              end: '2023-10-17T22:45:00.000Z'
                             timestamp: '2023-06-07T00:00:00.000Z'
                       agent:
                         person:
@@ -17740,12 +17852,15 @@ x-examples:
                           type: start
                           location:
                             gps: 12.4535445,77.9283792
-                            area_code: '560041'
-                            map_url: ''
                             address: My house or building name, street name
-                            city: Bengaluru
-                            state: Karnataka
-                            country: India
+                            city:
+                              name: Bengaluru
+                            state:
+                              name: Karnataka
+                            country:
+                              name: India
+                              code: IND
+                            area_code: '560041'
                           contact:
                             phone: '9886098860'
                             email: abcd.efgh@gmail.com
@@ -17773,11 +17888,13 @@ x-examples:
                           type: end
                           location:
                             gps: 12.342769,77.9129423
-                            map_url: ''
                             address: My house or building name, street name
-                            city: Bengaluru
-                            state: Karnataka
-                            country: India
+                            city:
+                              name: Bengaluru
+                            state:
+                              name: Karnataka
+                            country:
+                              code: IND
                             area_code: '560043'
                           contact:
                             phone: '9886098860'
@@ -18028,8 +18145,8 @@ x-examples:
                               - link/to/shipping/label
                           time:
                             range:
-                              start: '2023-02-06T22:30:00.000Z'
-                              end: '2023-02-06T22:45:00.000Z'
+                              start: '2023-10-17T22:30:00.000Z'
+                              end: '2023-10-17T22:45:00.000Z'
                         - id: L2
                           parent_stop_id: L1
                           type: end
@@ -18211,7 +18328,7 @@ x-examples:
                         - descriptor:
                             code: url
                           value: https://xxxxx/xx.png
-                  updated_at: '2023-02-06T22:00:30.000Z'
+                  updated_at: '2023-10-17T22:00:30.000Z'
           - summary: >-
               Solicited response to update - package measurement updated (Air
               Delivery)
@@ -18306,8 +18423,8 @@ x-examples:
                               - link/to/shipping/label
                           time:
                             range:
-                              start: '2023-02-06T22:30:00.000Z'
-                              end: '2023-02-06T22:45:00.000Z'
+                              start: '2023-10-17T22:30:00.000Z'
+                              end: '2023-10-17T22:45:00.000Z'
                         - id: L2
                           parent_stop_id: L1
                           type: end
@@ -18407,7 +18524,7 @@ x-examples:
                             - descriptor:
                                 code: Type
                               value: ON-FULFILLMENT
-                  updated_at: '2023-02-06T22:00:30.000Z'
+                  updated_at: '2023-10-17T22:00:30.000Z'
           - summary: >-
               Unsoliciated call to update differential charges (Surface
               Delivery)
@@ -19628,8 +19745,8 @@ x-examples:
                               - link/to/shipping/label
                           time:
                             range:
-                              start: '2023-02-06T22:30:00.000Z'
-                              end: '2023-02-06T22:45:00.000Z'
+                              start: '2023-10-17T22:30:00.000Z'
+                              end: '2023-10-17T22:45:00.000Z'
                         - id: L2
                           parent_stop_id: L1
                           type: end
@@ -19759,7 +19876,7 @@ x-examples:
                         - descriptor:
                             code: Height
                           value: '1.5'
-                  updated_at: '2023-02-06T22:00:30.000Z'
+                  updated_at: '2023-10-17T22:00:30.000Z'
   B2B Logistics - International:
     summary: B2B Logistics - International Use Case Specification
     description: >-
@@ -19828,10 +19945,10 @@ x-examples:
                         code: Delivery_Terms
                       list:
                         - descriptor:
-                            code: INCOTERMS
+                            code: Incoterms
                           value: CIF
                         - descriptor:
-                            code: NAMED_PLACE_OF_DELIVERY
+                            code: Named_Place_Of_Delivery
                           value: UN:SGSIN
                   payment:
                     collected_by: BPP
@@ -19984,10 +20101,10 @@ x-examples:
                         code: Delivery_Terms
                       list:
                         - descriptor:
-                            code: INCOTERMS
+                            code: Incoterms
                           value: CIF
                         - descriptor:
-                            code: NAMED_PLACE_OF_DELIVERY
+                            code: Named_Place_Of_Delivery
                           value: UN:SGSIN
                   payment:
                     collected_by: BPP
@@ -20121,6 +20238,9 @@ x-examples:
                         - '1'
                       descriptor:
                         code: P2H2P
+                      time:
+                        label: TAT
+                        duration: P4D
                   fulfillments:
                     - id: '1'
                       type: Delivery
@@ -20158,10 +20278,10 @@ x-examples:
                           code: Delivery_Terms
                         list:
                           - descriptor:
-                              code: INCOTERMS
+                              code: Incoterms
                             value: CIF
                           - descriptor:
-                              code: NAMED_PLACE_OF_DELIVERY
+                              code: Named_Place_Of_Delivery
                             value: UN:SIN
                   billing:
                     name: ONDC sellerapp
@@ -20249,6 +20369,9 @@ x-examples:
                         - '1'
                       descriptor:
                         code: P2H2P
+                      time:
+                        label: TAT
+                        duration: P7D
                   fulfillments:
                     - id: '1'
                       type: Delivery
@@ -20286,10 +20409,10 @@ x-examples:
                           code: Delivery_Terms
                         list:
                           - descriptor:
-                              code: INCOTERMS
+                              code: Incoterms
                             value: CIF
                           - descriptor:
-                              code: NAMED_PLACE_OF_DELIVERY
+                              code: Named_Place_Of_Delivery
                             value: UN:SIN
                   billing:
                     name: ONDC sellerapp
@@ -20361,7 +20484,7 @@ x-examples:
                 bpp_uri: https://logistics_seller.com/ondc
                 transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
                 message_id: '1755281254860'
-                timestamp: '2023-02-06T21:00:00.000Z'
+                timestamp: '2023-10-17T21:00:00.000Z'
                 ttl: PT30S
               message:
                 order:
@@ -20379,6 +20502,9 @@ x-examples:
                         - C1
                       descriptor:
                         code: P2H2P
+                      time:
+                        label: TAT
+                        duration: P4D
                   fulfillments:
                     - id: '1'
                       type: Delivery
@@ -20426,10 +20552,10 @@ x-examples:
                           code: Delivery_Terms
                         list:
                           - descriptor:
-                              code: INCOTERMS
+                              code: Incoterms
                             value: CIF
                           - descriptor:
-                              code: NAMED_PLACE_OF_DELIVERY
+                              code: Named_Place_Of_Delivery
                             value: UN:SIN
                   quote:
                     price:
@@ -20602,8 +20728,8 @@ x-examples:
                         - descriptor:
                             code: Accept_BPP_Terms
                           value: 'Y'
-                  created_at: '2023-02-06T22:00:00.000Z'
-                  updated_at: '2023-02-06T22:00:00.000Z'
+                  created_at: '2023-10-17T22:00:00.000Z'
+                  updated_at: '2023-10-17T22:00:00.000Z'
           - summary: Logistics buyer confirms the order
             description: Logistics buyer confirms the order
             value:
@@ -20640,6 +20766,9 @@ x-examples:
                         - C1
                       descriptor:
                         code: P2H2P
+                      time:
+                        label: TAT
+                        duration: P7D
                   fulfillments:
                     - id: '1'
                       type: Delivery
@@ -20687,10 +20816,10 @@ x-examples:
                           code: Delivery_Terms
                         list:
                           - descriptor:
-                              code: INCOTERMS
+                              code: Incoterms
                             value: CIF
                           - descriptor:
-                              code: NAMED_PLACE_OF_DELIVERY
+                              code: Named_Place_Of_Delivery
                             value: UN:SIN
                   quote:
                     price:
@@ -20888,7 +21017,7 @@ x-examples:
                 bpp_uri: https://logistics_seller.com/ondc
                 transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
                 message_id: '1755281254860'
-                timestamp: '2023-02-06T21:00:00.000Z'
+                timestamp: '2023-10-17T21:00:00.000Z'
                 ttl: PT30S
               message:
                 update_target: fulfillment
@@ -21018,7 +21147,7 @@ x-examples:
                         - descriptor:
                             code: Temp_Max
                           value: '4'
-                  updated_at: '2023-02-06T22:00:00.000Z'
+                  updated_at: '2023-10-17T22:00:00.000Z'
           - summary: Logistics Buyer updates RTS
             description: null
             value:
@@ -21511,7 +21640,7 @@ x-examples:
                 bpp_uri: https://logistics_seller.com/ondc
                 transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
                 message_id: '1755281254860'
-                timestamp: '2023-02-06T21:00:00.000Z'
+                timestamp: '2023-10-17T21:00:00.000Z'
                 ttl: PT30S
               message:
                 order:
@@ -21525,6 +21654,9 @@ x-examples:
                         - '1'
                       category_ids:
                         - C1
+                      time:
+                        label: TAT
+                        duration: P4D
                   fulfillments:
                     - id: '1'
                       type: Delivery
@@ -21562,16 +21694,22 @@ x-examples:
                           code: Delivery_Terms
                         list:
                           - descriptor:
-                              code: INCOTERMS
+                              code: Incoterms
                             value: CIF
                           - descriptor:
-                              code: NAMED_PLACE_OF_DELIVERY
+                              code: Named_Place_Of_Delivery
                             value: UN:SIN
                   quote:
                     price:
                       currency: INR
-                      value: '6000.0'
+                      value: '3500.0'
                     breakup:
+                      - item:
+                          id: I3
+                        title: delivery
+                        price:
+                          currency: INR
+                          value: '500.0'
                       - item:
                           id: I3
                         title: Origin
@@ -21753,7 +21891,7 @@ x-examples:
                 bpp_uri: https://logistics_seller.com/ondc
                 transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
                 message_id: '1755281254860'
-                timestamp: '2023-02-06T21:00:00.000Z'
+                timestamp: '2023-10-17T21:00:00.000Z'
                 ttl: PT30S
               message:
                 order:
@@ -21767,6 +21905,9 @@ x-examples:
                         - '1'
                       category_ids:
                         - C1
+                      time:
+                        label: TAT
+                        duration: P4D
                   fulfillments:
                     - id: '1'
                       type: Delivery
@@ -21804,16 +21945,22 @@ x-examples:
                           code: Delivery_Terms
                         list:
                           - descriptor:
-                              code: INCOTERMS
+                              code: Incoterms
                             value: CIF
                           - descriptor:
-                              code: NAMED_PLACE_OF_DELIVERY
+                              code: Named_Place_Of_Delivery
                             value: UN:SIN
                   quote:
                     price:
                       currency: INR
-                      value: '6000.0'
+                      value: '3500.0'
                     breakup:
+                      - item:
+                          id: I3
+                        title: delivery
+                        price:
+                          currency: INR
+                          value: '500.0'
                       - item:
                           id: I3
                         title: Origin
@@ -22007,7 +22154,7 @@ x-examples:
                 bpp_uri: https://logistics_seller.com/ondc
                 transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
                 message_id: '1755281254861'
-                timestamp: '2023-02-06T21:11:00.801Z'
+                timestamp: '2023-10-17T21:11:00.801Z'
                 ttl: PT30S
               message:
                 order:
@@ -22023,6 +22170,9 @@ x-examples:
                         - C1
                       descriptor:
                         code: P2H2P
+                      time:
+                        label: TAT
+                        duration: P7D
                   fulfillments:
                     - id: '1'
                       type: Delivery
@@ -22060,16 +22210,22 @@ x-examples:
                           code: Delivery_Terms
                         list:
                           - descriptor:
-                              code: INCOTERMS
+                              code: Incoterms
                             value: CIF
                           - descriptor:
-                              code: NAMED_PLACE_OF_DELIVERY
+                              code: Named_Place_Of_Delivery
                             value: UN:SIN
                   quote:
                     price:
                       currency: INR
                       value: '4000.0'
                     breakup:
+                      - item:
+                          id: I1
+                        title: delivery
+                        price:
+                          currency: INR
+                          value: '500.0'
                       - item:
                           id: I1
                         title: Origin
@@ -22253,7 +22409,7 @@ x-examples:
                 bpp_uri: https://logistics_seller.com/ondc
                 transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
                 message_id: '1755281254860'
-                timestamp: '2023-02-06T21:00:00.000Z'
+                timestamp: '2023-10-17T21:00:00.000Z'
                 ttl: PT30S
               message:
                 order:
@@ -22273,13 +22429,19 @@ x-examples:
                         code: P2H2P
                       time:
                         label: TAT
-                        duration: PT45M
-                        timestamp: '2023-10-23'
+                        duration: P4D
+                        timestamp: '2023-10-21'
                   quote:
                     price:
                       currency: INR
                       value: '6000.0'
                     breakup:
+                      - item:
+                          id: I3
+                        title: delivery
+                        price:
+                          currency: INR
+                          value: '500.0'
                       - item:
                           id: I3
                         title: Origin
@@ -22303,19 +22465,37 @@ x-examples:
                         title: Clearance_Service_Origin
                         price:
                           currency: INR
-                          value: '500.0'
+                          value: '300.0'
                       - item:
                           id: I3
                         title: Clearance_Service_Destination
                         price:
                           currency: INR
-                          value: '500.0'
+                          value: '300.0'
                       - item:
                           id: I3
                         title: tax
                         price:
                           currency: INR
                           value: '500.0'
+                      - item:
+                          id: I3
+                        title: insurance
+                        price:
+                          currency: INR
+                          value: '400.0'
+                      - item:
+                          id: I3
+                        title: delivery_diff
+                        price:
+                          currency: INR
+                          value: '200.0'
+                      - item:
+                          id: I3
+                        title: tax_diff
+                        price:
+                          currency: INR
+                          value: '200.0'
                   fulfillments:
                     - id: '1'
                       type: Delivery
@@ -22351,8 +22531,8 @@ x-examples:
                               - link/to/shipping/label
                           time:
                             range:
-                              start: '2023-02-06T22:30:00.000Z'
-                              end: '2023-02-06T22:45:00.000Z'
+                              start: '2023-10-17T22:30:00.000Z'
+                              end: '2023-10-17T22:45:00.000Z'
                         - id: L2
                           parent_stop_id: L1
                           type: end
@@ -22393,10 +22573,10 @@ x-examples:
                                 code: RTO_Action
                               value: 'no'
                             - descriptor:
-                                code: INCOTERMS
+                                code: Incoterms
                               value: CIF
                             - descriptor:
-                                code: NAMED_PLACE_OF_DELIVERY
+                                code: Named_Place_Of_Delivery
                               value: UN:SIN
                   billing:
                     name: ONDC sellerapp
@@ -22533,7 +22713,7 @@ x-examples:
                         - descriptor:
                             code: url
                           value: https://xxxxx/xx.png
-                  updated_at: '2023-02-06T22:00:30.000Z'
+                  updated_at: '2023-10-17T22:00:30.000Z'
           - summary: Status updates
             description: Logistics provider updates the status of fulfillment
             value:
@@ -22552,7 +22732,7 @@ x-examples:
                 bpp_uri: https://logistics_seller.com/ondc
                 transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
                 message_id: '1755281254860'
-                timestamp: '2023-02-06T21:00:00.000Z'
+                timestamp: '2023-10-17T21:00:00.000Z'
                 ttl: PT30S
               message:
                 order:
@@ -22572,13 +22752,19 @@ x-examples:
                         code: P2H2P
                       time:
                         label: TAT
-                        duration: PT45M
-                        timestamp: '2023-10-23'
+                        duration: P4D
+                        timestamp: '2023-10-21'
                   quote:
                     price:
                       currency: INR
                       value: '6000.0'
                     breakup:
+                      - item:
+                          id: I3
+                        title: delivery
+                        price:
+                          currency: INR
+                          value: '500.0'
                       - item:
                           id: I3
                         title: Origin
@@ -22602,19 +22788,37 @@ x-examples:
                         title: Clearance_Service_Origin
                         price:
                           currency: INR
-                          value: '500.0'
+                          value: '300.0'
                       - item:
                           id: I3
                         title: Clearance_Service_Destination
                         price:
                           currency: INR
-                          value: '500.0'
+                          value: '300.0'
                       - item:
                           id: I3
                         title: tax
                         price:
                           currency: INR
                           value: '500.0'
+                      - item:
+                          id: I3
+                        title: insurance
+                        price:
+                          currency: INR
+                          value: '400.0'
+                      - item:
+                          id: I3
+                        title: delivery_diff
+                        price:
+                          currency: INR
+                          value: '200.0'
+                      - item:
+                          id: I3
+                        title: tax_diff
+                        price:
+                          currency: INR
+                          value: '200.0'
                   fulfillments:
                     - id: '1'
                       type: Delivery
@@ -22650,8 +22854,8 @@ x-examples:
                               - link/to/shipping/label
                           time:
                             range:
-                              start: '2023-02-06T22:30:00.000Z'
-                              end: '2023-02-06T22:45:00.000Z'
+                              start: '2023-10-17T22:30:00.000Z'
+                              end: '2023-10-17T22:45:00.000Z'
                         - id: L2
                           parent_stop_id: L1
                           type: end
@@ -22692,10 +22896,10 @@ x-examples:
                                 code: RTO_Action
                               value: 'no'
                             - descriptor:
-                                code: INCOTERMS
+                                code: Incoterms
                               value: CIF
                             - descriptor:
-                                code: NAMED_PLACE_OF_DELIVERY
+                                code: Named_Place_Of_Delivery
                               value: UN:SIN
                   billing:
                     name: ONDC sellerapp
@@ -22832,7 +23036,7 @@ x-examples:
                         - descriptor:
                             code: url
                           value: https://xxxxx/xx.png
-                  updated_at: '2023-02-06T22:00:30.000Z'
+                  updated_at: '2023-10-17T22:00:30.000Z'
           - summary: Status updates
             description: Logistics provider updates the status of fulfillment
             value:
@@ -22851,7 +23055,7 @@ x-examples:
                 bpp_uri: https://logistics_seller.com/ondc
                 transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
                 message_id: '1755281254860'
-                timestamp: '2023-02-06T21:00:00.000Z'
+                timestamp: '2023-10-17T21:00:00.000Z'
                 ttl: PT30S
               message:
                 order:
@@ -22871,13 +23075,19 @@ x-examples:
                         code: P2H2P
                       time:
                         label: TAT
-                        duration: PT45M
-                        timestamp: '2023-10-23'
+                        duration: P4D
+                        timestamp: '2023-10-21'
                   quote:
                     price:
                       currency: INR
                       value: '6000.0'
                     breakup:
+                      - item:
+                          id: I3
+                        title: delivery
+                        price:
+                          currency: INR
+                          value: '500.0'
                       - item:
                           id: I3
                         title: Origin
@@ -22901,19 +23111,37 @@ x-examples:
                         title: Clearance_Service_Origin
                         price:
                           currency: INR
-                          value: '500.0'
+                          value: '300.0'
                       - item:
                           id: I3
                         title: Clearance_Service_Destination
                         price:
                           currency: INR
-                          value: '500.0'
+                          value: '300.0'
                       - item:
                           id: I3
                         title: tax
                         price:
                           currency: INR
                           value: '500.0'
+                      - item:
+                          id: I3
+                        title: insurance
+                        price:
+                          currency: INR
+                          value: '400.0'
+                      - item:
+                          id: I3
+                        title: delivery_diff
+                        price:
+                          currency: INR
+                          value: '200.0'
+                      - item:
+                          id: I3
+                        title: tax_diff
+                        price:
+                          currency: INR
+                          value: '200.0'
                   fulfillments:
                     - id: '1'
                       type: Delivery
@@ -22949,8 +23177,8 @@ x-examples:
                               - link/to/shipping/label
                           time:
                             range:
-                              start: '2023-02-06T22:30:00.000Z'
-                              end: '2023-02-06T22:45:00.000Z'
+                              start: '2023-10-17T22:30:00.000Z'
+                              end: '2023-10-17T22:45:00.000Z'
                             timestamp: '2023-06-07T00:00:00.000Z'
                         - id: L2
                           parent_stop_id: L1
@@ -22992,10 +23220,10 @@ x-examples:
                                 code: RTO_Action
                               value: 'no'
                             - descriptor:
-                                code: INCOTERMS
+                                code: Incoterms
                               value: CIF
                             - descriptor:
-                                code: NAMED_PLACE_OF_DELIVERY
+                                code: Named_Place_Of_Delivery
                               value: UN:SIN
                   billing:
                     name: ONDC sellerapp
@@ -23132,7 +23360,7 @@ x-examples:
                         - descriptor:
                             code: url
                           value: https://xxxxx/xx.png
-                  updated_at: '2023-02-06T22:00:30.000Z'
+                  updated_at: '2023-10-17T22:00:30.000Z'
           - summary: Status updates
             description: Logistics provider updates the status of fulfillment
             value:
@@ -23151,7 +23379,7 @@ x-examples:
                 bpp_uri: https://logistics_seller.com/ondc
                 transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
                 message_id: '1755281254860'
-                timestamp: '2023-02-06T21:00:00.000Z'
+                timestamp: '2023-10-17T21:00:00.000Z'
                 ttl: PT30S
               message:
                 order:
@@ -23171,13 +23399,19 @@ x-examples:
                         code: P2H2P
                       time:
                         label: TAT
-                        duration: PT45M
-                        timestamp: '2023-10-23'
+                        duration: P4D
+                        timestamp: '2023-10-21'
                   quote:
                     price:
                       currency: INR
                       value: '6000.0'
                     breakup:
+                      - item:
+                          id: I3
+                        title: delivery
+                        price:
+                          currency: INR
+                          value: '500.0'
                       - item:
                           id: I3
                         title: Origin
@@ -23201,19 +23435,37 @@ x-examples:
                         title: Clearance_Service_Origin
                         price:
                           currency: INR
-                          value: '500.0'
+                          value: '300.0'
                       - item:
                           id: I3
                         title: Clearance_Service_Destination
                         price:
                           currency: INR
-                          value: '500.0'
+                          value: '300.0'
                       - item:
                           id: I3
                         title: tax
                         price:
                           currency: INR
                           value: '500.0'
+                      - item:
+                          id: I3
+                        title: insurance
+                        price:
+                          currency: INR
+                          value: '400.0'
+                      - item:
+                          id: I3
+                        title: delivery_diff
+                        price:
+                          currency: INR
+                          value: '200.0'
+                      - item:
+                          id: I3
+                        title: tax_diff
+                        price:
+                          currency: INR
+                          value: '200.0'
                   fulfillments:
                     - id: '1'
                       type: Delivery
@@ -23249,8 +23501,8 @@ x-examples:
                               - link/to/shipping/label
                           time:
                             range:
-                              start: '2023-02-06T22:30:00.000Z'
-                              end: '2023-02-06T22:45:00.000Z'
+                              start: '2023-10-17T22:30:00.000Z'
+                              end: '2023-10-17T22:45:00.000Z'
                             timestamp: '2023-06-07T00:00:00.000Z'
                         - id: L2
                           parent_stop_id: L1
@@ -23292,10 +23544,10 @@ x-examples:
                                 code: RTO_Action
                               value: 'no'
                             - descriptor:
-                                code: INCOTERMS
+                                code: Incoterms
                               value: CIF
                             - descriptor:
-                                code: NAMED_PLACE_OF_DELIVERY
+                                code: Named_Place_Of_Delivery
                               value: UN:SIN
                   billing:
                     name: ONDC sellerapp
@@ -23432,7 +23684,7 @@ x-examples:
                         - descriptor:
                             code: url
                           value: https://xxxxx/xx.png
-                  updated_at: '2023-02-06T22:00:30.000Z'
+                  updated_at: '2023-10-17T22:00:30.000Z'
           - summary: Status updates
             description: Logistics provider updates the status of fulfillment
             value:
@@ -23451,7 +23703,7 @@ x-examples:
                 bpp_uri: https://logistics_seller.com/ondc
                 transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
                 message_id: '1755281254860'
-                timestamp: '2023-02-06T21:00:00.000Z'
+                timestamp: '2023-10-17T21:00:00.000Z'
                 ttl: PT30S
               message:
                 order:
@@ -23471,13 +23723,19 @@ x-examples:
                         code: P2H2P
                       time:
                         label: TAT
-                        duration: PT45M
-                        timestamp: '2023-10-23'
+                        duration: P4D
+                        timestamp: '2023-10-21'
                   quote:
                     price:
                       currency: INR
                       value: '6000.0'
                     breakup:
+                      - item:
+                          id: I3
+                        title: delivery
+                        price:
+                          currency: INR
+                          value: '500.0'
                       - item:
                           id: I3
                         title: Origin
@@ -23501,19 +23759,37 @@ x-examples:
                         title: Clearance_Service_Origin
                         price:
                           currency: INR
-                          value: '500.0'
+                          value: '300.0'
                       - item:
                           id: I3
                         title: Clearance_Service_Destination
                         price:
                           currency: INR
-                          value: '500.0'
+                          value: '300.0'
                       - item:
                           id: I3
                         title: tax
                         price:
                           currency: INR
                           value: '500.0'
+                      - item:
+                          id: I3
+                        title: insurance
+                        price:
+                          currency: INR
+                          value: '400.0'
+                      - item:
+                          id: I3
+                        title: delivery_diff
+                        price:
+                          currency: INR
+                          value: '200.0'
+                      - item:
+                          id: I3
+                        title: tax_diff
+                        price:
+                          currency: INR
+                          value: '200.0'
                   fulfillments:
                     - id: '1'
                       type: Delivery
@@ -23549,8 +23825,8 @@ x-examples:
                               - link/to/shipping/label
                           time:
                             range:
-                              start: '2023-02-06T22:30:00.000Z'
-                              end: '2023-02-06T22:45:00.000Z'
+                              start: '2023-10-17T22:30:00.000Z'
+                              end: '2023-10-17T22:45:00.000Z'
                             timestamp: '2023-06-07T00:00:00.000Z'
                         - id: L2
                           parent_stop_id: L1
@@ -23593,10 +23869,10 @@ x-examples:
                                 code: RTO_Action
                               value: 'no'
                             - descriptor:
-                                code: INCOTERMS
+                                code: Incoterms
                               value: CIF
                             - descriptor:
-                                code: NAMED_PLACE_OF_DELIVERY
+                                code: Named_Place_Of_Delivery
                               value: UN:SIN
                   billing:
                     name: ONDC sellerapp
@@ -23733,7 +24009,7 @@ x-examples:
                         - descriptor:
                             code: url
                           value: https://xxxxx/xx.png
-                  updated_at: '2023-02-06T22:00:30.000Z'
+                  updated_at: '2023-10-17T22:00:30.000Z'
       on_confirm:
         examples:
           - summary: Logistics Provider accepts the order.
@@ -23754,7 +24030,7 @@ x-examples:
                 bpp_uri: https://logistics_seller.com/ondc
                 transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
                 message_id: '1755281254860'
-                timestamp: '2023-02-06T21:00:00.000Z'
+                timestamp: '2023-10-17T21:00:00.000Z'
                 ttl: PT30S
               message:
                 order:
@@ -23772,6 +24048,9 @@ x-examples:
                         - C1
                       descriptor:
                         code: P2H2P
+                      time:
+                        label: TAT
+                        duration: P4D
                   quote:
                     price:
                       currency: INR
@@ -23852,8 +24131,8 @@ x-examples:
                               url: https://shipping/label/image.htm
                           time:
                             range:
-                              start: '2023-02-06T22:30:00.000Z'
-                              end: '2023-02-06T22:45:00.000Z'
+                              start: '2023-10-17T22:30:00.000Z'
+                              end: '2023-10-17T22:45:00.000Z'
                         - id: L2
                           parent_stop_id: L1
                           type: end
@@ -23891,10 +24170,10 @@ x-examples:
                                 code: RTO_Action
                               value: 'no'
                             - descriptor:
-                                code: INCOTERMS
+                                code: Incoterms
                               value: CIF
                             - descriptor:
-                                code: NAMED_PLACE_OF_DELIVERY
+                                code: Named_Place_Of_Delivery
                               value: UN:SIN
                             - descriptor:
                                 code: AWB_No
@@ -24102,8 +24381,8 @@ x-examples:
                         - descriptor:
                             code: Accept_BPP_Terms
                           value: 'Y'
-                  created_at: '2023-02-06T22:00:00.000Z'
-                  updated_at: '2023-02-06T22:00:30.000Z'
+                  created_at: '2023-10-17T22:00:00.000Z'
+                  updated_at: '2023-10-17T22:00:30.000Z'
           - summary: Logistics Provider accepts the order.
             description: Logistics Provider accepts the order.
             value:
@@ -24140,6 +24419,9 @@ x-examples:
                         - C1
                       descriptor:
                         code: P2H2P
+                      time:
+                        label: TAT
+                        duration: P7D
                   quote:
                     price:
                       currency: INR
@@ -24259,10 +24541,10 @@ x-examples:
                                 code: RTO_Action
                               value: 'no'
                             - descriptor:
-                                code: INCOTERMS
+                                code: Incoterms
                               value: CIF
                             - descriptor:
-                                code: NAMED_PLACE_OF_DELIVERY
+                                code: Named_Place_Of_Delivery
                               value: UN:SIN
                             - descriptor:
                                 code: AWB_No
@@ -24495,7 +24777,7 @@ x-examples:
                 bpp_uri: https://logistics_seller.com/ondc
                 transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
                 message_id: '1755281254860'
-                timestamp: '2023-02-06T21:00:00.000Z'
+                timestamp: '2023-10-17T21:00:00.000Z'
                 ttl: PT30S
               message:
                 order:
@@ -24515,8 +24797,8 @@ x-examples:
                         code: P2H2P
                       time:
                         label: TAT
-                        duration: PT45M
-                        timestamp: '2023-10-23'
+                        duration: P4D
+                        timestamp: '2023-10-21'
                   quote:
                     price:
                       currency: INR
@@ -24599,9 +24881,8 @@ x-examples:
                               - link/to/shipping/label
                           time:
                             range:
-                              start: '2023-02-06T22:30:00.000Z'
-                              end: '2023-02-06T22:45:00.000Z'
-                            timestamp: '2023-06-07T00:00:00.000Z'
+                              start: '2023-10-17T22:30:00.000Z'
+                              end: '2023-10-17T22:45:00.000Z'
                         - id: L2
                           parent_stop_id: L1
                           type: end
@@ -24642,10 +24923,10 @@ x-examples:
                                 code: RTO_Action
                               value: 'no'
                             - descriptor:
-                                code: INCOTERMS
+                                code: Incoterms
                               value: CIF
                             - descriptor:
-                                code: NAMED_PLACE_OF_DELIVERY
+                                code: Named_Place_Of_Delivery
                               value: UN:SIN
                             - descriptor:
                                 code: AWB_No
@@ -24773,31 +25054,7 @@ x-examples:
                         - descriptor:
                             code: Temp_Max
                           value: '4'
-                    - descriptor:
-                        code: Package_Dimensions_Diff
-                      list:
-                        - descriptor:
-                            code: Unit
-                          value: centimeter
-                        - descriptor:
-                            code: Length
-                          value: '1.5'
-                        - descriptor:
-                            code: Breadth
-                          value: '1.5'
-                        - descriptor:
-                            code: Height
-                          value: '1.5'
-                    - descriptor:
-                        code: Diff_Proof
-                      list:
-                        - descriptor:
-                            code: type
-                          value: image
-                        - descriptor:
-                            code: url
-                          value: https://xxxxx/xx.png
-                  updated_at: '2023-02-06T22:00:30.000Z'
+                  updated_at: '2023-10-17T22:00:30.000Z'
           - summary: Solicited response to update - package measurement updated
             description: null
             value:
@@ -24836,8 +25093,8 @@ x-examples:
                         code: P2H2P
                       time:
                         label: TAT
-                        duration: PT7D
-                        timestamp: '2023-10-17'
+                        duration: P7D
+                        timestamp: '2023-10-24'
                   quote:
                     price:
                       currency: INR
@@ -24922,7 +25179,6 @@ x-examples:
                             range:
                               start: '2023-10-17T21:12:00.720Z'
                               end: '2023-10-20T21:12:00.720Z'
-                            timestamp: '2023-10-17T21:13:00.720Z'
                         - id: L2
                           parent_stop_id: L1
                           type: end
@@ -24963,10 +25219,10 @@ x-examples:
                                 code: RTO_Action
                               value: 'no'
                             - descriptor:
-                                code: INCOTERMS
+                                code: Incoterms
                               value: CIF
                             - descriptor:
-                                code: NAMED_PLACE_OF_DELIVERY
+                                code: Named_Place_Of_Delivery
                               value: UN:SIN
                             - descriptor:
                                 code: AWB_No
@@ -25097,31 +25353,7 @@ x-examples:
                         - descriptor:
                             code: Packaging
                           value: Barrels
-                    - descriptor:
-                        code: Package_Dimensions_Diff
-                      list:
-                        - descriptor:
-                            code: Unit
-                          value: centimeter
-                        - descriptor:
-                            code: Length
-                          value: '1.5'
-                        - descriptor:
-                            code: Breadth
-                          value: '1.5'
-                        - descriptor:
-                            code: Height
-                          value: '1.5'
-                    - descriptor:
-                        code: Diff_Proof
-                      list:
-                        - descriptor:
-                            code: type
-                          value: image
-                        - descriptor:
-                            code: url
-                          value: https://xxxxx/xx.png
-                  updated_at: '2023-02-06T22:00:30.000Z'
+                  updated_at: '2023-10-17T22:00:30.000Z'
 x-attributes:
   B2B Domestic Logistics:
     attribute_set:
@@ -25789,12 +26021,12 @@ x-attributes:
           created_at:
             description: order created at
             required: required
-            usage: '2023-02-06T22:00:00.000Z'
+            usage: '2023-10-17T22:00:00.000Z'
             reference: if any
           updated_at:
             description: order updated at
             required: required
-            usage: '2023-02-06T22:00:00.000Z'
+            usage: '2023-10-17T22:00:00.000Z'
             reference: if any
       on_confirm:
         parent: true

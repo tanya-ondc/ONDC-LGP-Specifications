@@ -91,8 +91,8 @@ value:
                   - link/to/shipping/label
               time:
                 range:
-                  start: '2023-02-06T22:30:00.000Z'
-                  end: '2023-02-06T22:45:00.000Z'
+                  start: '2023-10-17T22:30:00.000Z'
+                  end: '2023-10-17T22:45:00.000Z'
             - id: L2
               parent_stop_id: L1
               type: end
@@ -192,4 +192,4 @@ value:
               - descriptor:
                   code: Type
                 value: ON-FULFILLMENT
-      updated_at: '2023-02-06T22:00:30.000Z'
+      updated_at: '2023-10-17T22:00:30.000Z'

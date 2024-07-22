@@ -231,13 +231,13 @@
                 },
                 {
                   "descriptor": {
-                    "code": "INCOTERMS"
+                    "code": "Incoterms"
                   },
                   "value": "CIF"
                 },
                 {
                   "descriptor": {
-                    "code": "NAMED_PLACE_OF_DELIVERY"
+                    "code": "Named_Place_Of_Delivery"
                   },
                   "value": "UN:SIN"
                 },

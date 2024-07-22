@@ -16,7 +16,7 @@ value:
     bpp_uri: https://logistics_seller.com/ondc
     transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
     message_id: '1755281254860'
-    timestamp: '2023-02-06T21:00:00.000Z'
+    timestamp: '2023-10-17T21:00:00.000Z'
     ttl: PT30S
   message:
     order:
@@ -92,8 +92,8 @@ value:
                   url: URL for instructions
               time:
                 range:
-                  start: '2023-02-06T22:30:00.000Z'
-                  end: '2023-02-06T22:45:00.000Z'
+                  start: '2023-10-17T22:30:00.000Z'
+                  end: '2023-10-17T22:45:00.000Z'
             - id: L2
               parent_stop_id: L1
               type: end
@@ -319,5 +319,5 @@ value:
             - descriptor:
                 code: Accept_BPP_Terms
               value: 'Y'
-      created_at: '2023-02-06T22:00:00.000Z'
-      updated_at: '2023-02-06T22:00:30.000Z'
+      created_at: '2023-10-17T22:00:00.000Z'
+      updated_at: '2023-10-17T22:00:30.000Z'
