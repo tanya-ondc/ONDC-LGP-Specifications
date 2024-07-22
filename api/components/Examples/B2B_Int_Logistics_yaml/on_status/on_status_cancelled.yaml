@@ -22,6 +22,10 @@ value:
     order:
       id: O2
       status: Cancelled
+      cancellation:
+        cancelled_by: logistics_buyer.com
+        reason:
+          id: '004'
       provider:
         id: P1
         locations:
