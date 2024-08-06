@@ -3800,7 +3800,7 @@ x-flows:
               ttl: PT30S
             message:
               intent:
-                fulfillments:
+                fulfillment:
                   type: Delivery
                   stops:
                     - id: L1
@@ -8216,7 +8216,7 @@ x-flows:
                     range:
                       start: '1100'
                       end: '2100'
-                fulfillments:
+                fulfillment:
                   type: Delivery
                   stops:
                     - id: L1
@@ -13546,7 +13546,7 @@ x-examples:
                       range:
                         start: '1100'
                         end: '2100'
-                  fulfillments:
+                  fulfillment:
                     type: Delivery
                     stops:
                       - id: L1
@@ -13689,7 +13689,7 @@ x-examples:
                       range:
                         start: '1100'
                         end: '2100'
-                  fulfillments:
+                  fulfillment:
                     type: Delivery
                     stops:
                       - id: L1
@@ -13819,7 +13819,7 @@ x-examples:
                 ttl: PT30S
               message:
                 intent:
-                  fulfillments:
+                  fulfillment:
                     type: Delivery
                     stops:
                       - id: L1
@@ -19933,7 +19933,7 @@ x-examples:
                       range:
                         start: '1100'
                         end: '2100'
-                  fulfillments:
+                  fulfillment:
                     type: Delivery
                     stops:
                       - id: L1
@@ -20089,7 +20089,7 @@ x-examples:
                       range:
                         start: '1100'
                         end: '2100'
-                  fulfillments:
+                  fulfillment:
                     type: Delivery
                     stops:
                       - id: L1

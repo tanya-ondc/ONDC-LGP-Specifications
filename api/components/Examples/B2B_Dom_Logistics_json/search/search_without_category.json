@@ -20,7 +20,7 @@
   },
   "message": {
     "intent": {
-      "fulfillments": {
+      "fulfillment": {
         "type": "Delivery",
         "stops": [
           {

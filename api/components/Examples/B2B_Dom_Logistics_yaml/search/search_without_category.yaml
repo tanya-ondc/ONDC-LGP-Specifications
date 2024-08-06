@@ -18,7 +18,7 @@ value:
     ttl: PT30S
   message:
     intent:
-      fulfillments:
+      fulfillment:
         type: Delivery
         stops:
         - id: L1
