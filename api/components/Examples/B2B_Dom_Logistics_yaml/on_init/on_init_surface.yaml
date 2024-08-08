@@ -211,4 +211,5 @@ value:
                 https://github.com/ONDC-Official/protocol-network-extension/discussions/79
   error:
     code: '66006'
+    type: DOMAIN-ERROR
     message: 'KYC Failed - due to xx reason'

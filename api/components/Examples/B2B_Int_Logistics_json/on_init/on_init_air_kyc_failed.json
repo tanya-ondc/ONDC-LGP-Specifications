@@ -431,6 +431,7 @@
   },
   "error": {
     "code": "66006",
+    "domain": "DOMAIN-ERROR",
     "message": "KYC Failed - due to xx reason"
   }
 }
