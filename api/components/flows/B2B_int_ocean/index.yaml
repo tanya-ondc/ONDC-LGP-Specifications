@@ -13,7 +13,7 @@ details:
         B2B BAP->> B2B BPP: RFQ is requested
 
         note over B2B BPP,Logistics BPP: **SERVICABILITY & QUOTATION**
-        B2B BPP->>Logistics BPP: **/search**  - Check for servicability based on start and end location and <br/> quotation based on product dimensions & INCOTERMS
+        B2B BPP->>Logistics BPP: **/search**  - Check for servicability based on start and end location and <br/> quotation based on product dimensions & Incoterms
         Logistics BPP->>B2B BPP: **/on_search** - Returns possible fulfillments and categories of fulfillment <br/>                      + Quotation of each fulfilment type + e-KYC form
 
 
@@ -78,7 +78,7 @@ steps:
     description: Search Logistics based on fulfilment start and end location + Product details.
     reference: if any
     example:
-      $ref: "../../Examples/B2B_Int_Logistics_yaml/search/search_Standard_Delivery.yaml"
+      $ref: "../../Examples/B2B_Int_Logistics_yaml/search/search_by_air_delivery.yaml"
   - summary: LSP sends catalog - Air & Ocean Cargo
     api: on_search
     description: Logistics service provider sends the catalog based on search + Sends the KYC Link. 

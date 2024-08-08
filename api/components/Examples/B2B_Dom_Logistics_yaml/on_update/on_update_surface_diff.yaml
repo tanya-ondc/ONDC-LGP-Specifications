@@ -107,7 +107,6 @@ value:
                 range:
                   start: '2023-10-17T21:12:00.710Z'
                   end: '2023-10-20T21:12:00.710Z'
-                timestamp: '2023-10-17T21:13:00.601Z'
             - id: L2
               parent_stop_id: L1
               type: end
@@ -152,8 +151,14 @@ value:
                     code: RTO_Action
                   value: 'no'
                 - descriptor:
+                    code: Eway_Bill_No
+                  value: '1209567899003'
+                - descriptor:
                     code: Doc_Way_Bill_No
                   value: '1209567899003'
+                - descriptor:
+                    code: Invoice_Number
+                  value: '94395859020203'
       billing:
         name: ONDC sellerapp
         address: My house or building name
@@ -162,7 +167,9 @@ value:
         tax_id: XXXXXXXXXXXXXXX
         phone: '9886098860'
         email: abcd.efgh@gmail.com
-      payment:
+        time:
+          timestamp: '2023-10-17T21:11:00.000Z'
+      payments:
         - id: P1
           collected_by: BPP
           params:
@@ -211,7 +218,7 @@ value:
               value: kilogram
             - descriptor:
                 code: Value
-              Value: '5'
+              value: '5'
         - descriptor:
             code: Package_Dimensions
           list:

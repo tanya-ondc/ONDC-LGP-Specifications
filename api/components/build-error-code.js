@@ -4,18 +4,37 @@ const fs = require("fs");
 
 async function buildErrorCodes() {
     const workSheetsFromBuffer = xlsx.parse(`../../Error-codes.xlsx`);
-    const outputObject = workSheetsFromBuffer[0]?.data.filter((item,index)=>item.length>0 && index!==0).map(([Code,Reason,WhoCanUseCode,Usage,Action]) => (
-       {
-         Code,
-         Reason,
-         "Who can use code?": WhoCanUseCode,
-         Usage,
-         Action
-       }
-    ));
-   
-    const yamlString = yaml.dump({ code: outputObject });
-    fs.writeFileSync(`./error_codes/index.yaml`, yamlString);
-   }
+    let outputObject;
+
+    for (let i = 0; i < workSheetsFromBuffer.length; i++) {
+        const sheetName = workSheetsFromBuffer[i]?.name
+        if (sheetName === 'Cancellation') {
+            outputObject = workSheetsFromBuffer[i]?.data.filter((item, index) => item.length > 0 && index !== 0).map(([Code,
+                Reason, triggersRTO, WhoCanUseCode, causeOfCancellation, applicableForPartCancel, comment]) => (
+                {
+                    Code,
+                    Reason,
+                    "Triggers RTO?": triggersRTO,
+                    "Who can use code?": WhoCanUseCode,
+                    "Cause of cancellation & hence cost attributed to": causeOfCancellation,
+                    "Applicable for part cancel": applicableForPartCancel,
+                    Comment: comment
+                }
+            ));
+        } else if (sheetName === 'Error Codes') {
+            outputObject = workSheetsFromBuffer[i]?.data.filter((item, index) => item.length > 0 && index !== 0).map(([Code,
+                Type, Message, Description]) => (
+                {
+                    Code,
+                    Type,
+                    Message,
+                    Description
+                }
+            ));
+        }
+        const yamlString = yaml.dump({ [sheetName.replace(' ','')]: outputObject });
+        fs.writeFileSync(`./error_codes/${sheetName.replace(' ','')}/${sheetName.replace(' ','')}.yaml`, yamlString,{});
+    }
+}
 
 module.exports = { buildErrorCodes }

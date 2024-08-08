@@ -16,7 +16,7 @@ value:
     bpp_uri: https://logistics_seller.com/ondc
     transaction_id: 9fdb667c-76c6-456a-9742-ba9caa5eb765
     message_id: '1755281254860'
-    timestamp: '2023-02-06T21:00:00.000Z'
+    timestamp: '2023-10-17T21:00:00.000Z'
     ttl: PT30S
   message:
     order:
@@ -36,8 +36,8 @@ value:
             code: P2H2P
           time:
             label: TAT
-            duration: PT45M
-            timestamp: '2023-10-23'
+            duration: P4D
+            timestamp: '2023-10-21'
       quote:
         price:
           currency: INR
@@ -120,9 +120,8 @@ value:
                   - link/to/shipping/label
               time:
                 range:
-                  start: '2023-02-06T22:30:00.000Z'
-                  end: '2023-02-06T22:45:00.000Z'
-                timestamp: '2023-06-07T00:00:00.000Z'
+                  start: '2023-10-17T22:30:00.000Z'
+                  end: '2023-10-17T22:45:00.000Z'
             - id: L2
               parent_stop_id: L1
               type: end
@@ -163,10 +162,10 @@ value:
                     code: RTO_Action
                   value: 'no'
                 - descriptor:
-                    code: INCOTERMS
+                    code: Incoterms
                   value: CIF
                 - descriptor:
-                    code: NAMED_PLACE_OF_DELIVERY
+                    code: Named_Place_Of_Delivery
                   value: UN:SIN
                 - descriptor:
                     code: AWB_No
@@ -180,6 +179,9 @@ value:
                 - descriptor:
                     code: Doc_Way_Bill_No
                   value: '1209567899003'
+                - descriptor:
+                    code: Invoice_Number
+                  value: '94395859020203'
       billing:
         name: ONDC sellerapp
         address: My house or building name
@@ -239,7 +241,7 @@ value:
               value: kilogram
             - descriptor:
                 code: Value
-              Value: '5'
+              value: '5'
         - descriptor:
             code: Package_Dimensions
           list:
@@ -291,28 +293,4 @@ value:
             - descriptor:
                 code: Temp_Max
               value: '4'
-        - descriptor:
-            code: Package_Dimensions_Diff
-          list:
-            - descriptor:
-                code: Unit
-              value: centimeter
-            - descriptor:
-                code: Length
-              value: '1.5'
-            - descriptor:
-                code: Breadth
-              value: '1.5'
-            - descriptor:
-                code: Height
-              value: '1.5'
-        - descriptor:
-            code: Diff_Proof
-          list:
-            - descriptor:
-                code: type
-              value: image
-            - descriptor:
-                code: url
-              value: https://xxxxx/xx.png
-      updated_at: '2023-02-06T22:00:30.000Z'
+      updated_at: '2023-10-17T22:00:30.000Z'

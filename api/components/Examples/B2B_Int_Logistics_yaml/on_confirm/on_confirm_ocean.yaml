@@ -34,6 +34,9 @@ value:
             - C1
           descriptor:
             code: P2H2P
+          time:
+            label: TAT
+            duration: P7D
       quote:
         price:
           currency: INR
@@ -153,10 +156,10 @@ value:
                     code: RTO_Action
                   value: 'no'
                 - descriptor:
-                    code: INCOTERMS
+                    code: Incoterms
                   value: CIF
                 - descriptor:
-                    code: NAMED_PLACE_OF_DELIVERY
+                    code: Named_Place_Of_Delivery
                   value: UN:SIN
                 - descriptor:
                     code: AWB_No
@@ -284,7 +287,7 @@ value:
               value: kilogram
             - descriptor:
                 code: Value
-              Value: '5'
+              value: '5'
         - descriptor:
             code: Package_Dimensions
           list:

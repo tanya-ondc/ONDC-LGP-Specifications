@@ -1,55 +1,55 @@
 context:
   parent: true
   action:
-    description: call to action /search
-    required: mandatory
+    description: The API endpoint to which the request/response is sent (e.g., /search).
+    required: required
     usage: "search"
     reference: if any
   transaction_id:
-    description: transaction id
-    required: mandatory
+    description: Transaction trail for a buyer is maintained through a unique transaction_id
+    required: required
     usage: "9fdb667c-76c6-456a-9742-ba9caa5eb765"
     reference: if any
   message_id:
-    description: message id
-    required: mandatory
+    description: Every request & response pair is identified by a unique message_id
+    required: required
     usage: "1755281254860"
     reference: if any
   domain:
-    description: domain code, enums - ONDC:LOG10 ( Domestic Logistics )
-    required: mandatory
+    description: The domain code for which the transaction is initiated for, enums - ONDC:LOG10 ( Domestic Logistics )
+    required: required
     usage: "ONDC:LOG10"
     reference: if any
   city:
     code:
-      description: city code for search where product needs to be delivered. List of city codes for domestic, with pincode mapping, are here - https://docs.google.com/spreadsheets/d/12A_B-nDtvxyFh_FWDfp85ss2qpb65kZ7/edit#gid=213574534
-      required: mandatory
+      description: City code for search where product needs to be delivered. List of city codes for domestic, with pincode mapping, are here - https://docs.google.com/spreadsheets/d/12A_B-nDtvxyFh_FWDfp85ss2qpb65kZ7/edit#gid=213574534
+      required: required
       usage: std:080
       reference: if any
   country:
     code:
       description: ISO standard 3 digit country code where product needs to be delivered
-      required: mandatory
+      required: required
       usage: IND
       reference: if any  
   bap_id:
     description: subscriber id for logistics buyer app
-    required: mandatory
+    required: required
     usage: logistics_buyer.com
     reference: if any
   bap_uri:
     description: subscriber URI for buyer app
-    required: mandatory
+    required: required
     usage: https://logistics_buyer.com/ondc
     reference: if any
   timestamp:
-    description: RFC3339 compliant timestamp
-    required: mandatory
+    description: RFC3339 compliant timestamp when the request/response is sent
+    required: required
     usage: '2023-10-17T21:10:00.000Z'
     reference: if any
   ttl:
     description: validity of message
-    required: mandatory
+    required: required
     usage: PT30S
     reference: if any
 message:
@@ -65,8 +65,8 @@ message:
         reference: if any
       descriptor:
         code:
-          description: delivery category for the order, enums for parent category - Standard Delivery (Surface Delivery) & Express Delivery (Air Delivery)
-          required: required, if category present
+          description: delivery category for the order, enums for parent category - Surface Delivery (Standard Delivery), Air Delivery (Express Delivery) and Ocean Delivery.
+          required: optional
           usage: "Surface_Delivery"
           reference: if any
     provider:

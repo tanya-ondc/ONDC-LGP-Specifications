@@ -23,9 +23,9 @@ value:
       id: O2
       status: Cancelled
       cancellation:
-        cancelled_by: logistics_buyer.com
+        cancelled_by: logistics_seller.com
         reason:
-          id: '004'
+          id: '013'
       provider:
         id: P1
         locations:
@@ -43,35 +43,53 @@ value:
             label: TAT
             duration: PT7D
             timestamp: '2023-10-17'
+        - id: I2
+          category_ids:
+            - C1
+            - R1
+          descriptor:
+            code: P2H2P
+          fulfillment_ids:
+            - '2'
+          time:
+            label: TAT
+            duration: PT7D
+            timestamp: '2023-10-24'
       quote:
         price:
           currency: INR
-          value: '0.00'
+          value: '7500.00'
         breakup:
           - item:
               id: I1
             title: delivery
             price:
               currency: INR
-              value: '0.00'
+              value: '3000.00'
+          - item:
+              id: I1
+            title: insurance
+            price:
+              currency: INR
+              value: '500.0'
           - item:
               id: I1
             title: tax
             price:
               currency: INR
-              value: '0.00'
+              value: '500.00'
           - item:
               id: I2
             title: rto
             price:
               currency: INR
-              value: '0.00'
+              value: '3000.00'
           - item:
               id: I2
             title: tax
             price:
               currency: INR
-              value: '0.00'
+              value: '500.00'
       fulfillments:
         - id: '1'
           type: Delivery
@@ -85,12 +103,15 @@ value:
               type: start
               location:
                 gps: 12.4535445,77.9283792
-                area_code: '560041'
-                map_url: ''
                 address: My house or building name, street name
-                city: Bengaluru
-                state: Karnataka
-                country: India
+                city:
+                  name: Bengaluru
+                state:
+                  name: Karnataka
+                country:
+                  name: India
+                  code: IND
+                area_code: '560041'
               contact:
                 phone: '9886098860'
                 email: abcd.efgh@gmail.com
@@ -111,16 +132,20 @@ value:
                 range:
                   start: '2023-10-17T21:12:00.710Z'
                   end: '2023-10-20T21:12:00.710Z'
+                timestamp: '2023-10-20T21:12:00.710Z'
             - id: L2
               parent_stop_id: L1
               type: end
               location:
                 gps: 12.342769,77.9129423
-                map_url: ''
                 address: My house or building name, street name
-                city: Bengaluru
-                state: Karnataka
-                country: India
+                city:
+                  name: Bengaluru
+                state:
+                  name: Karnataka
+                country:
+                  name: India
+                  code: IND
                 area_code: '560043'
               contact:
                 phone: '9886098860'
@@ -147,26 +172,58 @@ value:
                 - descriptor:
                     code: AWB_No
                   value: '1209878992826353'
-            - code: RTO_Event
+            - descriptor:
+                code: RTO_Event
               list:
-                - code: Retry_Count
-                  value: '3'
-                - code: RTO_Id
-                  value: '2'
-                - code: Cancellation_Reason_Id
-                  value: '013'
-                - code: Sub_Reason_Id
-                  value: '004'
-                - code: Cancelled_By
-                  value: lsp.com
+               - descriptor:
+                  code: Retry_Count
+                 value: '3'
+               - descriptor:
+                   code: RTO_Id
+                 value: '2'
+               - descriptor:
+                  code: Cancellation_Reason_Id
+                 value: '013'
+               - descriptor:
+                   code: Sub_Reason_Id
+                 value: '004'
+               - descriptor:
+                   code: Cancelled_By
+                 value: logistics_seller.com
         - id: '2'
           type: RTO
           state:
             descriptor:
               code: RTO-Initiated
-          start:
-            time:
-              timestamp: '2023-06-07T14:00:00.000Z'
+          stops:
+            - id: L2
+              type: start
+              location:
+                gps: 12.342769,77.9129423
+                address: My house or building name, street name
+                city:
+                  name: Bengaluru
+                state:
+                  name: Karnataka
+                country:
+                  name: India
+                  code: IND
+                area_code: '560043'
+              time:
+                timestamp: '2023-06-07T14:00:00.000Z'
+            - id: L1
+              type: end
+              location:
+                gps: 12.4535445,77.9283792
+                address: My house or building name, street name
+                city:
+                  name: Bengaluru
+                state:
+                  name: Karnataka
+                country:
+                  name: India
+                  code: IND
+                area_code: '560041'
       billing:
         name: ONDC sellerapp
         address: My house or building name
@@ -175,7 +232,9 @@ value:
         tax_id: XXXXXXXXXXXXXXX
         phone: '9886098860'
         email: abcd.efgh@gmail.com
-      payment:
+        time:
+          timestamp: '2023-10-17T21:11:00.000Z'
+      payments:
         - id: P1
           collected_by: BPP
           params:
@@ -217,18 +276,6 @@ value:
                 value: ON-FULFILLMENT
       tags:
         - descriptor:
-            code: Quantity
-          list:
-            - descriptor:
-                code: count
-              value: '1000'
-            - descriptor:
-                code: MEASURE_UNIT
-              value: kilogram
-            - descriptor:
-                code: MEASURE_VALUE
-              value: '1000'
-        - descriptor:
             code: Package_Dimensions
           list:
             - descriptor:
@@ -249,12 +296,6 @@ value:
             - descriptor:
                 code: Category
               value: Grocery
-            - descriptor:
-                code: UNIT_PRICE
-              value: '100'
-            - descriptor:
-                code: ITEM_PRICE
-              value: '100000'
             - descriptor:
                 code: Dangerous_Goods
               value: 'true'

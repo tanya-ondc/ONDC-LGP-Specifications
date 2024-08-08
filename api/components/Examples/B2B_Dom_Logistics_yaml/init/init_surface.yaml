@@ -33,6 +33,9 @@ value:
             - '1'
           descriptor:
             code: P2H2P
+          time:
+            label: TAT
+            duration: P7D
       fulfillments:
         - id: '1'
           type: Delivery
@@ -75,7 +78,7 @@ value:
         email: abcd.efgh@gmail.com
         time:
           timestamp: '2023-10-17T21:11:00.000Z'
-      payment:
+      payments:
         collected_by: BPP
         type: ON-FULFILLMENT
         tags:

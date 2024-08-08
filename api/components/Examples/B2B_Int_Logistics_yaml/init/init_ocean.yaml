@@ -32,6 +32,9 @@ value:
             - '1'
           descriptor:
             code: P2H2P
+          time:
+            label: TAT
+            duration: P7D
       fulfillments:
         - id: '1'
           type: Delivery
@@ -69,10 +72,10 @@ value:
               code: Delivery_Terms
             list:
               - descriptor:
-                  code: INCOTERMS
+                  code: Incoterms
                 value: CIF
               - descriptor:
-                  code: NAMED_PLACE_OF_DELIVERY
+                  code: Named_Place_Of_Delivery
                 value: UN:SIN
       billing:
         name: ONDC sellerapp
@@ -84,7 +87,7 @@ value:
         email: abcd.efgh@gmail.com
         time:
           timestamp: '2023-10-17T21:11:00.000Z'
-      payment:
+      payments:
         collected_by: BPP
         type: PRE-FULFILLMENT
         tags:
@@ -123,5 +126,4 @@ value:
           url: https://lsp.com/xxx/kyc
           mime_type: text/html
           submission_id: xxxx44567789999
-          status: SUCCESS
         required: true

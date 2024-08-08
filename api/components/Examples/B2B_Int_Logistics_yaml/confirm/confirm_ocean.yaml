@@ -34,6 +34,9 @@ value:
             - C1
           descriptor:
             code: P2H2P
+          time:
+            label: TAT
+            duration: P7D
       fulfillments:
         - id: '1'
           type: Delivery
@@ -81,10 +84,10 @@ value:
               code: Delivery_Terms
             list:
               - descriptor:
-                  code: INCOTERMS
+                  code: Incoterms
                 value: CIF
               - descriptor:
-                  code: NAMED_PLACE_OF_DELIVERY
+                  code: Named_Place_Of_Delivery
                 value: UN:SIN
       quote:
         price:
@@ -111,13 +114,13 @@ value:
               value: '500.0'
           - item:
               id: I1
-            title: Clearance_Service_Origin
+            title: Custom_Clearance_Service_Origin
             price:
               currency: INR
               value: '500.0'
           - item:
               id: I1
-            title: Clearance_Service_Destination
+            title: Custom_Clearance_Service_Destination
             price:
               currency: INR
               value: '500.0'
@@ -178,7 +181,7 @@ value:
               value: kilogram
             - descriptor:
                 code: Value
-              Value: '5'
+              value: '5'
         - descriptor:
             code: Package_Dimensions
           list:

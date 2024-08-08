@@ -82,6 +82,9 @@ value:
                 - descriptor:
                     code: Eway_Bill_No
                   value: '1209878992826353'
+                - descriptor:
+                    code: Invoice_Number
+                  value: '94395859020203'
       tags:
         - descriptor:
             code: Package_Weight
@@ -91,7 +94,7 @@ value:
               value: kilogram
             - descriptor:
                 code: Value
-              Value: '5'
+              value: '5'
         - descriptor:
             code: Package_Dimensions
           list:

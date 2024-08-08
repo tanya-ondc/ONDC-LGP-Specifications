@@ -36,8 +36,8 @@ value:
             code: P2H2P
           time:
             label: TAT
-            duration: PT7D
-            timestamp: '2023-10-17'
+            duration: P7D
+            timestamp: '2023-10-24'
       quote:
         price:
           currency: INR
@@ -122,7 +122,6 @@ value:
                 range:
                   start: '2023-10-17T21:12:00.720Z'
                   end: '2023-10-20T21:12:00.720Z'
-                timestamp: '2023-10-17T21:13:00.720Z'
             - id: L2
               parent_stop_id: L1
               type: end
@@ -163,10 +162,10 @@ value:
                     code: RTO_Action
                   value: 'no'
                 - descriptor:
-                    code: INCOTERMS
+                    code: Incoterms
                   value: CIF
                 - descriptor:
-                    code: NAMED_PLACE_OF_DELIVERY
+                    code: Named_Place_Of_Delivery
                   value: UN:SIN
                 - descriptor:
                     code: AWB_No
@@ -180,6 +179,9 @@ value:
                 - descriptor:
                     code: Doc_Way_Bill_No
                   value: '1209567899003'
+                - descriptor:
+                    code: Invoice_Number
+                  value: '94395859020203'
       billing:
         name: ONDC sellerapp
         address: My house or building name
@@ -239,7 +241,7 @@ value:
               value: kilogram
             - descriptor:
                 code: Value
-              Value: '5'
+              value: '5'
         - descriptor:
             code: Package_Dimensions
           list:
@@ -294,28 +296,4 @@ value:
             - descriptor:
                 code: Packaging
               value: Barrels
-        - descriptor:
-            code: Package_Dimensions_Diff
-          list:
-            - descriptor:
-                code: Unit
-              value: centimeter
-            - descriptor:
-                code: Length
-              value: '1.5'
-            - descriptor:
-                code: Breadth
-              value: '1.5'
-            - descriptor:
-                code: Height
-              value: '1.5'
-        - descriptor:
-            code: Diff_Proof
-          list:
-            - descriptor:
-                code: type
-              value: image
-            - descriptor:
-                code: url
-              value: https://xxxxx/xx.png
-      updated_at: '2023-02-06T22:00:30.000Z'
+      updated_at: '2023-10-17T22:00:30.000Z'
