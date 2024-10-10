@@ -169,9 +169,6 @@ value:
                     code: NAMED_PLACE_OF_DELIVERY
                   value: UN:SIN
                 - descriptor:
-                    code: AWB_No
-                  value: '1209878992826353'
-                - descriptor:
                     code: BL_No
                   value: '1209878992826353'
                 - descriptor:
