@@ -35,8 +35,12 @@
       "items": [
         {
           "id": "I3",
-          "fulfillment_ids": ["1"],
-          "category_ids": ["C1"],
+          "fulfillment_ids": [
+            "1"
+          ],
+          "category_ids": [
+            "C1"
+          ],
           "descriptor": {
             "code": "P2H2P"
           },
@@ -134,6 +138,20 @@
               "code": "Pending"
             }
           },
+          "agent": {
+            "person": {
+              "name": "Ramu"
+            }
+          },
+          "customer": {
+            "person": {
+              "name": "xyz"
+            },
+            "contact": {
+              "phone": "9886098860",
+              "email": "xyz.efgh@gmail.com"
+            }
+          },
           "tracking": false,
           "stops": [
             {
@@ -166,7 +184,9 @@
                   "content_type": "text/html",
                   "url": "URL for instructions"
                 },
-                "images": ["link/to/shipping/label"]
+                "images": [
+                  "link/to/shipping/label"
+                ]
               },
               "time": {
                 "range": {
@@ -329,23 +349,23 @@
               ]
             },
             {
-                "descriptor": {
-                    "code": "Collection_Details"
+              "descriptor": {
+                "code": "Collection_Details"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "Amount"
+                  },
+                  "value": "20000"
                 },
-                "list": [
-                    {
-                        "descriptor": {
-                            "code": "Amount"
-                        },
-                        "value": "20000"
-                    },
-                    {
-                        "descriptor": {
-                            "code": "Type"
-                        },
-                        "value": "ON-FULFILLMENT"
-                    }
-                ]
+                {
+                  "descriptor": {
+                    "code": "Type"
+                  },
+                  "value": "ON-FULFILLMENT"
+                }
+              ]
             }
           ]
         }

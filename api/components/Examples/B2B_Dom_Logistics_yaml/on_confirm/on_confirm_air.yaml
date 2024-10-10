@@ -64,6 +64,15 @@ value:
           state:
             descriptor:
               code: Pending
+          agent:
+            person:
+              name: Ramu
+          customer:
+            person:
+              name: xyz
+            contact:
+              phone: '9886098860'
+              email: xyz.efgh@gmail.com
           tracking: false
           stops:
             - id: L1
@@ -133,6 +142,9 @@ value:
                 - descriptor:
                     code: Doc_Way_Bill_No
                   value: '1209567899003'
+                - descriptor:
+                    code: RTO_Action
+                  value: 'no'
       cancellation_terms:
         - fulfillment_state:
             descriptor:

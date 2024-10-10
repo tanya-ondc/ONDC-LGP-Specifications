@@ -50,6 +50,20 @@
         {
           "id": "1",
           "type": "Delivery",
+          "agent": {
+            "person": {
+              "name": "Ramu"
+            }
+          },
+          "customer": {
+            "person": {
+              "name": "xyz"
+            },
+            "contact": {
+              "phone": "9886098860",
+              "email": "xyz.efgh@gmail.com"
+            }
+          },
           "stops": [
             {
               "id": "L1",

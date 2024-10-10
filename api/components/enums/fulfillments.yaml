@@ -44,6 +44,9 @@ fulfillments:
       - code: Order-delivered
         description: about the enum
         reference: <PR/Issue/Discussion Links md format text>
+      - code: Order-partially-delivered
+        description: about the enum
+        reference: <PR/Issue/Discussion Links md format text>
       - code: RTO-Initiated
         description: about the enum
         reference: <PR/Issue/Discussion Links md format text>

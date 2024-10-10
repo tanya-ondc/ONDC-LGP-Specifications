@@ -56,6 +56,20 @@
                             "code": "Pending"
                         }
                     },
+                    "agent": {
+                        "person": {
+                            "name": "Ramu"
+                        }
+                    },
+                    "customer": {
+                        "person": {
+                            "name": "xyz"
+                        },
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "xyz.efgh@gmail.com"
+                        }
+                    },
                     "tracking": false,
                     "stops": [
                         {

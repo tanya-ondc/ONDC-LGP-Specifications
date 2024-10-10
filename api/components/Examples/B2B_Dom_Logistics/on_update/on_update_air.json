@@ -38,7 +38,9 @@
                     "category_ids": [
                         "C2"
                     ],
-                    "fulfillment_ids": ["1"],
+                    "fulfillment_ids": [
+                        "1"
+                    ],
                     "descriptor": {
                         "code": "P2H2P"
                     },
@@ -96,6 +98,20 @@
                             "code": "Pending"
                         }
                     },
+                    "agent": {
+                        "person": {
+                            "name": "Ramu"
+                        }
+                    },
+                    "customer": {
+                        "person": {
+                            "name": "xyz"
+                        },
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "xyz.efgh@gmail.com"
+                        }
+                    },
                     "tracking": false,
                     "stops": [
                         {
@@ -137,7 +153,7 @@
                                     "start": "2023-02-06T22:30:00.000Z",
                                     "end": "2023-02-06T22:45:00.000Z"
                                 },
-                                "timestamp":"2023-06-07T00:00:00.000Z"
+                                "timestamp": "2023-06-07T00:00:00.000Z"
                             }
                         },
                         {
@@ -204,10 +220,10 @@
                                     "value": "no"
                                 },
                                 {
-                                  "descriptor": {
-                                    "code": "Doc_Way_Bill_No"
-                                  },
-                                  "value": "1209878992826353"
+                                    "descriptor": {
+                                        "code": "Doc_Way_Bill_No"
+                                    },
+                                    "value": "1209878992826353"
                                 }
                             ]
                         }
